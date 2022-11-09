@@ -1,0 +1,377 @@
+body {
+  color: var(--primary-text);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+
+  @media (max-width: 1090px) {
+    column-gap: 16px;
+  }
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+svg,
+a,
+button {
+  transition: var(--transition-color);
+}
+
+a {
+  cursor: pointer;
+}
+
+.link-color {
+  color: var(--primary-orange) !important;
+}
+
+.header {
+  padding-top: 30px;
+  padding-bottom: 17px;
+
+  &__choice-town {
+    grid-column: 1/ span 5;
+
+    @media (max-width: 1090px) {
+      grid-column: 1/ span 6;
+    }
+
+    @media (max-width: 767px) {
+      grid-column: 5/ span 3;
+      position: relative;
+      z-index: 5;
+    }
+
+    .location {
+      margin: 0 20px;
+
+      @media (max-width: 1090px) {
+        margin: 0 17px 0 10px;
+      }
+    }
+  }
+
+  &__profile-action {
+    grid-column: 7/ span 6;
+    justify-content: flex-end;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__profile-mobile {
+    display: none;
+
+    @media (max-width: 767px) {
+      display: block;
+      z-index: 5;
+      grid-column: 11/ span 2;
+      position: relative;
+      display: flex;
+      align-self: flex-end;
+      justify-self: flex-end;
+    }
+  }
+
+  &__navbar {
+    @media (max-width: 1090px) {
+      display: none;
+
+    }
+
+  }
+
+  & .manual {
+    @media (max-width: 850px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  /*Кнопка создать новое предложение */
+  &__item-action-btn {
+    display: inline-block;
+    position: relative;
+    margin-right: 30px;
+
+    @media (max-width: 1090px) {
+      margin-right: 16px;
+    }
+
+    & p {
+      color: var(--primary-text);
+      transition: var(--transition-color);
+
+      @media (max-width: 850px) {
+        font-size: 14px;
+      }
+    }
+
+    & a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover .svg-header-wallet-dims,
+    &:hover p {
+      color: var(--primary-orange);
+    }
+
+    &:hover div {
+      display: block;
+      opacity: 1;
+    }
+
+    & div {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 63px;
+      background-color: var(--primary-orange);
+      color: var(--white);
+      font-size: 13px;
+      white-space: nowrap;
+      padding: 7px 12px;
+      border-radius: 4px;
+      z-index: 999;
+      transition: opacity 1s ease-in-out 1s;
+      opacity: 0;
+    }
+
+    & div::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 16px;
+      top: -3px;
+      background-color: var(--primary-orange);
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      z-index: -1;
+    }
+  }
+}
+
+.location {
+  font-size: 14px;
+  line-height: 2.5;
+  text-decoration: underline;
+  margin-left: 20px;
+  cursor: pointer;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    background: url(../image/arrows_region.png);
+    width: 4px;
+    height: 9px;
+    display: inline-block;
+    position: relative;
+    left: 5px;
+  }
+}
+
+.mobile-location .location {
+  display: none;
+}
+
+.underscore-link {
+  position: relative;
+  transition: var(--animation-onset);
+}
+
+.underscore-link:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--primary-orange);
+  content: "";
+  transition: all 0.2s ease-in-out 0.2s;
+}
+
+.underscore-link:hover:after,
+.underscore-link:focus:after {
+  width: 100%;
+}
+
+
+.search-header-button {
+  width: 45px;
+  height: 45px;
+  background-color: var(--primary-orange);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+}
+
+.svg-magnifier-white-dims,
+.svg-header-create-btn-dims {
+  color: var(--white);
+}
+
+.svg-header-wallet-dims {
+  margin-right: 8px;
+}
+
+.svg-header-wallet-dims {
+  color: var(--secondary-text);
+
+  @media (max-width: 850px) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.svg-header-wallet-dims:hover {
+  color: var(--primary-orange);
+}
+
+
+
+.widget_user_profile_name {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.round-button a {
+  width: 45px;
+  height: 45px;
+  background-color: var(--primary-orange);
+  color: var(--white);
+  border-radius: 50%;
+  transition: var(--transition-color);
+
+  @media (max-width: 850px) {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.round-button:hover a {
+  background-color: var(--secondary-orange);
+}
+
+.manual-nav-item {
+  display: none;
+
+  @media (max-width: 767px) {
+    display: inline-block;
+  }
+}
+
+.profile-mobile-link {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+.profile-mobile-link img {
+  border-radius: 50%;
+}
+
+
+
+
+
+//=-----модальное окно профиля на мобилке
+.user-menu-modal {
+  position: fixed;
+  top: 0;
+  left: 2500px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+
+  z-index: 1000;
+  display: block;
+  transition: all 0.5s ease-out 0.5s;
+
+  &.show {
+    left: 0;
+  }
+}
+
+.user-menu-modal-block {
+  height: 100%;
+  width: calc(100% - 65px);
+  background: var(--white);
+  float: right;
+  -webkit-transition: all 0.7s ease-out 0.7s;
+  -o-transition: all 0.7s ease-out 0.7s;
+  -webkit-transition: all 0.7s ease-out 0.7s;
+  -o-transition: all 0.7s ease-out 0.7s;
+  transition: all 0.7s ease-out 0.7s;
+  margin-right: -100vw;
+
+  &.show {
+    margin-right: 0vw;
+  }
+}
+
+
+a.user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.user-fio {
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.user-menu-modal ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-menu-modal ul li {
+  padding: 10px 30px;
+  display: inline-block;
+}
+
+.close__btn {
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  left: 11px;
+  top: 11px;
+  background-color: initial;
+
+  &-svg {
+    transform: rotate(45deg);
+    color: var(--white);
+  }
+
+}
+
+.user-menu-modal ul li a,
+.user-fio {
+  color: var(--primary-text);
+}

@@ -1,0 +1,111 @@
+<section class="price__increase-section auction__section" >
+  <div class="container">
+    <h1 class="new-style-title-h1">Аукционы на повышение цены</h1>
+    <div class="current-lot lot">
+      <p class="sub-title">Текущий лот</p>
+      <div class="auction__card-template auction__card-banner grid-container">
+        <p class="auction__card-title"  >Xiaomi Redmi 10 NFC</p>
+        <div class="auction__card-img-container">
+          <img src="../image/product__image.png" class="auction__card-img" alt="Фото продукта">
+        </div>
+        <div class="auction__card-action">
+            <div class="current__price card__action">
+              <span class="current__price-title card__action-title">Текущая цена:</span>
+              <span class="current__price-value">17 100 ₽</span>
+            </div>
+            <div class="bet__price card__action">
+              <span class="card__action-title bet-title">Ставка:</span>
+              <!-- <input type="text" class="bet__price-value price-value"> -->
+              <div class="bet__price-block">
+                <input type="text" class="bet__price-value price-value">
+                <div class="bet__buttons">
+                  <button class="bet__buttons-up bet-button"> 
+                    <svg width="7.5px" height="4px" class="svg-bet__button-up-dims">
+                      <use xlink:href="../image/icons/icons.svg#bet__button-up"></use>
+                    </svg>
+                  </button>
+                  <button class="bet__buttons-down bet-button">
+                    <svg width="7.5px" height="4px" class="svg-bet__button-down-dims">
+                      <use xlink:href="../image/icons/icons.svg#bet__button-down"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <span class="bet-step">Шаг ставки - 100 рублей</span>
+            </div>
+        </div>
+        <button class="auction__card-btn primary-btn">Сделать ставку</button>
+        <div class="auction__card-info">
+          <div class="card-info__amount-bet card-info__margin-bottom">
+            <span class="card-info-title">Сделано ставок:</span>
+            <span class="card-info-value">1</span>
+          </div>
+          <div class="card-info__amount-bet card-info__margin-bottom">
+            <span class="card-info-title">До конца аукциона:</span>
+            <span class="card-info-value">7</span>
+          </div>
+          <div class="card-info__amount-bet">
+            <span class="card-info-title">Начальная цена:</span>
+            <span class="card-info-value">1000 ₽</span>
+          </div>
+          <div class="card-info__amount-bet">
+            <span class="card-info-title">Последняя ставка:</span>
+            <span class="card-info-value">100 ₽ (ID: 4748)</span>
+          </div>
+          <a class="auction__card-info-btn secondary-btn" href="#">Подробнее</a>
+        </div>
+      </div>
+    </div>
+    <div class="future-lot lot">
+      <p class="sub-title">Будущий лот</p>
+      <div class="auction__card-template auction__card-banner grid-container">
+        <p class="auction__card-title"  >Xiaomi Redmi 10 NFC</p>
+        <div class="auction__card-img-container">
+          <img src="../image/product__image.png" alt="Фото продукта">
+        </div>
+        <div class="auction__card-action">
+            <div class="current__price card__action">
+              <span class="current__price-title card__action-title">Текущая цена:</span>
+              <input type="text" class="current__price-value price-value">
+            </div>
+            <div class="bet__price card__action">
+              <span class="card__action-title bet-title">Ставка:</span>
+              <span class="current__price-value">Неизвестна</span>
+            </div>
+        </div>
+        <button class="auction__card-btn primary-btn future-lot-btn">Сообщить мне 
+          о&nbsp;начале аукциона</button>
+        <div class="auction__card-important-block important-block">
+          <div>
+            <svg width="46px" height="46px" class="svg-important-dims">
+              <use xlink:href="../image/icons/icons.svg#important"></use>
+            </svg>
+          </div>
+          <div class="important-block__text">
+            <p class="important-block-description">Аукцион начнется через <span>1д 12ч 56мин</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="previous-lot lot">
+      <p class="sub-title">Предыдущий лот</p>
+      <div class="auction__card-template auction__card-banner auction__card-sold grid-container">
+        <p class="auction__card-title"  >Xiaomi Redmi 10 NFC</p>
+        <div class="auction__card-img-container">
+          <img src="../image/product__image.png" alt="Фото продукта">
+        </div>
+        <div class="previous-lot__card-action">
+            <div class="closed__price card__action">
+              <span class="card__action-title close-bet-title">Цена закрытия аукциона:</span>
+              <span class="current__price-value">17 100 ₽</span>
+            </div>  
+            <!-- <a class="auction__card-sold-btn secondary-btn" href="#">Подробнее</a> -->
+        </div>
+        <a class="auction__card-sold-btn secondary-btn" href="#">Подробнее</a>
+        <div class="auction__card-sold-block">
+          <span class="auction__card-sold-text">Лот продан</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

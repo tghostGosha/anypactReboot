@@ -1,0 +1,210 @@
+.product-card__sub-title {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.product__card-template {
+  padding: 36px;
+  row-gap: 32px;
+  @media(max-width: 1039px) {
+    row-gap: 24px;
+    padding: 36px 12px;
+  }
+  @media(max-width: 748px) {
+    padding: 24px 12px;
+  }
+}
+
+.product-card-img-container {
+  grid-column: 1/ span 3;
+  grid-row: 1/span 3;
+  @media(max-width: 748px) {
+    grid-row: 1/span 2;
+    grid-column: 1/ span 4;
+  }
+}
+
+.product__card-list-description {
+  display: flex;
+  flex-direction: column;
+  grid-column: 4/ span 4;
+  grid-row: 1/span 2;
+  @media(max-width: 748px) {
+    grid-row: 5/span 1;
+    grid-column: 1/ span 12;
+  }
+}
+
+.product__card-list-item:not(:last-child) {
+  margin-bottom: 8px;
+  @media(max-width: 748px) {
+    margin-bottom: 12px;
+  }
+}
+
+.product__card-action {
+  display: flex;
+  grid-column: 9/ span 4;
+  justify-content: space-between;
+  @media(max-width: 1039px) {
+    grid-column: 8/ span 5;
+  }
+  @media(max-width: 748px) {
+    flex-direction: column;
+    grid-column: 5/ span 8;
+    grid-row: 1/ span 2;
+    justify-content: flex-start;
+  }
+}
+
+.product__card-btn {
+  grid-row: 2/span 1;
+  grid-column: 9/ span 4;
+  @media(max-width: 1039px) {
+    padding: 12px 25px;
+  }
+  @media(max-width: 748px) {
+    grid-row: 3/span 1;
+    grid-column: 1/ span 12;
+  }
+}
+.product__current-price {
+  @media(max-width: 748px) {
+    margin-bottom: 8px;
+  }
+}
+.current__bet-value {
+  max-width: 144px;
+  @media(max-width: 748px) {
+    max-width: 100%;
+    height: 51px;
+    max-height: 51px;
+  }
+}
+.current__price-title {
+  @media(max-width: 1039px) {
+    margin-bottom: 22px;
+  }
+  @media(max-width: 748px) {
+    margin-bottom: 4px;
+  }
+}
+.price__bet {
+  display: flex;
+  flex-direction: column;
+}
+
+.product__current-bet {
+  position: relative;
+}
+
+.product__bet-step {
+  left: 7px;
+  bottom: -7px;
+  @media(max-width: 1039px) {
+    bottom: -19px;
+  }
+}
+
+.product__card-info-bet {
+  display: flex;
+  justify-content: space-between;
+  grid-row: 3/span 1;
+  grid-column: 4/ span 6;
+  @media(max-width: 1039px) {
+    grid-column: 1/ span 9;
+    grid-row: 4/span 1;
+  }
+  @media(max-width: 748px) {
+    grid-column: 1/ span 12;
+    flex-wrap: wrap;
+  }
+}
+
+.history__bet {
+  grid-row: 4/span 1;
+  grid-column: 1/ span 6;
+  @media(max-width: 1039px) {
+    grid-row: 5/span 1;
+    grid-column: 1/ span 10;
+  }
+  @media(max-width: 748px) {
+    grid-row: 6/span 1;
+    grid-column: 1/ span 12;
+  }
+  &-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+
+  &-price{
+    text-align: end;
+    @media(max-width: 1039px) {
+      text-align: center;
+    }
+  }
+  &-date {
+    text-align: end;
+  }
+}
+
+.history__bet-table-header {
+
+  margin-bottom: 16px;
+
+}
+
+.grid-container-table {
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr;
+  column-gap: 32px;
+  margin-bottom: 24px;
+  @media(max-width: 1039px) {
+    column-gap: 16px;
+    grid-template-columns: 3fr 2fr 2fr;
+  } 
+  @media(max-width: 748px) {
+    margin-bottom: 16px;
+    grid-template-columns: 3fr 2fr 2fr;
+  }
+}
+
+.history__bet-table-header span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.history__bet-person {
+  display: flex;
+  justify-content: space-between;
+  @media(max-width: 748px) {
+    display: grid;
+  }
+}
+
+.history__bet-person:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.button-text {
+  display: flex;
+  background-color: inherit;
+  color: var(--primary-orange);
+  margin: 0 auto;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.svg-show-more-dims {
+  color: var(--primary-orange);
+  margin-left: 8px;
+}
+.user-bet {
+  color: var(--primary-orange);
+}

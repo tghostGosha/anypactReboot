@@ -1,0 +1,60 @@
+//-----Бургер
+.menu__icon {
+    display: none;
+  
+    @media (max-width: 767px) {
+      z-index: 5;
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 21px;
+      cursor: pointer;
+      align-self: center;
+    }
+  
+    &::before,
+    &::after {
+      content: '';
+    }
+  
+    &::before,
+    &::after,
+    & span {
+      height: 10%;
+      width: 100%;
+      background-color: var(--primary-text);
+      left: 0;
+      position: absolute;
+      transition: var(--animation-onset);
+    }
+  
+  
+    & span {
+      top: 47%;
+      // transform: scale(0) translate(0px, -50%);
+    }
+  
+    &::after {
+      bottom: 0;
+    }
+  
+    &::before {
+      top: 0;
+    }
+  
+    &._active span {
+      transform: scale(0) translate(0px, -50%);
+    }
+  
+    &._active::before {
+      top: 40%;
+      transform: rotate(-45deg) ;
+      background-color: var(--primary-orange);
+    }
+  
+    &._active::after {
+      bottom: 50%;
+      transform: rotate(45deg) ;
+      background-color: var(--primary-orange);
+    }
+  }
