@@ -1,0 +1,8 @@
+#message_error_aut_main, #message_error_aut{
+    min-height: 25px;
+    color: red;
+    font-size: 14px;
+}
+.regpopup_content_auform input{
+    margin-top: 20px;
+}

@@ -1,0 +1,114 @@
+.cardPact .cardPact-box {
+    width: 100%;
+    overflow: hidden;
+}
+
+.cardPact .cardPact-box-BoxMainImg {
+    width: 100%;
+    max-height: 460px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.cardPact .cardPact-box-BoxPrewImg {
+    width: 2500px;
+    overflow: hidden;
+}
+
+.cardPact .cardPact-box-BoxPrewImg .cardPact-box-BoxPrewImg-img {
+    width: 150px;
+    float: left;
+    margin-right: 30px;
+}
+
+.cardPact-rightPanel .btn {
+    width: 100%;
+}
+
+.cardPact-person__avatar{
+    width: 68px;
+    height: 68px;
+    margin-right: 30px;
+    float: left;
+    background: #e8e8e8;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.cardPact-person__avatar span{
+    font-weight: bold;
+    font-size: 35px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 50%;
+    margin: 0 auto;
+    top: 8px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.cardPact .modal-content textarea{
+    margin-top: 0;
+}
+
+.sp-thumbnail{
+    width: 150px;
+    float: left;
+    margin-right: 30px;
+}
+.gallery-img-cover {
+    position: absolute;
+    display: block;
+    top: -13px;
+    left: -13px;
+    right: -13px;
+    bottom: -13px;
+    background: no-repeat center;
+    background-size: cover;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+    opacity: .4;
+}
+.complaints_type-select{
+    margin-bottom: 10px;
+}
+a#show_phone {
+    height: 60px;
+}
+.triangle {
+    right: 20px;
+    top: -15px;
+    position: absolute;
+    z-index: -1;
+    -webkit-transform: scaleX(2);
+            transform: scaleX(2);
+    color: #FFF;
+    text-shadow: 0px -5px 11px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+}
+.not_auth-error-phone{
+    top: 70px!important;
+}
+div#my-slider {
+    position: relative;
+}
+.sp-full-screen-button {
+    width: 100%;
+    height: 456.25px;
+    transform: rotate(0deg)!important;
+    top: 0!important;
+    right: 0!important;
+}
+.sp-full-screen-button::before{
+    content: none!important;
+}
+.address-pact{
+    margin-top: 12px;
+    line-height: 19px;
+}
+
+.ymaps-2-1-79-gototech {
+    display: none!important;
+}

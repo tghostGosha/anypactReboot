@@ -1,0 +1,44 @@
+#message_error_login {
+    min-height: 25px;
+    color: red;
+    font-size: 14px;
+}
+
+#box_submit_button {
+    min-height: 97px;
+}
+
+.profile-box.form-check {
+    cursor: pointer;
+    padding-left: 0;
+}
+.regpopup_content_form input, textarea{
+    border-radius: 5px;
+    background-color: #f2f3f5;
+    border-color: #f2f3f5;
+    width: 100%;
+    min-height: unset;
+}
+
+.form-check input[type=checkbox] {
+    margin-top: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.profile-box.form-check label {
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+input[disabled] {
+    background: #f8f9fa !important;
+}
+
+input[disabled]::-webkit-input-placeholder {
+    color: #d4d4d4;
+}
+
+#box_submit_button input[disabled]:hover {
+    color: #ff6416 !important;
+}
