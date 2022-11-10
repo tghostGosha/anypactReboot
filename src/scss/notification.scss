@@ -1,0 +1,298 @@
+.right-menu {
+  position: fixed;
+  display: flex;
+  right: -368px;
+  transition: var(--animation-onset);
+  top: 20%;
+  z-index: 101;
+  @media (max-width: 450px) {
+    right: -230px;
+  }
+  & .tabs .point {
+    padding: 20px;
+    background: var(--white);
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+
+    position: relative;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  & .tabs .point::after {
+    content: "";
+    height: 72px;
+    background: var(--white);
+    position: absolute;
+    width: 8px;
+    right: -8px;
+    top: 0;
+  }
+
+  & .content {
+    background: var(--white);
+    -webkit-transition: all 3s;
+    -o-transition: all 3s;
+    transition: all 3s;
+    border-bottom-left-radius: 6px;
+    width: 366px;
+    @media (max-width: 450px) {
+      width: 230px;
+    }
+  }
+
+  &.open {
+    transition: var(--animation-onset);
+    right: 0;
+  }
+
+  &.open .content {
+    -webkit-transition: all 0s;
+    -o-transition: all 0s;
+    transition: all 0s;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+//======SVG Колокольчик====
+.svg-notification-bell-dims {
+  color: var(--secondary-text);
+}
+
+.svg-notification-bell-dims:hover {
+  color: var(--primary-orange);
+}
+
+.svg-notification-bell-dims._active {
+  color: var(--primary-orange);
+}
+
+.list-person-conversation .person-conversation {
+  list-style: none;
+  display: flex;
+  text-decoration: none;
+  color: var(--primary-text);
+  padding: 15px;
+  @media (max-width: 450px) {
+    padding: 10px;
+  }
+}
+
+.list-person-conversation .person-conversation-photo {
+  border-radius: 50%;
+  margin-right: 15px;
+  overflow: hidden;
+  @media (max-width: 450px) {
+    margin-right: 10px;
+  }
+}
+
+.list-person-conversation .person-conversation-photo.system {
+  border-radius: 0;
+}
+
+.list-person-conversation {
+  overflow: auto;
+  max-height: 370px;
+}
+
+.person-conversation {
+  padding: 0 12px;
+}
+
+.list-person-conversation div.person-conversation.not-read {
+  background-color: rgba(247, 248, 250, 1);
+  color: inherit;
+}
+
+.notification {
+  &-block {
+    max-width: 265px;
+    width: 100%;
+    @media (max-width: 767px) {
+      font-size: 16px !important;
+    }
+  }
+
+  &-header {
+    position: relative;
+  }
+
+  &_count {
+    position: absolute;
+    z-index: 1;
+    top: -1px;
+    right: -3px;
+    background: var(--primary-orange);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  &-message-block {
+    font-size: 14px;
+    color: var(--primary-text);
+    font-weight: 300;
+    @media (max-width: 450px) {
+      font-size: 13px;
+    }
+  }
+  &-name-date  {
+    a {
+      transition: var(--transition-color);
+    }
+    a:hover {
+      
+      strong {
+        color: var(--primary-orange);
+      }
+    }
+  }
+
+}
+
+
+
+.no-notification {
+  padding: 30px;
+  text-align: center;
+
+  p {
+    font-weight: 900;
+    font-size: 23px;
+    line-height: 28px;
+    color: var(--primary-text);
+  }
+}
+
+
+
+.person-conversation {
+  &-name {
+    overflow: hidden;
+    max-width: 65%;
+    width: 67%;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: top;
+    transition: var(--transition-color);
+
+    strong {
+      white-space: nowrap;
+      transition: var(--transition-color);
+
+    }
+  }
+
+  &-date {
+    display: inline-block;
+    vertical-align: top;
+    width: 81px;
+  }
+
+  &-message {
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    span {
+      white-space: nowrap;
+    }
+  }
+}
+
+.avatar-name-block {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#notification_list .list-person-conversation .person-conversation {
+  border-bottom: 1px solid #E8E8E8;
+}
+
+#notification_list .list-person-conversation .person-conversation.active {
+  border-bottom: none;
+}
+
+#notification_list .list-person-conversation .person-conversation:last-of-type {
+  border-bottom: none;
+}
+
+#notification_list .list-person-conversation .person-conversation-photo {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#notification_list .list-person-conversation .person-conversation-photo img {
+  max-width: 100%;
+}
+
+#notification_list .list-person-conversation .person-conversation-photo.system img {
+  max-width: 90%;
+}
+
+#notification_list a.person-conversation.active,
+a.person-conversation.active:hover {
+  background: #F1F4F4;
+  border-radius: 6px;
+}
+
+#notification_list .person-conversation-name {
+  color: var(--primary-text);
+}
+
+#notification_list .person-conversation-message,
+.person-conversation-date {
+  color: var(--secondary-text);
+  font-weight: 300;
+}
+
+#notification_list .person-conversation-date {
+  font-size: 14px;
+}
+
+
+#notification_list .person-conversation-name.system {
+  color: var(--secondary-text);
+}
+
+
+
+.delete-all {
+  padding: 0 15px;
+  text-align: right;
+  color: var(--primary-orange);
+  font-weight: 300;
+}
+
+.delete-all>div,
+.notification-block .not-delete {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.notification-block .delete {
+  text-align: right;
+  color: var(--primary-orange);
+  font-weight: 300;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+

@@ -2,7 +2,7 @@
 .menu__icon {
     display: none;
   
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       z-index: 5;
       display: block;
       position: relative;
@@ -10,6 +10,7 @@
       height: 21px;
       cursor: pointer;
       align-self: center;
+      grid-column: 1/ span 1;
     }
   
     &::before,

@@ -8,7 +8,7 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       position: relative;
       display: block;
       visibility: hidden;
@@ -25,7 +25,7 @@
 .navbar-nav {
     flex-wrap: wrap;
   
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       flex-direction: column;
       left: 0;
       width: 100%;
@@ -56,13 +56,15 @@
     &-link {
       cursor: pointer;
       color: var(--primary-text);
-  
+      @media (max-width: 1090px) {
+        font-size: 14px;
+      }
     }
   
     &-link:after {
-      content: attr(data-count);
+      // content: attr(data-count);
       position: absolute;
-      top: -8px;
+      // top: -8px;
       right: -6px;
       color: var(--primary-orange);
       font-size: 12px;

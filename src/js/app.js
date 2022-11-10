@@ -8,6 +8,8 @@ import $ from "jquery"
 
 flsFunctions.isWebp();
 
+
+//====БУргер=============
 const burger = document.querySelector('.menu__icon');
 if(burger) {
       const iconMenu = document.querySelector('.header__nav');
@@ -24,7 +26,7 @@ if(burger) {
       });
 };
 
-
+//====Профайл на мобилке=============
 const userIcon = document.querySelector('.header__profile-mobile');
 if(userIcon) {
   const closeBtn = document.querySelector('.close__btn')
@@ -43,6 +45,31 @@ if(userIcon) {
     
   })
 }
+//====Боковое окно=============
+const notificationsBtn = document.querySelector('#notification_btn');
+const rightMenu = document.querySelector('.right-menu');
+const bellSvg = document.querySelector('.svg-notification-bell-dims')
+notificationsBtn.addEventListener('click', (e) => {
+  rightMenu.classList.toggle('open')
+  bellSvg.classList.toggle('_active')
+});
+
+//====Открытие карты=============
+
+const openMap = document.querySelector('.location')
+const cityChoose = document.querySelector('.city__choose')
+const closeMap = document.querySelector('.city__choose-btn-close')
+openMap.addEventListener('click', (e) => {
+  cityChoose.classList.remove('_close');
+  cityChoose.classList.add('_open');
+
+})
+closeMap.addEventListener('click', (e) => {
+  cityChoose.classList.remove('_open');
+  cityChoose.classList.add('_close');
+})
+
+
 //=========swiper hero=======
 // const heroSwiper = new Swiper('.hero-swiper', {
 //   modules: [Navigation, Pagination],

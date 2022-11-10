@@ -13,6 +13,10 @@ body {
   }
 }
 
+.svg-dont__chat-dims {
+  color: var(--primary-orange);
+}
+
 .flex-container {
   display: flex;
   align-items: center;
@@ -24,17 +28,194 @@ button {
   transition: var(--transition-color);
 }
 
-a {
+a,
+button {
   cursor: pointer;
+  border-radius: .25rem;
+}
+
+.primary__btn-orange {
+  color: var(--white);
+  background-color: var(--primary-orange);
+  border: 1px solid var(--primary-orange);
+  transition: var(--transition-color);
+
+  &:hover {
+    background-color: inherit;
+    color: var(--primary-orange);
+  }
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
 }
 
 .link-color {
   color: var(--primary-orange) !important;
 }
 
+.grey-link {
+  color: var(--secondary-text);
+  text-decoration: underline;
+
+}
+
+.grey-link:hover,
+.grey-link:focus {
+  color: var(--primary-text);
+}
+
+.city__choose {
+  font-size: 14px;
+  padding: 42px 0 42px 0;
+  background: #eaeaea url('/image/bg-russia-mini.png') no-repeat center right;
+  position: fixed;
+  width: 100%;
+  z-index: 995;
+  background-size: 50%;
+  display: block;
+  top: -1000px;
+  overflow: hidden;
+  
+  &._open {
+    top: 0;
+    animation: mapDown 2s 1;
+  }
+  &._close {
+    animation: mapUp 2s 1;
+  }
+
+  &-btn-close {
+    margin: 4px;
+    font-size: 16px;
+    float: right;
+  }
+
+  &-btn-choose {
+    padding: 13px 60px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &-btn-close:hover {
+    color: var(--primary-orange);
+  }
+
+  &-btn-city:hover {
+    text-decoration: underline;
+  }
+
+  &-btn-city,
+  &-btn-close {
+    color: var(--grey-text);
+    border: none;
+    background: unset;
+    line-height: 2.2;
+    padding: 0;
+    cursor: pointer;
+    font-weight: 400;
+    transition: var(--transition-color);
+  }
+
+  &-form-header {
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: 600;
+    display: block;
+  }
+
+  & h2 {
+    display: inline-block;
+    margin-bottom: 25px;
+  }
+
+  & .row-column {
+    columns: auto;
+    column-width: auto;
+    column-width: 12em;
+  }
+
+}
+
+@keyframes mapDown {
+  from {
+    height: 0;
+    top: -1000px;
+  }
+
+  to {
+    height: 694px;
+    top: 0;
+    
+  }
+ 
+}
+@media (max-width: 1090px) {
+  @keyframes mapDown {
+    from {
+      height: 0;
+      top: -1000px;
+    }
+  
+    to {
+      height: 784px;
+      top: 0;
+      
+    }
+   
+  }
+  @keyframes mapUp {
+
+    from {
+      height: 784px;
+      top: 0;
+    }
+  
+    to {
+      height: 0;
+      top: -1000px;
+    }
+  }
+}
+@keyframes mapUp {
+
+  from {
+    height: 694px;
+    top: 0;
+    @media (max-width: 1090px) {
+      height: 882px;
+    }
+  }
+
+  to {
+    height: 0;
+    top: -1000px;
+  }
+}
+
+.col-md-6 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.city__submit div:nth-child(1) {
+  margin-right: 16px;
+}
+
+.city__submit-input {
+  padding: 13px;
+}
+
+
 .header {
   padding-top: 30px;
   padding-bottom: 17px;
+
+  & .logo {
+    display: block;
+  }
 
   &__choice-town {
     grid-column: 1/ span 5;
@@ -43,10 +224,11 @@ a {
       grid-column: 1/ span 6;
     }
 
-    @media (max-width: 767px) {
-      grid-column: 5/ span 3;
+    @media (max-width: 1024px) {
+      grid-column: 3/ span 8;
       position: relative;
       z-index: 5;
+      justify-content: center;
     }
 
     .location {
@@ -62,7 +244,7 @@ a {
     grid-column: 7/ span 6;
     justify-content: flex-end;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       display: none;
     }
   }
@@ -70,7 +252,7 @@ a {
   &__profile-mobile {
     display: none;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       display: block;
       z-index: 5;
       grid-column: 11/ span 2;
@@ -90,13 +272,10 @@ a {
   }
 
   & .manual {
-    @media (max-width: 850px) {
-      font-size: 14px;
-    }
-
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       display: none;
     }
+
   }
 
   /*Кнопка создать новое предложение */
@@ -125,7 +304,9 @@ a {
     }
 
     &:hover .svg-header-wallet-dims,
-    &:hover p {
+    &:hover p,
+    &:focus-visible .svg-header-wallet-dims,
+    &:focus-visible p {
       color: var(--primary-orange);
     }
 
@@ -174,7 +355,7 @@ a {
   margin-left: 20px;
   cursor: pointer;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 
@@ -202,6 +383,7 @@ a {
   display: block;
   position: absolute;
   left: 0;
+  bottom: 0;
   width: 0;
   height: 1px;
   background-color: var(--primary-orange);
@@ -242,14 +424,14 @@ a {
   }
 }
 
-.svg-header-wallet-dims:hover {
-  color: var(--primary-orange);
-}
+// .svg-header-wallet-dims:hover {
+//   color: var(--primary-orange);
+// }
 
 
 
 .widget_user_profile_name {
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 }
@@ -272,10 +454,16 @@ a {
   background-color: var(--secondary-orange);
 }
 
+
+.round-button:focus a {
+  background-color: var(--secondary-orange);
+
+}
+
 .manual-nav-item {
   display: none;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     display: inline-block;
   }
 }
@@ -305,7 +493,7 @@ a {
 
   z-index: 1000;
   display: block;
-  transition: all 0.5s ease-out 0.5s;
+  transition: all 0.3s ease-out 0.3s;
 
   &.show {
     left: 0;
@@ -317,11 +505,11 @@ a {
   width: calc(100% - 65px);
   background: var(--white);
   float: right;
-  -webkit-transition: all 0.7s ease-out 0.7s;
-  -o-transition: all 0.7s ease-out 0.7s;
-  -webkit-transition: all 0.7s ease-out 0.7s;
-  -o-transition: all 0.7s ease-out 0.7s;
-  transition: all 0.7s ease-out 0.7s;
+  -webkit-transition: all 0.5s ease-out 0.5s;
+  -o-transition: all 0.5s ease-out 0.5s;
+  -webkit-transition: all 0.7s ease-out 0.5s;
+  -o-transition: all 0.5s ease-out 0.5s;
+  transition: all 0.5s ease-out 0.5s;
   margin-right: -100vw;
 
   &.show {
