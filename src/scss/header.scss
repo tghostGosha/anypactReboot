@@ -41,7 +41,7 @@ button {
   transition: var(--transition-color);
 
   &:hover {
-    background-color: inherit;
+    background-color: var(--white);
     color: var(--primary-orange);
   }
 }
@@ -76,7 +76,9 @@ button {
   display: block;
   top: -1000px;
   overflow: hidden;
-  
+  @media(max-width: 768px) {
+    top: -1076px;
+  }
   &._open {
     top: 0;
     animation: mapDown 2s 1;
@@ -133,6 +135,12 @@ button {
     columns: auto;
     column-width: auto;
     column-width: 12em;
+    @media(max-width: 768px) {
+      column-width: 8em;
+    }
+    @media(max-width: 523px) {
+      column-width: 3em;
+    }
   }
 
 }
@@ -212,7 +220,10 @@ button {
 .header {
   padding-top: 30px;
   padding-bottom: 17px;
-
+  margin-bottom: 30px;
+  // & .grid-container {
+  //   padding-bottom: 30px;
+  // }
   & .logo {
     display: block;
   }
