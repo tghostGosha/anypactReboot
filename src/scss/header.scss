@@ -1,7 +1,9 @@
 body {
   color: var(--primary-text);
 }
-
+.hide {
+  display: none;
+}
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -220,7 +222,7 @@ button {
 .header {
   padding-top: 30px;
   padding-bottom: 17px;
-  margin-bottom: 30px;
+ 
   
   & .logo {
     display: block;
