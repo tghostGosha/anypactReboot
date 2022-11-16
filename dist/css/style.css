@@ -106,7 +106,7 @@ main {
   --white: #ffffff;
   --grey: #CDCDCD;
   --transition-color: all 0.1s ease-in-out 0.1s;
-  --animation-onset: all 0.5s ease-in 0.5s;
+  --animation-onset: all 0.3s ease-in 0.3s;
   --mb-68: 68px;
   --mb-24: 24px;
 }
@@ -977,6 +977,7 @@ button {
 }
 
 .underscore-link:after {
+  content: "";
   display: block;
   position: absolute;
   left: 0;
@@ -984,7 +985,6 @@ button {
   width: 0;
   height: 1px;
   background-color: var(--primary-orange);
-  content: "";
   transition: all 0.2s ease-in-out 0.2s;
 }
 
@@ -1078,7 +1078,7 @@ button {
   background: rgba(0, 0, 0, 0.3);
   z-index: 1000;
   display: block;
-  transition: all 0.3s ease-out 0.3s;
+  transition: var(--animation-onset);
 }
 .user-menu-modal.show {
   left: 0;
@@ -1089,11 +1089,7 @@ button {
   width: calc(100% - 65px);
   background: var(--white);
   float: right;
-  -webkit-transition: all 0.5s ease-out 0.5s;
-  -o-transition: all 0.5s ease-out 0.5s;
-  -webkit-transition: all 0.7s ease-out 0.5s;
-  -o-transition: all 0.5s ease-out 0.5s;
-  transition: all 0.5s ease-out 0.5s;
+  transition: var(--animation-onset);
   margin-right: -100vw;
 }
 .user-menu-modal-block.show {
