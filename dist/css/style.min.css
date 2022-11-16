@@ -106,7 +106,8 @@ main {
   --white: #ffffff;
   --grey: #CDCDCD;
   --transition-color: all 0.1s ease-in-out 0.1s;
-  --animation-onset: all 0.3s ease-in 0.3s;
+  --animation-onset: all 0.4s ease-in-out 0.2s;
+  --animation-profile-mobile: all 0.8s ease-in-out 0.3s;
   --mb-68: 68px;
   --mb-24: 24px;
 }
@@ -704,11 +705,10 @@ button {
   }
 }
 .city__choose._open {
-  top: 0;
-  animation: mapDown 2s 1;
+  animation: mapDown 1s 0.3s both;
 }
 .city__choose._close {
-  animation: mapUp 2s 1;
+  animation: mapUp 1s 0.3s both;
 }
 .city__choose-btn-close {
   margin: 4px;
@@ -772,6 +772,16 @@ button {
     top: 0;
   }
 }
+@keyframes mapUp {
+  from {
+    height: 694px;
+    top: 0;
+  }
+  to {
+    height: 0;
+    top: -1000px;
+  }
+}
 @media (max-width: 1090px) {
   @keyframes mapDown {
     from {
@@ -792,19 +802,6 @@ button {
       height: 0;
       top: -1000px;
     }
-  }
-}
-@keyframes mapUp {
-  from {
-    height: 694px;
-    top: 0;
-    @media (max-width: 1090px) {
-      height: 882px;
-    }
-  }
-  to {
-    height: 0;
-    top: -1000px;
   }
 }
 .col-md-6 {
@@ -942,8 +939,6 @@ button {
   right: 16px;
   top: -3px;
   background-color: var(--primary-orange);
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   z-index: -1;
 }
@@ -1072,6 +1067,22 @@ button {
   border-radius: 50%;
 }
 
+@keyframes profileModalShow {
+  from {
+    left: 2500px;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes profileModalHide {
+  from {
+    left: 0;
+  }
+  to {
+    left: 2500px;
+  }
+}
 .user-menu-modal {
   position: fixed;
   top: 0;
@@ -1081,10 +1092,10 @@ button {
   background: rgba(0, 0, 0, 0.3);
   z-index: 1000;
   display: block;
-  transition: var(--animation-onset);
+  animation: profileModalHide 1s 0.4s both;
 }
 .user-menu-modal.show {
-  left: 0;
+  animation: profileModalShow 1s 0s both;
 }
 
 .user-menu-modal-block {
@@ -1092,11 +1103,12 @@ button {
   width: calc(100% - 65px);
   background: var(--white);
   float: right;
-  transition: var(--animation-onset);
+  transition: var(--animation-profile-mobile);
   margin-right: -100vw;
 }
 .user-menu-modal-block.show {
   margin-right: 0vw;
+  transition: var(--animation-profile-mobile);
 }
 
 a.user-info {
@@ -1237,7 +1249,7 @@ a.user-info {
     height: 100%;
     max-height: 0;
     padding: 0 16px 0 16px;
-    transition: max-height 0.5s ease-in-out 0.5s;
+    transition: max-height 0.4s ease-in-out 0.1s;
     align-items: flex-start;
     overflow: hidden;
     display: flex;

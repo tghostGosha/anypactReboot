@@ -41,7 +41,10 @@ if(userIcon) {
   });
   closeBtn.addEventListener('click', (e) => {
     menuModalBody.classList.toggle('show');
-    menuModal.classList.toggle('show');
+    
+      menuModal.classList.toggle('show');
+    
+    
     
   })
 }

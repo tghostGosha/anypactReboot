@@ -82,11 +82,10 @@ button {
     top: -1076px;
   }
   &._open {
-    top: 0;
-    animation: mapDown 2s 1;
+    animation: mapDown 1s 0.3s both;
   }
   &._close {
-    animation: mapUp 2s 1;
+    animation: mapUp 1s 0.3s both;
   }
 
   &-btn-close {
@@ -160,6 +159,22 @@ button {
   }
  
 }
+@keyframes mapUp {
+
+  from {
+    height: 694px;
+    top: 0;
+    // @media (max-width: 1090px) {
+    //   height: 882px;
+    // }
+  }
+
+  to {
+    height: 0;
+    top: -1000px;
+  }
+}
+
 @media (max-width: 1090px) {
   @keyframes mapDown {
     from {
@@ -187,21 +202,9 @@ button {
     }
   }
 }
-@keyframes mapUp {
 
-  from {
-    height: 694px;
-    top: 0;
-    @media (max-width: 1090px) {
-      height: 882px;
-    }
-  }
 
-  to {
-    height: 0;
-    top: -1000px;
-  }
-}
+
 
 .col-md-6 {
   -webkit-box-flex: 0;
@@ -351,8 +354,6 @@ button {
       right: 16px;
       top: -3px;
       background-color: var(--primary-orange);
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
       transform: rotate(45deg);
       z-index: -1;
     }
@@ -488,6 +489,29 @@ button {
 
 
 //=-----модальное окно профиля на мобилке
+
+@keyframes profileModalShow {
+
+  from {
+    left: 2500px;
+    
+  }
+
+  to {
+    left: 0;
+  }
+}
+@keyframes profileModalHide {
+
+  from {
+    left: 0;
+    
+  }
+
+  to {
+    left: 2500px;
+  }
+}
 .user-menu-modal {
   position: fixed;
   top: 0;
@@ -497,10 +521,10 @@ button {
   background: rgba(0, 0, 0, 0.3);
   z-index: 1000;
   display: block;
-  transition: var(--animation-onset);
-
+  animation: profileModalHide 1s 0.4s both;
   &.show {
-    left: 0;
+    
+    animation: profileModalShow 1s 0s both;
   }
 }
 
@@ -509,11 +533,12 @@ button {
   width: calc(100% - 65px);
   background: var(--white);
   float: right;
-  transition: var(--animation-onset);
+  transition: var(--animation-profile-mobile);
   margin-right: -100vw;
 
   &.show {
     margin-right: 0vw;
+    transition: var(--animation-profile-mobile);
   }
 }
 
