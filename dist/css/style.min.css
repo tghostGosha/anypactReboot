@@ -1284,7 +1284,7 @@ a.user-info {
   display: flex;
   align-items: center;
   position: relative;
-  background: url("../image/promotion_2022/anypact_part_1.png") bottom left no-repeat, url("../image/promotion_2022/anypact_part_2.png") top right 4rem no-repeat, url("../image/promotion_2022/dots_bg.png") center/cover no-repeat;
+  background: url("../image/promotion_2022/anypact_part_1.png") bottom left no-repeat, url("../image/promotion_2022/anypact_part_2.png") top right 10rem no-repeat, url("../image/promotion_2022/dots_bg.png") center/cover no-repeat;
 }
 @media (max-width: 1024px) {
   .promotion__2022 .offer {
