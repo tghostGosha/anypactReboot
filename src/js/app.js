@@ -35,15 +35,15 @@ if(userIcon) {
       
   userIcon.addEventListener('click', (e) => {
     userIcon.classList.toggle('_active');
-    menuModal.classList.toggle('show');
-    menuModalBody.classList.toggle('show');
+    menuModal.classList.toggle('_show');
+    menuModalBody.classList.toggle('_show');
             
   });
   closeBtn.addEventListener('click', (e) => {
-    menuModalBody.classList.toggle('show');
-    
-      menuModal.classList.toggle('show');
-    
+    menuModalBody.classList.toggle('_show');
+    setTimeout(function () {
+      menuModal.classList.toggle('_show');
+    }, 200);
     
     
   })

@@ -1,9 +1,11 @@
 body {
   color: var(--primary-text);
 }
+
 .hide {
   display: none;
 }
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -78,12 +80,15 @@ button {
   display: block;
   top: -1000px;
   overflow: hidden;
+
   @media(max-width: 768px) {
     top: -1076px;
   }
+
   &._open {
     animation: mapDown 1s 0.3s both;
   }
+
   &._close {
     animation: mapUp 1s 0.3s both;
   }
@@ -136,9 +141,11 @@ button {
     columns: auto;
     column-width: auto;
     column-width: 12em;
+
     @media(max-width: 768px) {
       column-width: 8em;
     }
+
     @media(max-width: 523px) {
       column-width: 3em;
     }
@@ -155,10 +162,11 @@ button {
   to {
     height: 694px;
     top: 0;
-    
+
   }
- 
+
 }
+
 @keyframes mapUp {
 
   from {
@@ -181,21 +189,22 @@ button {
       height: 0;
       top: -1000px;
     }
-  
+
     to {
       height: 784px;
       top: 0;
-      
+
     }
-   
+
   }
+
   @keyframes mapUp {
 
     from {
       height: 784px;
       top: 0;
     }
-  
+
     to {
       height: 0;
       top: -1000px;
@@ -225,8 +234,8 @@ button {
 .header {
   padding-top: 30px;
   padding-bottom: 17px;
- 
-  
+
+
   & .logo {
     display: block;
   }
@@ -490,42 +499,51 @@ button {
 
 //=-----модальное окно профиля на мобилке
 
-@keyframes profileModalShow {
+// @keyframes profileModalShow {
 
-  from {
-    left: 2500px;
+//   from {
+  
+//     left: 100%;
+
+//   }
+
+//   to {
     
-  }
+//     left: 0;
 
-  to {
-    left: 0;
-  }
-}
-@keyframes profileModalHide {
+//   }
+ 
+// }
 
-  from {
-    left: 0;
+// @keyframes profileModalHide {
+
+//   from {
     
-  }
+//     left: 100%;
 
-  to {
-    left: 2500px;
-  }
-}
+//   }
+
+//   to {
+//     left: 0;
+    
+//   }
+// }
+
 .user-menu-modal {
   position: fixed;
   top: 0;
-  left: 2500px;
+  left: 100%;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
   z-index: 1000;
   display: block;
-  animation: profileModalHide 1s 0.4s both;
-  &.show {
-    
-    animation: profileModalShow 1s 0s both;
+  transition: all 0.5s ease-in 0.1s;
+
+  &._show {
+    left: 0;
   }
+   
 }
 
 .user-menu-modal-block {
@@ -536,7 +554,7 @@ button {
   transition: var(--animation-profile-mobile);
   margin-right: -100vw;
 
-  &.show {
+  &._show {
     margin-right: 0vw;
     transition: var(--animation-profile-mobile);
   }
