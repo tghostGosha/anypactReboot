@@ -1,0 +1,11 @@
+.ymaps-2-1-79-balloon__content a{
+    color: var(--primary-orange);
+}
+
+// .ymaps-2-1-79-balloon__content {
+//     height: auto !important;
+// }
+
+[class*="balloon__content"] {
+    height: auto !important;
+}

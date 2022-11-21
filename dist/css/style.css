@@ -1538,6 +1538,14 @@ a.user-info {
   display: none;
 }
 
+.ymaps-2-1-79-balloon__content a {
+  color: var(--primary-orange);
+}
+
+[class*=balloon__content] {
+  height: auto !important;
+}
+
 .promotion__2022 {
   font-family: Montserrat;
   color: var(--primary-text);
