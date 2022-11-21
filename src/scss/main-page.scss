@@ -18,14 +18,26 @@
   }
 }
 
-.static__card {
+.card {
+
+  &__static {
+    &:hover {
+      background-color: var(--primary-orange);
+      & a {
+        color: var(--white);
+      }
+    }
+  }
   grid-column: span 3;
   padding: 35px 32px 5px;
   box-shadow: 1px 2px 10px rgb(0 0 0 / 20%);
-  background-color: #ffffff;
+  border-radius: 5px;
+  background-color: var(--white);
   height: calc(100% - 35px);
   min-height: 380px;
-
+  transition: var(--transition-color);
+  cursor: pointer;
+  
   & a {
     color: var(--primary-text);
     flex-direction: column;
@@ -40,8 +52,19 @@
 
   & p {}
 }
+.description__wrapper {
+  align-items: center;
+  margin-bottom: 40px ;
+}
+.video__block {
+  grid-column: span 6;
+}
 
-.icon-main {
-  background-image: url('../image/sprite-main.png');
-  background-repeat: no-repeat;
+.map {
+  width: 100%;
+  position: relative;
+  margin-bottom: 40px ;
+}
+#mymap {
+  height: 500px;
 }

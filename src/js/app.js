@@ -72,6 +72,16 @@ closeMap.addEventListener('click', (e) => {
   cityChoose.classList.add('_close');
 })
 
+//====Открытие категории сделки=============
+const openCategory = document.querySelector('#button_select_category')
+const selectCategory = document.querySelector('.select__category-list')
+
+openCategory.addEventListener('click', (e) => {
+  setTimeout(function () {
+    selectCategory.classList.toggle('_open');
+  }, 200);
+  openCategory.classList.toggle('_open');
+})
 
 //=========swiper hero=======
 // const heroSwiper = new Swiper('.hero-swiper', {
