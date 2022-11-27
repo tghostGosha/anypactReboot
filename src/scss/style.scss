@@ -4,7 +4,7 @@
   
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 1170px;
+  max-width: 1200px;
   @media (max-width: 1024px) {
     max-width: 834px;
   }
@@ -46,8 +46,12 @@ video {
 * Autoprefixer: v9.7.6
 * Browsers: last 4 version
 */
+@import "../../node_modules/swiper/swiper-bundle.min";
+@import "../../node_modules/swiper/swiper.scss";
+@import "../../node_modules/swiper/modules/navigation/navigation.scss";
 @import "fonts";
 @import "root";
+@import "swiper-styles";
 @import "tooltip";
 @import "burger";
 @import "notification";
@@ -160,12 +164,10 @@ h5 {
     justify-content: center;
   }
 }
-.form-card {
-  border-radius: 5px;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 38px;
-  padding-top: 22px;
+.block__margin-bottom {
+  margin-bottom: var(--mb-68);
 }
+
 
 input,
 textarea {
@@ -1201,12 +1203,6 @@ input::-webkit-input-placeholder {
   z-index: 1;
 }
 
-.short-divider {
-  margin-top: 27px;
-  width: 68px;
-  border-top: 2px solid #ff6416;
-  margin-bottom: 30px;
-}
 
 .long-divider {
   margin-top: 64px;
@@ -1347,20 +1343,17 @@ input::-webkit-input-placeholder {
   border-color: #ffffff;
 }
 
-.all-easy {
-  margin-bottom: 120px;
-}
+// .all-easy {
+//   margin-bottom: 120px;
+// }
 
-.all-easy .big-number {
-  font-size: 44px;
-  font-weight: 900;
-  line-height: 1;
-}
+// .all-easy .big-number {
+//   font-size: 44px;
+//   font-weight: 900;
+//   line-height: 1;
+// }
 
-.all-easy .short-divider {
-  margin-top: 15px;
-  margin-bottom: 17px;
-}
+
 
 .contact-container a {
   color: black;
@@ -2523,12 +2516,7 @@ input::-webkit-input-placeholder {
   margin-top: -60px;
 }
 
-.short-divider {
-  margin-top: 27px;
-  width: 68px;
-  border-top: 2px solid #ff6416;
-  margin-bottom: 30px;
-}
+
 
 .long-divider {
   margin-top: 64px;
@@ -2673,20 +2661,16 @@ input::-webkit-input-placeholder {
   border-color: #ffffff;
 }
 
-.all-easy {
-  margin-bottom: 90px;
-}
+// .all-easy {
+//   margin-bottom: 90px;
+// }
 
-.all-easy .big-number {
-  font-size: 44px;
-  font-weight: 900;
-  line-height: 1;
-}
+// .all-easy .big-number {
+//   font-size: 44px;
+//   font-weight: 900;
+//   line-height: 1;
+// }
 
-.all-easy .short-divider {
-  margin-top: 15px;
-  margin-bottom: 17px;
-}
 
 .contact-container a {
   color: black;
@@ -3733,9 +3717,7 @@ h4.subtitle_contract {
   margin-bottom: 30px;
 }
 
-.contact-container .short-divider {
-  margin-bottom: 36px;
-}
+
 
 .up-arrow {
   display: none;

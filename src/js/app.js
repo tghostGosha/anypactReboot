@@ -1,7 +1,7 @@
 import * as flsFunctions from "./modules/functions.js";
 import $ from "jquery"
 // import { Inputmask } from "inputmask";
-// import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 // import JustValidate from 'just-validate';
 
 // Swiper.use([Navigation, Pagination])
@@ -83,20 +83,24 @@ openCategory.addEventListener('click', (e) => {
   openCategory.classList.toggle('_open');
 })
 
-//=========swiper hero=======
-// const heroSwiper = new Swiper('.hero-swiper', {
-//   modules: [Navigation, Pagination],
-//   slidesPerView: 1,
-//   slidesPerColumn: 1,
-//   slidesPerGroup: 1,
-//   spaceBetween: 50,
-//   loop: true,
+// =========swiper hero=======
+const swiperDeal = new Swiper('.swiper-deal', {
+  modules: [Navigation, Pagination],
+  slidesPerView: 4,
+  slidesPerColumn: 4,
+  slidesPerGroup: 2,
+  spaceBetween: 20,
+  loop: false,
 
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true,
-//   },
-// })
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  }
+})
 
 //====делаем первую букву  в Верхнем регистре
 // const regex = /[A-Za-z0-0]/;
