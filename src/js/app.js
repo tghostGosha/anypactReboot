@@ -1,5 +1,7 @@
 import * as flsFunctions from "./modules/functions.js";
 import $ from "jquery"
+import './modules/map.js'
+
 // import { Inputmask } from "inputmask";
 import Swiper, { Navigation, Pagination } from 'swiper';
 // import JustValidate from 'just-validate';
