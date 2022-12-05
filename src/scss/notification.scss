@@ -2,7 +2,7 @@
   position: fixed;
   display: flex;
   right: -368px;
-  transition: var(--animation-onset);
+  // transition: var(--animation-onset);
   top: 20%;
   z-index: 101;
   @media (max-width: 450px) {
@@ -33,9 +33,10 @@
 
   & .content {
     background: var(--white);
-    -webkit-transition: all 3s;
-    -o-transition: all 3s;
-    transition: all 3s;
+    // -webkit-transition: all 3s;
+    // -o-transition: all 3s;
+    // transition: all 3s;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
     border-bottom-left-radius: 6px;
     width: 366px;
     @media (max-width: 450px) {
@@ -44,14 +45,14 @@
   }
 
   &.open {
-    transition: var(--animation-onset);
+    // transition: var(--animation-onset);
     right: 0;
   }
 
   &.open .content {
-    -webkit-transition: all 0s;
-    -o-transition: all 0s;
-    transition: all 0s;
+    // -webkit-transition: all 0s;
+    // -o-transition: all 0s;
+    // transition: all 0s;
     -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
   }

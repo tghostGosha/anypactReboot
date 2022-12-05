@@ -17,12 +17,14 @@
     "@popperjs/core": "^2.11.5",
     "bootstrap": "^5.2.0-beta1",
     "chokidar": "^3.5.3",
+    
     "gulp-cli": "^2.3.0",
     "inputmask": "^5.0.7",
     "jquery": "^3.6.0"
   },
   "devDependencies": {
     "browser-sync": "latest",
+    "gsap": "^3.11.3",
     "del": "^6.1.1",
     "fs": "latest",
     "gulp": "latest",

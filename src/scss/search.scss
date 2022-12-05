@@ -11,17 +11,27 @@
 
   &__form {
     position: relative;
-
+    z-index: 10;
     & .svg-magnifier-dims {
       margin-right: 16px;
     }
 
     & input {
-      // width: calc(100% - 630px);
       background-color: var(--white);
       border: none;
       padding: 10px;
-      width: 35rem;
+      width: 52%;
+      @media (max-width: 1024px) {
+        // width: 24rem;
+      }
+
+    }
+
+    & .search-btn {
+      display: inline-block;
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
   }
 
@@ -34,15 +44,20 @@
   & .deal-type {
     border-left: 1px solid #dddddd;
     padding: 6px 0px 6px 37px;
+    @media (max-width: 1024px) {
+      padding: 6px 0px 6px 17px;
+    }
+    @media (max-width: 850px) {
+      padding: 0 0px 0 10px;
+    }
   }
 
   & .deal-type {
     user-select: none;
-    position: absolute;
-    top: 0;
-    right: 43px;
+    position: relative;
     background-color: inherit;
-
+    margin-left: 2rem;
+    border-radius: 0;
     & .svg-settings-dims {
       margin-right: 12px;
     }
@@ -50,12 +65,20 @@
     & span {
       transition: var(--transition-color);
       font-size: 16px;
+      
+      @media(max-width: 523px) {
+        display: none;
+      }
     }
 
     & .svg-arr__profile-dims {
       position: absolute;
       right: -32px;
       top: 18px;
+      @media (max-width: 850px) {
+        top: 12px;
+        right: -22px;
+      }
     }
 
     &:hover svg,
@@ -74,39 +97,47 @@
   }
 
   & .region__link {
-    position: absolute;
+    position: relative;
     top: 0;
-    right: 15rem;
+    margin-left: 2rem;
+    border-radius: 0;
     color: var(--primary-text);
     text-decoration: none;
     background-color: inherit;
-
+    @media (max-width: 850px) {
+      display: none;
+    }
     &:hover .svg-geopointer-dims {
       color: var(--primary-orange);
     }
   }
 
   & .select__category-list {
-    user-select: none;
+    z-index: 5;
     position: absolute;
     background-color: var(--white);
     padding: 20px 23px;
     right: -14px;
-    box-shadow: 1px 9px 11px rgb(0 0 0 / 15%);
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 15%);
     border-radius: 5px;
     top: 78px;
+    height: 0;
     display: none;
+    flex-direction: column;
     opacity: 0;
-    transition: var(--transition-color);
+    transform: translate(0px, -209px);
+    // transition: var(--transition-color);
 
     & li:not(:last-child) {
       margin-bottom: 10px;
     }
-
-    &._open {
-      display: block;
-      opacity: 1;
-    }
+    // & li {
+    //   opacity: 0;
+    //   transform: translate(0px, -209px);
+    // }
+    // &._open {
+    //   opacity: 1;
+    // }
 
     &::after {
       content: '';

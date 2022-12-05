@@ -1,7 +1,8 @@
 import * as flsFunctions from "./modules/functions.js";
 import $ from "jquery"
-import './modules/map.js'
-
+// import './modules/map.js'
+import gsap from "gsap";
+// import scrollTrigger from "gsap";
 // import { Inputmask } from "inputmask";
 import Swiper, { Navigation, Pagination } from 'swiper';
 // import JustValidate from 'just-validate';
@@ -9,6 +10,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 // Swiper.use([Navigation, Pagination])
 
 flsFunctions.isWebp();
+
 
 
 //====БУргер=============
@@ -50,14 +52,70 @@ if(userIcon) {
     
   })
 }
+
 //====Боковое окно=============
 const notificationsBtn = document.querySelector('#notification_btn');
-const rightMenu = document.querySelector('.right-menu');
+// const rightMenu = document.querySelector('.right-menu');
 const bellSvg = document.querySelector('.svg-notification-bell-dims')
-notificationsBtn.addEventListener('click', (e) => {
-  rightMenu.classList.toggle('open')
-  bellSvg.classList.toggle('_active')
-});
+// notificationsBtn.addEventListener('click', (e) => {
+//   rightMenu.classList.toggle('open')
+//   bellSvg.classList.toggle('_active')
+// });
+
+// const onEnter = ({ notificationsBtn }) => 
+let rightMenu = gsap.timeline();
+
+
+notificationsBtn.onclick = function() {
+  if (!notificationsBtn.classList.contains('active')) {
+    notificationsBtn.classList.add('active');
+    bellSvg.classList.add('_active')
+    rightMenu
+      .to('.right-menu', {x: -368, duration: 0.4});
+      rightMenu.play();
+  } else {
+    notificationsBtn.classList.remove('active');
+    bellSvg.classList.remove('_active')
+    rightMenu.reverse();
+  }
+  
+}
+
+//====Открытие категории сделки=============
+const openCategory = document.querySelector('#button_select_category')
+const selectCategory = document.querySelector('.select__category-list')
+let tl = gsap.timeline();
+openCategory.onclick = function() {
+  if (!openCategory.classList.contains('active')) {
+    openCategory.classList.add('active');
+    
+    tl
+      .to(selectCategory, {height: 'auto',y: 0, opacity:1, display:'flex', duration: 0.3})
+      // .to(selectCategoryItem, {opacity: 1, y: 0, duration: 0.3})
+    tl.play();
+  } else {
+    openCategory.classList.remove('active');
+    tl.reverse(0.5);
+  }
+  
+}
+// openCategory.addEventListener('click', (e) => {
+//   setTimeout(function () {
+//     selectCategory.classList.toggle('_open');
+//   }, 200);
+//   openCategory.classList.toggle('_open');
+// })
+
+// const awardsSection = document.querySelector('#awards')
+// gsap.timeline( {
+//   scrollTrigger: {
+//     trigger: '#awards',
+//     start: 'top top',
+//     end: '+=500',
+//     markers: true,
+//     pin: true,
+//   }
+// });
 
 //====Открытие карты=============
 
@@ -74,16 +132,6 @@ closeMap.addEventListener('click', (e) => {
   cityChoose.classList.add('_close');
 })
 
-//====Открытие категории сделки=============
-const openCategory = document.querySelector('#button_select_category')
-const selectCategory = document.querySelector('.select__category-list')
-
-openCategory.addEventListener('click', (e) => {
-  setTimeout(function () {
-    selectCategory.classList.toggle('_open');
-  }, 200);
-  openCategory.classList.toggle('_open');
-})
 
 // =========swiper hero=======
 const swiperDeal = new Swiper('.swiper-deal', {

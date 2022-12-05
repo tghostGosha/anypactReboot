@@ -61,11 +61,11 @@ video {
 @import "main-page";
 @import "nav";
 @import "map";
+@import "formStyles";
 @import "promo/promotion.scss";
 // @import "type-of-auction.scss";
 // @import "price__increase.scss";
 // @import "product__card.scss";
-
 
 
 
@@ -199,57 +199,57 @@ textarea {
   margin-top: 90px;
 }
 
-.radio__label:before {
-  content: ' ';
-  display: block;
-  height: 16px;
-  width: 16px;
-  position: absolute;
-  top: 12px;
-  transform: translateY(-50%);
-  left: 0;
-  background: #f1f4f4;
-  border: 1px solid #e8e8e8;
-  border-radius: 4px;
-}
+// .radio__label:before {
+//   content: ' ';
+//   display: block;
+//   height: 16px;
+//   width: 16px;
+//   position: absolute;
+//   top: 12px;
+//   transform: translateY(-50%);
+//   left: 0;
+//   background: #f1f4f4;
+//   border: 1px solid #e8e8e8;
+//   border-radius: 4px;
+// }
 
-.radio__label:after {
-  content: ' ';
-  display: block;
-  height: 8px;
-  width: 15px;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-}
+// .radio__label:after {
+//   content: ' ';
+//   display: block;
+//   height: 8px;
+//   width: 15px;
+//   position: absolute;
+//   top: 4px;
+//   left: 4px;
+// }
 
-.radio__input {
-  display: none;
-}
+// .radio__input {
+//   display: none;
+// }
 
-.radio__input:checked~.radio__label:after {
-  border-bottom: 2px solid #ff6416;
-  border-left: 2px solid #ff6416;
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
+// .radio__input:checked~.radio__label:after {
+//   border-bottom: 2px solid #ff6416;
+//   border-left: 2px solid #ff6416;
+//   -ms-transform: rotate(-45deg);
+//   transform: rotate(-45deg);
+// }
 
-.radio-transform {
-  position: relative;
-  cursor: pointer;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+// .radio-transform {
+//   position: relative;
+//   cursor: pointer;
+//   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+// }
 
-.radio__label:after:hover,
-.radio__label:after:active {
-  border-color: green
-}
+// .radio__label:after:hover,
+// .radio__label:after:active {
+//   border-color: green
+// }
 
-.radio__label {
-  margin-left: 2.5rem;
-  line-height: .75;
-  font-weight: 300;
-}
+// .radio__label {
+//   margin-left: 2.5rem;
+//   line-height: .75;
+//   font-weight: 300;
+// }
 
 #input-buffer {
   display: inline-block;
@@ -2241,71 +2241,9 @@ table.detail_contract td {
   
 }
 
-@media screen and (max-width: 991px) {
-  .map-space {
-    min-height: 392px;
-  }
 
-  .search>form>input {
-    width: calc(100% - 29px);
-  }
 
-  
 
-  .phone {
-    float: left;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .search .deal-type::after {
-    display: none;
-  }
-
-  .search>form>input {
-    width: calc(100% - 120px);
-    padding-left: 10px;
-  }
-
-  // .magnifier {
-  //   padding: 15px 0;
-  //   margin-right: 10px;
-  //   cursor: pointer;
-  // }
-
-  .search .deal-type {
-    border-left: none;
-    padding: 5px 0px 15px 18px;
-  }
-
-  .location {
-    float: none;
-  }
-
-  .phone {
-    float: right;
-  }
-
-  .nav-link[href="#"] {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 543px) {
-
-  body,
-  .btn {
-    font-size: 13px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  h5 {
-    font-size: 16px;
-  }
-}
 
 
 /*-----------------------------------------------------------*/

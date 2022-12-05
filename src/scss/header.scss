@@ -38,6 +38,34 @@ button {
   border-radius: .25rem;
 }
 
+.buttons-wrapper {
+  margin-top: 1.5rem;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.underscore-link {
+  position: relative;
+  transition: var(--animation-onset);
+}
+
+.underscore-link:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--primary-orange);
+  transition: all 0.2s ease-in-out 0.2s;
+}
+
+.underscore-link:hover:after,
+.underscore-link:focus:after {
+  width: 100%;
+}
+
 .primary__btn-orange {
   color: var(--white);
   background-color: var(--primary-orange);
@@ -47,6 +75,19 @@ button {
   &:hover {
     background-color: var(--white);
     color: var(--primary-orange);
+  }
+}
+
+.white-btn {
+  color: var(--primary-orange);
+  background-color: var(--white);
+  border: 1px solid var(--primary-orange);
+  transition: var(--transition-color);
+  padding: 12px 38px;
+
+  &:hover {
+    background-color: var(--primary-orange);
+    color: var(--white);
   }
 }
 
@@ -86,11 +127,11 @@ button {
   }
 
   &._open {
-    animation: mapDown 1s 0.3s both;
+    animation: mapDown 1s 0.1s both;
   }
 
   &._close {
-    animation: mapUp 1s 0.3s both;
+    animation: mapUp 1s 0.1s both;
   }
 
   &-btn-close {
@@ -395,27 +436,7 @@ button {
   display: none;
 }
 
-.underscore-link {
-  position: relative;
-  transition: var(--animation-onset);
-}
 
-.underscore-link:after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 1px;
-  background-color: var(--primary-orange);
-  transition: all 0.2s ease-in-out 0.2s;
-}
-
-.underscore-link:hover:after,
-.underscore-link:focus:after {
-  width: 100%;
-}
 
 
 .search-header-button {
@@ -494,41 +515,6 @@ button {
 }
 
 
-
-
-
-//=-----модальное окно профиля на мобилке
-
-// @keyframes profileModalShow {
-
-//   from {
-  
-//     left: 100%;
-
-//   }
-
-//   to {
-    
-//     left: 0;
-
-//   }
- 
-// }
-
-// @keyframes profileModalHide {
-
-//   from {
-    
-//     left: 100%;
-
-//   }
-
-//   to {
-//     left: 0;
-    
-//   }
-// }
-
 .user-menu-modal {
   position: fixed;
   top: 0;
@@ -543,7 +529,7 @@ button {
   &._show {
     left: 0;
   }
-   
+
 }
 
 .user-menu-modal-block {
@@ -629,7 +615,7 @@ a.user-info {
 
 .widget_user_profile_name__title {
   position: relative;
-  color: #ff6416;
+  color: var(--primary-orange);
 }
 
 .widget_user_profile_name__title:hover {
@@ -639,7 +625,7 @@ a.user-info {
 .widget_user_profile_fio {
   display: inline-block;
   width: 100%;
-  color: #ff6416;
+  color: var(--primary-orange);
 }
 
 .widget_user_profile_name {
