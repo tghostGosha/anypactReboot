@@ -218,3 +218,28 @@
   }
 }
 
+.contacts {
+  background-image: url('../image/bg-points.png');
+  background-repeat: no-repeat;
+  background-position: right -25rem bottom -25px;
+  padding-bottom: 50px;
+  & .flex-container {
+    column-gap: 30px;
+    justify-content: space-between;
+  }
+  &__phone {
+    display: inline-block;
+
+  }
+
+  & .contact-big-text {
+    font-size: 48px;
+    display: block;
+    line-height: 1.3;
+    color: var(--primary-text);
+  }
+
+  &__el a:hover .contact-big-text{
+    color: var(--primary-orange);
+  }
+}

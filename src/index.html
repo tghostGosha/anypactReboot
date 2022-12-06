@@ -463,7 +463,7 @@
         <div class="profile_item">
           <div class="widget_user_profile">
             <div class="login-information">
-              <div class="login-information-container">
+              <div class="flex-container">
                 <a href="/profile_user/?ID=2207" class="link-messageList">
                   <div class="login-information-photo container_prof">
                     <img src="image/test-account-img/d45dfb0e1762f6e7ae55db2e7628934a.jpeg">
@@ -473,57 +473,28 @@
 
 
                 <div class="login-information-text widget_user_profile_name">
-                  <!-- <a href="#" class="widget_user_profile_name__title">
-               Куралев Е.А.                </a> -->
-                  <span class="widget_user_profile_name__title">
-                    <span>
-                      Куралев Е.А. </span>
-                    <span class="dropdown-arrow-profile"></span>
-                  </span>
-
-                  <div class="widget_user_profile_select" style="display: none;">
-                    <ul>
-                      <li><a href="/my_pacts/edit_my_pact/?ACTION=ADD">Создать предложение</a>
-                      </li>
-                      <li><a href="/profile_user/?ID=2207">Мой профиль</a></li>
-                      <li><a href="/profile/">Редактировать профиль</a></li>
-                      <li><a href="/profile/select_company/">Переключить профиль</a></li>
-                      <!-- <li data-href="/my_pacts/"><a href="/my_pacts/">Мои сделки</a></li>
-                <li data-href="/friends/"><a href="/friends/">Мои друзья</a></li>
-                <li data-href="/list_message/"><a href="/list_message/">Сообщения</a></li> -->
-                    </ul>
-                    <a href="/develop/empty/?logout=yes" class="exit-profile">Выйти</a>
-                  </div>
+                  <button type="button" id="profileOptionsBtn" class="widget_user_profile_name__title">
+                    <span>Куралев Е.А. </span>
+                    <svg width="12px" height="8px" class="svg-arr__profile-dims">
+                      <use xlink:href="image/icons/icons.svg#arr_profile"></use>
+                    </svg>
+                  </button>
+                  
+                  <ul class="profile__select-options dropdown__menu" id="selectProfileOptions">
+                    <li><a href="/my_pacts/edit_my_pact/?ACTION=ADD" class="link-color underscore-link">Создать объявление</a>
+                    </li>
+                    <li><a href="/profile_user/?ID=2207" class="link-color underscore-link">Мой профиль</a></li>
+                    <li><a href="/profile/" class="link-color underscore-link">Редактировать профиль</a></li>
+                    <li><a href="/profile/select_company/" class="link-color underscore-link">Переключить профиль</a></li>
+                    
+                    <li><a href="/develop/empty/?logout=yes" class="exit-profile link-color underscore-link">Выйти</a>
+                    </li>
+                   
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-          <!-- <script>
-      // $('.widget_user_profile_name a').on('click', function() {
-      //     window.location = $( this ).attr('href');
-      // });
-      //клик по профилю в шапке
-      // $('#widget_user_profile_name__title').on('click', function(){
-      //     let select = $('#widget_user_profile_select');
-      //     let visual = $(select).css('display');
-      //     if(visual == 'none'){
-      //         $(select).css('display', 'block');
-      //     }else {
-      //         $(select).css('display', 'none');
-      //     }
-      // });
-      // $('#widget_user_profile_name__title').click(function () {
-      //     $('#widget_user_profile_select').fadeIn(50);
-    
-      // });
-    
-      // $(document).mouseup(function (e) {
-      //     var popup = $('#widget_user_profile_name__title');
-      //     if (e.target!=popup[0]&&popup.has(e.target).length === 0){
-      //         $('#widget_user_profile_select').css('display', 'none');
-      //     }
-      // });
-    </script> -->
         </div>
       </div>
       <div class="header__profile-mobile">
@@ -591,7 +562,7 @@
             <use xlink:href="image/icons/icons.svg#magnifier"></use>
           </svg>
           <input type="text" name="q" placeholder="Введите ваш запрос" value="">
-          <a name="s" type="submit" class="primary__btn-orange search-btn" value="Поиск">Поиск</a>
+          <a name="s" type="submit" class="white-btn search-btn" value="Поиск">Поиск</a>
           <button type="button" class="region__link " href="#city_choose">
             <svg width="27px" height="29px" class="svg-geopointer-dims">
               <use xlink:href="image/icons/icons.svg#geopointer"></use>
@@ -606,7 +577,7 @@
               <use xlink:href="image/icons/icons.svg#arr_profile"></use>
             </svg>
           </button>
-          <ul id="select_category_main" class="select__category-list">
+          <ul id="select_category_main" class="select__category-list dropdown__menu">
             <li><a href="/pacts/" class="link-color underscore-link">Все категории</a></li>
             <li>
               <a href="/pacts/nayem_zhilya/" class="link-color underscore-link">
@@ -902,8 +873,9 @@
               <label for="empty_rules" class="radio-transform">
                 <input type="checkbox" class="radio__input" name="template_type" value="empty" id="empty_rules"
                   checked="">
-                <span class="radio__label" id="empty_rules_span">Нажимая на кнопку, вы даете <a class="link-color underscore-link"
-                    href="/upload/rules/noreg_user_rules.pdf" target="_blank">согласие на обработку персональных
+                <span class="radio__label" id="empty_rules_span">Нажимая на кнопку, вы даете <a
+                    class="link-color underscore-link" href="/upload/rules/noreg_user_rules.pdf"
+                    target="_blank">согласие на обработку персональных
                     данных</a></span>
               </label>
 
@@ -918,12 +890,36 @@
       </div>
     </section>
 
-    <section>
-        <div class="container">
-          <h2 class="title-with-border">
-            Контакты
-          </h2>
+    <section class="contacts">
+      <div class="container">
+        <h2 class="title-with-border">
+          Контакты
+        </h2>
+        <div class="flex-container">
+          <div class="contacts__el">
+            <a href="#" class="flex-container">
+              <svg width="60px" height="60px" class="svg-header-wallet-dims">
+                <use xlink:href="image/icons/icons.svg#header-wallet"></use>
+              </svg>
+              <div class="contacts__phone">
+                <span class="contact-big-text">8 (800) 600-41-55</span>
+                <span class="secondary-text">Менеджер ответит на Ваши вопросы по телефону</span>
+              </div>
+            </a>
+          </div>
+          <div class="contacts__el">
+            <a href="#" class="flex-container">
+              <svg width="60px" height="60px" class="svg-header-wallet-dims">
+                <use xlink:href="image/icons/icons.svg#header-wallet"></use>
+              </svg>
+              <div class="contacts__phone">
+                <span class="contact-big-text">info@anypact.ru</span>
+                <span class="secondary-text">Свяжитесь с нами по электронной почте</span>
+              </div>
+            </a>
+          </div>
         </div>
+      </div>
     </section>
   </main>
 
@@ -1523,30 +1519,7 @@
   </div>
   <script type="text/javascript"
     src="//api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=08f051a6-35f1-4392-a988-5024961ee1a8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
-    <script>
-      let awardsSection = gsap.timeline({
-  // yes, we can add it to an entire timeline!
-  scrollTrigger: {
-    trigger: '#awards',
-    pin: true,   // pin the trigger element while active
-    markers: true,
-    start: "top top", // when the top of the trigger hits the top of the viewport
-    end: "+=500", // end after scrolling 500px beyond the start
-    scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-    snap: {
-      snapTo: "labels", // snap to the closest label in the timeline
-      duration: {min: 0.2, max: 3}, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-      delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
-      ease: "power1.inOut" // the ease of the snap animation ("power3" by default)
-    }
-  }
-  
-});
-awardsSection.addLabel('start')
-  .to('#awards ',{backgroundPosition: "+=25% +=25%"})
-    </script>
+
   <!-- <script src="js/modules/map.js"></script> -->
   <script src="js/app.min.js"></script>
 

@@ -38,6 +38,7 @@ button {
   border-radius: .25rem;
 }
 
+
 .buttons-wrapper {
   margin-top: 1.5rem;
   flex: 0 0 100%;
@@ -58,7 +59,7 @@ button {
   width: 0;
   height: 1px;
   background-color: var(--primary-orange);
-  transition: all 0.2s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0s;
 }
 
 .underscore-link:hover:after,
@@ -119,21 +120,17 @@ button {
   z-index: 995;
   background-size: 50%;
   display: block;
-  top: -1000px;
+  transform: translate(0px, -1100px);
   overflow: hidden;
-
-  @media(max-width: 768px) {
-    top: -1076px;
+  height: 0;
+  opacity: 0;
+  
+  & .container {
+    transform: translate(0px, -1000px);
+   
+    opacity: 0;
   }
-
-  &._open {
-    animation: mapDown 1s 0.1s both;
-  }
-
-  &._close {
-    animation: mapUp 1s 0.1s both;
-  }
-
+  
   &-btn-close {
     margin: 4px;
     font-size: 16px;
@@ -193,68 +190,6 @@ button {
   }
 
 }
-
-@keyframes mapDown {
-  from {
-    height: 0;
-    top: -1000px;
-  }
-
-  to {
-    height: 694px;
-    top: 0;
-
-  }
-
-}
-
-@keyframes mapUp {
-
-  from {
-    height: 694px;
-    top: 0;
-    // @media (max-width: 1090px) {
-    //   height: 882px;
-    // }
-  }
-
-  to {
-    height: 0;
-    top: -1000px;
-  }
-}
-
-@media (max-width: 1090px) {
-  @keyframes mapDown {
-    from {
-      height: 0;
-      top: -1000px;
-    }
-
-    to {
-      height: 784px;
-      top: 0;
-
-    }
-
-  }
-
-  @keyframes mapUp {
-
-    from {
-      height: 784px;
-      top: 0;
-    }
-
-    to {
-      height: 0;
-      top: -1000px;
-    }
-  }
-}
-
-
-
 
 .col-md-6 {
   -webkit-box-flex: 0;
@@ -595,6 +530,26 @@ a.user-info {
 
 .widget_user_profile {
   text-align: right;
+
+  & .dropdown__menu {
+    width: 15rem;
+    top: 60px;
+
+    & .exit-profile {
+      padding-top: 20px;
+      
+    }
+    & li:last-child {
+      display: block;
+      border-top: 1px solid var(--grey);
+      width: 100%;
+      text-align: start;
+    }
+
+    & a {
+      display: inline-block;
+    }
+  }
 }
 
 .widget_user_profile_avatar {

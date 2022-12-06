@@ -25,6 +25,7 @@ body {
 }
 main {
   flex: 1 1 auto;
+  padding: 24px 0 116px 0;
 }
 video {
   height: 312px;
@@ -103,6 +104,7 @@ button {
   cursor: pointer;
   margin: 0;
   padding: 0;
+  background-color: transparent;
 }
 
 img {
@@ -199,58 +201,9 @@ textarea {
   margin-top: 90px;
 }
 
-// .radio__label:before {
-//   content: ' ';
-//   display: block;
-//   height: 16px;
-//   width: 16px;
-//   position: absolute;
-//   top: 12px;
-//   transform: translateY(-50%);
-//   left: 0;
-//   background: #f1f4f4;
-//   border: 1px solid #e8e8e8;
-//   border-radius: 4px;
-// }
-
-// .radio__label:after {
-//   content: ' ';
-//   display: block;
-//   height: 8px;
-//   width: 15px;
-//   position: absolute;
-//   top: 4px;
-//   left: 4px;
-// }
-
-// .radio__input {
-//   display: none;
-// }
-
-// .radio__input:checked~.radio__label:after {
-//   border-bottom: 2px solid #ff6416;
-//   border-left: 2px solid #ff6416;
-//   -ms-transform: rotate(-45deg);
-//   transform: rotate(-45deg);
-// }
-
-// .radio-transform {
-//   position: relative;
-//   cursor: pointer;
-//   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-// }
-
-// .radio__label:after:hover,
-// .radio__label:after:active {
-//   border-color: green
-// }
-
-// .radio__label {
-//   margin-left: 2.5rem;
-//   line-height: .75;
-//   font-weight: 300;
-// }
-
+.secondary-text {
+  color: var(--secondary-text);
+}
 #input-buffer {
   display: inline-block;
   /*position:*/
@@ -1360,11 +1313,7 @@ input::-webkit-input-placeholder {
   text-decoration: none;
 }
 
-.contact-container .contact-big-text {
-  font-size: 48px;
-  display: block;
-  line-height: 1.3;
-}
+
 
 .contact-phone,
 .contact-mail,
@@ -2610,34 +2559,6 @@ input::-webkit-input-placeholder {
 // }
 
 
-.contact-container a {
-  color: black;
-  text-decoration: none;
-}
-
-.contact-container .contact-big-text {
-  font-size: 48px;
-  display: block;
-  line-height: 1.3;
-}
-
-.contact-phone,
-.contact-mail,
-.contact-phone-icon,
-.contact-mail-icon {
-  display: inline-block;
-  width: 70%;
-}
-
-.contact-mail-icon,
-.contact-phone-icon {
-  width: 98px;
-  height: 98px;
-  border: 1px solid #ff6416;
-  border-radius: 50%;
-  float: left;
-  margin-right: 25px;
-}
 
 
 .card-deal:hover .icon-6 {
@@ -3398,9 +3319,7 @@ input::-webkit-input-placeholder {
     padding: 35px 20px 5px;
   }
 
-  .contact-container .contact-big-text {
-    font-size: 39px;
-  }
+ 
 }
 
 @media screen and (max-width: 991px) {
@@ -3486,10 +3405,7 @@ input::-webkit-input-placeholder {
     min-width: 60px;
   }
 
-  .contact-container .contact-big-text {
-    font-size: 24px;
-  }
-
+  
   .contact-container .icon-main {
     margin: 15px auto;
     background-size: 195px;
@@ -3917,22 +3833,6 @@ h4.subtitle_contract {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .contact-el {
-    margin-bottom: 20px;
-  }
-
-  .new-auth {
-    display: none;
-    position: initial;
-    float: right;
-  }
-
-  .create-pact-btn {
-    margin-right: 15px;
   }
 }
 
@@ -4507,17 +4407,17 @@ form.form-filter .selectbox-select .selectize-input input::placeholder {
 
 
 
-.login-information .login-information-text a,
-.login-information .login-information-text span {
-  display: inline-block !important;
-}
+// .login-information .login-information-text a,
+// .login-information .login-information-text span {
+//   display: inline-block !important;
+// }
 
 
 
 
-.login-information {
-  display: flex !important;
-}
+// .login-information {
+//   display: flex !important;
+// }
 
 @media screen and (max-width: 991px) {
   .tablet_ver_tel {
@@ -5562,17 +5462,12 @@ label {
   font-size: 14px;
 }
 
-.login-information {
-  display: inline-block;
-  /* float: right; */
-}
+// .login-information {
+//   display: inline-block;
+//   /* float: right; */
+// }
 
-.login-information .login-information-container {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-}
+
 
 .login-information-photo {
   width: 45px;
@@ -5610,10 +5505,10 @@ label {
   text-decoration: none;
 }
 
-.login-information .login-information-text a,
-.login-information .login-information-text span {
-  display: block;
-}
+// .login-information .login-information-text a,
+// .login-information .login-information-text span {
+//   display: block;
+// }
 
 .container_prof {
   position: relative;

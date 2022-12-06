@@ -1,13 +1,12 @@
 import * as flsFunctions from "./modules/functions.js";
 import $ from "jquery"
-// import './modules/map.js'
-import gsap from "gsap";
-// import scrollTrigger from "gsap";
+import './modules/map.js'  //====яндекс карта
+import gsap from "gsap";   //======Анимация
 // import { Inputmask } from "inputmask";
 import Swiper, { Navigation, Pagination } from 'swiper';
 // import JustValidate from 'just-validate';
 
-// Swiper.use([Navigation, Pagination])
+Swiper.use([Navigation, Pagination])
 
 flsFunctions.isWebp();
 
@@ -55,16 +54,8 @@ if(userIcon) {
 
 //====Боковое окно=============
 const notificationsBtn = document.querySelector('#notification_btn');
-// const rightMenu = document.querySelector('.right-menu');
 const bellSvg = document.querySelector('.svg-notification-bell-dims')
-// notificationsBtn.addEventListener('click', (e) => {
-//   rightMenu.classList.toggle('open')
-//   bellSvg.classList.toggle('_active')
-// });
-
-// const onEnter = ({ notificationsBtn }) => 
 let rightMenu = gsap.timeline();
-
 
 notificationsBtn.onclick = function() {
   if (!notificationsBtn.classList.contains('active')) {
@@ -91,11 +82,30 @@ openCategory.onclick = function() {
     
     tl
       .to(selectCategory, {height: 'auto',y: 0, opacity:1, display:'flex', duration: 0.3})
-      // .to(selectCategoryItem, {opacity: 1, y: 0, duration: 0.3})
+      
     tl.play();
   } else {
     openCategory.classList.remove('active');
     tl.reverse(0.5);
+  }
+  
+}
+
+//=======Открытие настроек профиля===========
+const openProfileOptions = document.querySelector('#profileOptionsBtn')
+const selectOptions = document.querySelector('#selectProfileOptions')
+let options = gsap.timeline();
+openProfileOptions.onclick = function() {
+  if (!openProfileOptions.classList.contains('active')) {
+    openProfileOptions.classList.add('active');
+    
+    options
+      .to(selectOptions, {height: 'auto', y: 0, display:'flex', duration: 0.3})
+      
+    options.play();
+  } else {
+    openProfileOptions.classList.remove('active');
+    options.reverse(0.5);
   }
   
 }
@@ -120,18 +130,33 @@ openCategory.onclick = function() {
 //====Открытие карты=============
 
 const openMap = document.querySelector('.location')
-const cityChoose = document.querySelector('.city__choose')
+const openMap2 = document.querySelector('.region__link')
+const cityChoose = document.querySelector('#city_choose')
 const closeMap = document.querySelector('.city__choose-btn-close')
-openMap.addEventListener('click', (e) => {
-  cityChoose.classList.remove('_close');
-  cityChoose.classList.add('_open');
+let map = gsap.timeline();
 
-})
-closeMap.addEventListener('click', (e) => {
-  cityChoose.classList.remove('_open');
-  cityChoose.classList.add('_close');
-})
+let mapOpen = (btn) => {
+  btn.onclick = function() {
+    if (!openMap.classList.contains('active')) {
+      btn.classList.add('active');
+      
+      map
+        .add('start')
+        .to(cityChoose, {height: 'auto', y: 0, opacity: 1, duration: 0.4, easy:'none'}, 'start')
+        .to('.city__choose .container', {  y: 0, opacity: 1, duration: 0.5, easy:'none'}, 'start')
+      map.play();
+  
+      closeMap.onclick = function() {
+        map.reverse(0.5);
+        btn.classList.remove('active');
+      }
+    } 
+    
+  }
+}
 
+mapOpen(openMap)
+mapOpen(openMap2)
 
 // =========swiper hero=======
 const swiperDeal = new Swiper('.swiper-deal', {
