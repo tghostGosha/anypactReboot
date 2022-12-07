@@ -10,7 +10,22 @@ Swiper.use([Navigation, Pagination])
 
 flsFunctions.isWebp();
 
+//Модальное окно
+function OpenModalWindow(el){
+	CloseModalWindow();
+	let modal = $('.modal-block');
+	modal.addClass('open');
+	el.show();
+}
 
+function CloseModalWindow(){
+	let modal = $('.modal-block');
+	let forms = $('form', modal);
+	let formsBlocks = $('.modal-window-content > div', modal)
+	modal.removeClass('open');
+	forms.each(function(){this.reset()});
+	formsBlocks.each(function(){$(this).hide()});
+}
 
 //====БУргер=============
 const burger = document.querySelector('.menu__icon');
@@ -142,8 +157,8 @@ let mapOpen = (btn) => {
       
       map
         .add('start')
-        .to(cityChoose, {height: 'auto', y: 0, opacity: 1, duration: 0.4, easy:'none'}, 'start')
-        .to('.city__choose .container', {  y: 0, opacity: 1, duration: 0.5, easy:'none'}, 'start')
+        .to(cityChoose, {height: 'auto', y: 0, opacity: 1, duration: 0.5, easy:'none'}, 'start')
+        .to('.city__choose .container', {  y: 0, opacity: 1, duration: 0.7, easy:'none'}, 'start')
       map.play();
   
       closeMap.onclick = function() {

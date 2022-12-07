@@ -288,82 +288,82 @@
       </form>
     </div>
   </div>
-  <noindex>
-    <div class="reg-wallet-overflow" style="overflow-y: hidden;">
-      <div class="reg-wallet-container">
-        <div class="wallet-modal">
-          <div class="reg-wallet-col">
-            <div class="reg-wallet-form">
-              <h2>Регистрация кошелька</h2>
-              <form action="/develop/empty/?moneta_reg=yes" method="post" name="moneta_reg_form">
-                <div class="row">
-                  <div class="col-xl-6 col-md-6 col-sm-12">
-                    <label>Дата выдачи паспорта:</label>
-                    <input disabled="" type="text" placeholder="Дата выдачи паспорта:" value="29********">
-                    <div class="form-wallet-item">
-                      <div>
-                        <label>Серия:</label>
-                        <input disabled="" type="text" placeholder="Серия" value="97**">
-                      </div>
-                      <div>
-                        <label>Номер:</label>
-                        <input disabled="" type="text" placeholder="Номер" value="91****">
-                      </div>
-                    </div>
-                    <label>Кем выдан:</label>
-                    <input disabled="" type="text" placeholder="Кем выдан паспорт:"
-                      value="Вы****************************************************************************************************ы">
-                    <label>Код подразделения:</label>
-                    <input type="text" placeholder="Код подразделения" name="DEPARTMENT" value="" inputmode="text">
-                    <div class="reg-wallet-form-special">
-                      <label>СНИЛС:</label>
-                      <input disabled="" class="hidden-value" type="text" placeholder="СНИЛС" name="SNILS"
-                        value="150*********11">
-                      <input type="hidden" name="D_S" value="Y"> <label>ИНН:</label>
-                      <input disabled="" class="hidden-value" type="text" placeholder="ИНН" maxlength="12"
-                        aria-invalid="true" name="INN" value="213*******84">
-                      <input type="hidden" name="D_I" value="Y">
-                    </div>
+
+  <div class="modal-block">
+    <div class="modal-bg">
+      <div class="container">
+        <div class="modal-window">
+          <div class="modal-close"></div>
+          <div class="modal-window-content">
+
+            <div class="test1 modal__form-wallet">
+              <h2 class="modal__title">Регистрация кошелька</h2>
+              <form action="/develop/empty/?moneta_reg=yes" method="post" name="moneta_reg_form"
+                class="wallet__form flex-container">
+                <div class="wallet__form-item passport-date">
+                  <label>Дата выдачи паспорта:</label>
+                  <input disabled="" type="text" placeholder="Дата выдачи паспорта:" value="29********">
+                </div>
+                <div class="wallet__form-item wallet__form-passport">
+                  <div class="wallet__form-item-min">
+                    <label>Серия:</label>
+                    <input disabled="" type="text" placeholder="Серия" value="97**">
                   </div>
-                  <div class="col-xl-6 col-md-6 col-sm-12">
-                    <label>E-mail:</label>
-                    <input disabled="" type="text" placeholder="E-mail" value="e.k****ev@mail.ru">
-                    <label>Телефон:</label>
-                    <input type="text" placeholder="Телефон" class="js-mask__phone" name="PHONE"
-                      value="8(987) 677-78-70" inputmode="text">
-                    <p class="moneta_p">При нажатии на кнопку "Открыть" вы соглашаетесь передать
-                      свои персональные данные сервиcу <a href="https://www.moneta.ru/" target="__blank">Монета</a>, а
-                      так же соглашаетесь с правилами
-                      использования сервиса <a href="https://www.moneta.ru/" target="__blank">Монета</a></p>
-                    <button class="btn btn-reg-wallet" type="submit" name="SUBMIT" value="Открыть">Открыть</button>
+                  <div class="wallet__form-item-middle">
+                    <label class="secondary-text">Номер:</label>
+                    <input disabled="" type="text" placeholder="Номер" value="91****">
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-xl-6 col-md-6 col-sm-12">
-                  </div>
-                  <div class="col-xl-6 col-md-6 col-sm-12">
-                  </div>
+
+                <div class="wallet__form-item">
+                  <label>Кем выдан:</label>
+                  <input disabled="" type="text" placeholder="Кем выдан паспорт:"
+                    value="Вы****************************************************************************************************ы">
                 </div>
+
+                <div class="wallet__form-item">
+                  <label>Код подразделения:</label>
+                  <input type="text" placeholder="Код подразделения" name="DEPARTMENT" value="" inputmode="text">
+                </div>
+
+                <div class="wallet__form-item">
+                  <label>СНИЛС:</label>
+                  <input disabled="" class="hidden-value" type="text" placeholder="СНИЛС" name="SNILS"
+                    value="150*********11">
+                </div>
+
+                <div class="wallet__form-item">
+                  <input type="hidden" name="D_S" value="Y"> <label>ИНН:</label>
+                  <input disabled="" class="hidden-value" type="text" placeholder="ИНН" maxlength="12"
+                    aria-invalid="true" name="INN" value="213*******84">
+                </div>
+
+                <div class="wallet__form-item">
+                  <label>E-mail:</label>
+                  <input disabled="" type="email" placeholder="E-mail" value="e.k****ev@mail.ru">
+                </div>
+
+                <div class="wallet__form-item">
+                  <label>Телефон:</label>
+                  <input type="tel" placeholder="Телефон" class="js-mask__phone" name="PHONE" value="8(987) 677-78-70"
+                    inputmode="text">
+                </div>
+                <div class="wallet__form-item">
+
+                  <p class="secondary-text">При нажатии на кнопку "Открыть" вы соглашаетесь передать
+                    свои персональные данные сервиcу <a href="https://www.moneta.ru/" target="__blank">Монета</a>, а
+                    так же соглашаетесь с правилами
+                    использования сервиса <a href="https://www.moneta.ru/" target="__blank">Монета</a></p>
+                  <button class="btn btn-reg-wallet" type="submit" name="SUBMIT" value="Открыть">Открыть</button>
+                </div>
+
               </form>
             </div>
-          </div>
-          <div class="reg-wallet-overflow_close">
-            <span></span>
           </div>
         </div>
       </div>
     </div>
-    <script>
-      var MR_component = {
-        params: { 'ACTION_VARIABLE': 'action', '~ACTION_VARIABLE': 'action' },
-        signedParamsString: 'YToyOntzOjE1OiJBQ1RJT05fVkFSSUFCTEUiO3M6NjoiYWN0aW9uIjtzOjE2OiJ+QUNUSU9OX1ZBUklBQkxFIjtzOjY6ImFjdGlvbiI7fQ==.319b609046473b20433bb8d2570eeeb7eacc9f4757bf72310888c6d714d543f9',
-        siteID: 's1',
-        ajaxUrl: '/local/components/nfksber/moneta.registration/ajax.php',
-        templateFolder: '/local/components/nfksber/moneta.registration/templates/.default',
-      };
-    </script>
-  </noindex>
-
+  </div>
   <div class="right-menu">
     <div class="tabs">
       <div class="point" id="notification_btn" data-content-id="notification_list">
@@ -484,17 +484,19 @@
                       <use xlink:href="image/icons/icons.svg#arr_profile"></use>
                     </svg>
                   </button>
-                  
+
                   <ul class="profile__select-options dropdown__menu" id="selectProfileOptions">
-                    <li><a href="/my_pacts/edit_my_pact/?ACTION=ADD" class="link-color underscore-link">Создать объявление</a>
+                    <li><a href="/my_pacts/edit_my_pact/?ACTION=ADD" class="link-color underscore-link">Создать
+                        объявление</a>
                     </li>
                     <li><a href="/profile_user/?ID=2207" class="link-color underscore-link">Мой профиль</a></li>
                     <li><a href="/profile/" class="link-color underscore-link">Редактировать профиль</a></li>
-                    <li><a href="/profile/select_company/" class="link-color underscore-link">Переключить профиль</a></li>
-                    
+                    <li><a href="/profile/select_company/" class="link-color underscore-link">Переключить профиль</a>
+                    </li>
+
                     <li><a href="/develop/empty/?logout=yes" class="exit-profile link-color underscore-link">Выйти</a>
                     </li>
-                   
+
                   </ul>
                 </div>
               </div>
@@ -1246,7 +1248,7 @@
     </symbol>
 
   </svg>
-  <div class="modal-block">
+  <!-- <div class="modal-block">
     <div class="modal-bg">
       <div class="container">
         <div class="modal-window">
@@ -1259,7 +1261,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
