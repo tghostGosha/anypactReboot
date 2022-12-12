@@ -291,7 +291,7 @@
           <div class="modal-close"></div>
           <div class="modal-window-content">
 
-            <div class="test1 modal__form-wallet">
+            <div class="test1 modal__form-wallet" id="modalWalletRegister">
               <h2 class="modal__title">Регистрация кошелька</h2>
               <form action="/develop/empty/?moneta_reg=yes" method="post" name="moneta_reg_form"
                 class="wallet__form flex-container">
@@ -305,7 +305,7 @@
                     <input disabled="" type="text" placeholder="Серия" value="97**">
                   </div>
                   <div class="wallet__form-item-middle">
-                    <label class="secondary-text">Номер:</label>
+                    <label>Номер:</label>
                     <input disabled="" type="text" placeholder="Номер" value="91****">
                   </div>
                 </div>
@@ -346,10 +346,13 @@
                 <div class="wallet__form-item">
 
                   <p class="secondary-text">При нажатии на кнопку "Открыть" вы соглашаетесь передать
-                    свои персональные данные сервиcу <a href="https://www.moneta.ru/" target="__blank">Монета</a>, а
+                    свои персональные данные сервиcу <a href="https://www.moneta.ru/" target="__blank" class="underscore-link link-color">Монета</a>, а
                     так же соглашаетесь с правилами
-                    использования сервиса <a href="https://www.moneta.ru/" target="__blank">Монета</a></p>
-                  <button class="btn btn-reg-wallet" type="submit" name="SUBMIT" value="Открыть">Открыть</button>
+                    использования сервиса <a href="https://www.moneta.ru/" target="__blank" class="underscore-link link-color">Монета</a></p>
+                  <div class="buttons-wrapper">
+
+                    <button class="btn primary-btn" type="submit" name="SUBMIT" value="Открыть">Открыть</button>
+                  </div>
                 </div>
 
               </form>
@@ -438,13 +441,12 @@
       </div>
       <div class="flex-container header__profile-action">
         <div class="header__item-action-btn" tabindex="0">
-          <a href="/profile/wallet/" class="flex-container">
+          <a href="#" class="flex-container" id="walletRegister">
             <svg width="34px" height="34px" class="svg-header-wallet-dims">
               <use xlink:href="image/icons/icons.svg#header-wallet"></use>
             </svg>
-            <p>105,00 ₽</p>
+            <p>Открыть счёт</p>
           </a>
-
         </div>
         <div class="header__item-action-btn round-button" tabindex="0" tooltip="Создать предложение" flow="down">
           <a href="/my_pacts/edit_my_pact/?ACTION=ADD">

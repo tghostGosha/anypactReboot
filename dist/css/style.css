@@ -2715,7 +2715,7 @@ a.user-info {
 .modal-block {
   flex: 0 0 auto;
   width: 50%;
-  display: block;
+  display: none;
   z-index: 500;
 }
 .modal-block.open {
@@ -2798,10 +2798,12 @@ a.user-info {
 }
 .modal-close {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  right: 24px;
-  top: 24px;
+  width: 33px;
+  height: 33px;
+  right: -11px;
+  top: -11px;
+  background-color: var(--white);
+  border-radius: 50%;
   cursor: pointer;
 }
 @media (max-width: 748px) {
@@ -2816,8 +2818,8 @@ a.user-info {
   border-top: 1.5px solid #212529;
   width: 20px;
   transform: rotate(-45deg);
-  top: 10px;
-  left: -5px;
+  top: 15px;
+  left: 7px;
 }
 .modal-close:after {
   content: "";
@@ -2825,8 +2827,8 @@ a.user-info {
   border-top: 1.5px solid #212529;
   width: 20px;
   transform: rotate(45deg);
-  top: 10px;
-  left: -5px;
+  top: 15px;
+  left: 7px;
 }
 
 .modal__title {
@@ -3120,8 +3122,19 @@ a.user-info {
 .modal__form-wallet .wallet__form-item {
   width: 100%;
   max-width: 50%;
+  margin-bottom: 12px;
 }
-.modal__form-wallet .wallet__form-item-min {
+.modal__form-wallet .wallet__form-item label {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+.modal__form-wallet .wallet__form-item p {
+  font-size: 12px;
+}
+.modal__form-wallet .wallet__form-item button {
+  width: 100%;
+}
+.modal__form-wallet .wallet__form-item .modal__form-wallet .wallet__form-item-min {
   max-width: 40%;
 }
 .modal__form-wallet .wallet__form-item-middle {

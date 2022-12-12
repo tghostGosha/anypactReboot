@@ -27,6 +27,18 @@ function CloseModalWindow(){
 	formsBlocks.each(function(){$(this).hide()});
 }
 
+$( document ).ready(function (){
+	$(document).on('click', '#walletRegister', function (){
+		OpenModalWindow($('#modalWalletRegister'));
+	});
+
+	$(document).on('click', '.modal-close, .modal-bg', function (){
+		CloseModalWindow();
+	});
+	$(document).on('click', '.modal-window', function (e){
+		e.stopPropagation();
+	});
+});
 //====БУргер=============
 const burger = document.querySelector('.menu__icon');
 if(burger) {
