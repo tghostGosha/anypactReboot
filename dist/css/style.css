@@ -1104,19 +1104,6 @@ button.swiper-pagination-bullet {
   color: var(--primary-orange);
 }
 
-.swiper-deal {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-  list-style: none;
-  padding: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-}
-
 .swiper-pagination-bullet {
   border: 1px solid var(--primary-orange);
   width: 30px;
@@ -2532,6 +2519,16 @@ a.user-info {
 }
 
 .swiper-deal {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
   padding: 0.7rem 0.4rem 2rem 0.4rem;
 }
 
