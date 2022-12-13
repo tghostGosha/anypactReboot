@@ -1,141 +1,145 @@
 import * as flsFunctions from "./modules/functions.js";
-import $ from "jquery"
-import './modules/map.js'  //====яндекс карта
-import gsap from "gsap";   //======Анимация
+import $ from "jquery";
+import "./modules/map.js"; //====яндекс карта
+import gsap from "gsap"; //======Анимация
 // import { Inputmask } from "inputmask";
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination } from "swiper";
 // import JustValidate from 'just-validate';
 
-Swiper.use([Navigation, Pagination])
+Swiper.use([Navigation, Pagination]);
 
 flsFunctions.isWebp();
 
 //Модальное окно
-function OpenModalWindow(el){
-	CloseModalWindow();
-	let modal = $('.modal-block');
-	modal.addClass('open');
-	el.show();
+function OpenModalWindow(el) {
+  CloseModalWindow();
+  let modal = $(".modal-block");
+  modal.addClass("open");
+  el.show();
 }
 
-function CloseModalWindow(){
-	let modal = $('.modal-block');
-	let forms = $('form', modal);
-	let formsBlocks = $('.modal-window-content > div', modal)
-	modal.removeClass('open');
-	forms.each(function(){this.reset()});
-	formsBlocks.each(function(){$(this).hide()});
+function CloseModalWindow() {
+  let modal = $(".modal-block");
+  let forms = $("form", modal);
+  let formsBlocks = $(".modal-window-content > div", modal);
+  modal.removeClass("open");
+  forms.each(function () {
+    this.reset();
+  });
+  formsBlocks.each(function () {
+    $(this).hide();
+  });
 }
 
-$( document ).ready(function (){
-	$(document).on('click', '#walletRegister', function (){
-		OpenModalWindow($('#modalWalletRegister'));
-	});
+$(document).ready(function () {
+  $(document).on("click", "#walletRegister", function () {
+    OpenModalWindow($("#modalWalletRegister"));
+  });
 
-	$(document).on('click', '.modal-close, .modal-bg', function (){
-		CloseModalWindow();
-	});
-	$(document).on('click', '.modal-window', function (e){
-		e.stopPropagation();
-	});
+  $(document).on("click", ".modal-close, .modal-bg", function () {
+    CloseModalWindow();
+  });
+  $(document).on("click", ".modal-window", function (e) {
+    e.stopPropagation();
+  });
 });
 //====БУргер=============
-const burger = document.querySelector('.menu__icon');
-if(burger) {
-      const iconMenu = document.querySelector('.header__nav');
-      const menuBody = document.querySelector('.navbar-nav');
-      burger.addEventListener('click', (e) => {
-        burger.classList.toggle('_active');
-        setTimeout(function () {
-          iconMenu.classList.toggle('_active');
-        }, 300);
-            
-            
-        menuBody.classList.toggle('_active');
-            
-      });
-};
+const burger = document.querySelector(".menu__icon");
+if (burger) {
+  const iconMenu = document.querySelector(".header__nav");
+  const menuBody = document.querySelector(".navbar-nav");
+  burger.addEventListener("click", (e) => {
+    burger.classList.toggle("_active");
+    setTimeout(function () {
+      iconMenu.classList.toggle("_active");
+    }, 300);
+
+    menuBody.classList.toggle("_active");
+  });
+}
 
 //====Профайл на мобилке=============
-const userIcon = document.querySelector('.header__profile-mobile');
-if(userIcon) {
-  const closeBtn = document.querySelector('.close__btn')
-  const menuModal = document.querySelector('.user-menu-modal');
-  const menuModalBody = document.querySelector('.user-menu-modal-block');
-      
-  userIcon.addEventListener('click', (e) => {
-    userIcon.classList.toggle('_active');
-    menuModal.classList.toggle('_show');
-    menuModalBody.classList.toggle('_show');
-            
+const userIcon = document.querySelector(".header__profile-mobile");
+if (userIcon) {
+  const closeBtn = document.querySelector(".close__btn");
+  const menuModal = document.querySelector(".user-menu-modal");
+  const menuModalBody = document.querySelector(".user-menu-modal-block");
+
+  userIcon.addEventListener("click", (e) => {
+    userIcon.classList.toggle("_active");
+    menuModal.classList.toggle("_show");
+    menuModalBody.classList.toggle("_show");
   });
-  closeBtn.addEventListener('click', (e) => {
-    menuModalBody.classList.toggle('_show');
+  closeBtn.addEventListener("click", (e) => {
+    menuModalBody.classList.toggle("_show");
     setTimeout(function () {
-      menuModal.classList.toggle('_show');
+      menuModal.classList.toggle("_show");
     }, 200);
-    
-    
-  })
+  });
 }
 
 //====Боковое окно=============
-const notificationsBtn = document.querySelector('#notification_btn');
-const bellSvg = document.querySelector('.svg-notification-bell-dims')
+const notificationsBtn = document.querySelector("#notification_btn");
+const bellSvg = document.querySelector(".svg-notification-bell-dims");
 let rightMenu = gsap.timeline();
 
-notificationsBtn.onclick = function() {
-  if (!notificationsBtn.classList.contains('active')) {
-    notificationsBtn.classList.add('active');
-    bellSvg.classList.add('_active')
-    rightMenu
-      .to('.right-menu', {x: -368, duration: 0.4});
-      rightMenu.play();
+notificationsBtn.onclick = function () {
+  if (!notificationsBtn.classList.contains("active")) {
+    notificationsBtn.classList.add("active");
+    bellSvg.classList.add("_active");
+    rightMenu.to(".right-menu", { x: -368, duration: 0.4 });
+    rightMenu.play();
   } else {
-    notificationsBtn.classList.remove('active');
-    bellSvg.classList.remove('_active')
+    notificationsBtn.classList.remove("active");
+    bellSvg.classList.remove("_active");
     rightMenu.reverse();
   }
-  
-}
+};
 
 //====Открытие категории сделки=============
-const openCategory = document.querySelector('#button_select_category')
-const selectCategory = document.querySelector('.select__category-list')
+const openCategory = document.querySelector("#button_select_category");
+const selectCategory = document.querySelector(".select__category-list");
 let tl = gsap.timeline();
-openCategory.onclick = function() {
-  if (!openCategory.classList.contains('active')) {
-    openCategory.classList.add('active');
-    
-    tl
-      .to(selectCategory, {height: 'auto',y: 0, opacity:1, display:'flex', duration: 0.3})
-      
+openCategory.onclick = function () {
+  if (!openCategory.classList.contains("active")) {
+    openCategory.classList.add("active");
+
+    tl.to(selectCategory, {
+      height: "auto",
+      y: 0,
+      opacity: 1,
+      display: "flex",
+      duration: 0.3,
+    });
+
     tl.play();
   } else {
-    openCategory.classList.remove('active');
+    openCategory.classList.remove("active");
     tl.reverse(0.5);
   }
-  
-}
+};
 
 //=======Открытие настроек профиля===========
-const openProfileOptions = document.querySelector('#profileOptionsBtn')
-const selectOptions = document.querySelector('#selectProfileOptions')
+const openProfileOptions = document.querySelector("#profileOptionsBtn");
+const selectOptions = document.querySelector("#selectProfileOptions");
 let options = gsap.timeline();
-openProfileOptions.onclick = function() {
-  if (!openProfileOptions.classList.contains('active')) {
-    openProfileOptions.classList.add('active');
-    
-    options
-      .to(selectOptions, {height: 'auto', y: 0, display:'flex', duration: 0.3})
-      
+openProfileOptions.onclick = function () {
+  if (!openProfileOptions.classList.contains("active")) {
+    openProfileOptions.classList.add("active");
+
+    options.to(selectOptions, {
+      height: "auto",
+      y: 0,
+      display: "flex",
+      duration: 0.3,
+    });
+
     options.play();
   } else {
-    openProfileOptions.classList.remove('active');
+    openProfileOptions.classList.remove("active");
     options.reverse(0.5);
   }
-  
-}
+};
 // openCategory.addEventListener('click', (e) => {
 //   setTimeout(function () {
 //     selectCategory.classList.toggle('_open');
@@ -156,65 +160,139 @@ openProfileOptions.onclick = function() {
 
 //====Открытие карты=============
 
-const openMap = document.querySelector('.location')
-const openMap2 = document.querySelector('.region__link')
-const cityChoose = document.querySelector('#city_choose')
-const closeMap = document.querySelector('.city__choose-btn-close')
+const openMap = document.querySelector(".location");
+const openMap2 = document.querySelector(".region__link");
+const cityChoose = document.querySelector("#city_choose");
+const closeMap = document.querySelector(".city__choose-btn-close");
 let map = gsap.timeline();
 
 let mapOpen = (btn) => {
-  btn.onclick = function() {
-    if (!openMap.classList.contains('active')) {
-      btn.classList.add('active');
-      
-      map
-        .add('start')
-        .to(cityChoose, {height: 'auto', y: 0, opacity: 1, duration: 0.5, easy:'none'}, 'start')
-        .to('.city__choose .container', {  y: 0, opacity: 1, duration: 0.7, easy:'none'}, 'start')
-      map.play();
-  
-      closeMap.onclick = function() {
-        map.reverse(0.5);
-        btn.classList.remove('active');
-      }
-    } 
-    
-  }
-}
+  btn.onclick = function () {
+    if (!openMap.classList.contains("active")) {
+      btn.classList.add("active");
 
-mapOpen(openMap)
-mapOpen(openMap2)
+      map
+        .add("start")
+        .to(
+          cityChoose,
+          { height: "auto", y: 0, opacity: 1, duration: 0.5, easy: "none" },
+          "start"
+        )
+        .to(
+          ".city__choose .container",
+          { y: 0, opacity: 1, duration: 0.7, easy: "none" },
+          "start"
+        );
+      map.play();
+
+      closeMap.onclick = function () {
+        map.reverse(0.5);
+        btn.classList.remove("active");
+      };
+    }
+  };
+};
+
+mapOpen(openMap);
+mapOpen(openMap2);
 
 // =========swiper hero=======
-const swiperDeal = new Swiper('.swiper-deal', {
+const swiperDeal = new Swiper(".swiper-deal", {
   modules: [Navigation, Pagination],
-  slidesPerView: 4,
-  slidesPerColumn: 4,
-  slidesPerGroup: 2,
-  spaceBetween: 20,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 16,
   loop: false,
+  breakpoints: {
+    // when window width is >= 1090px
+    1090: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+    // when window width is >= 523px
+    523: {
+      slidesPerView: 2,
+      spaceBetween: 16,
+    },
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+  },
 
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
     clickable: true,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  }
-})
+    nextEl: ".swiper-deal-next",
+    prevEl: ".swiper-deal-prev",
+  },
+});
+//===========swiper ======
 
+let swiper = Swiper;
+let init = false;
+
+function swiperCard() {
+  let mobile = window.matchMedia("(min-width: 0px) and (max-width: 1024px)");
+
+  if (mobile.matches) {
+    if (!init) {
+      init = true;
+      swiper = new Swiper(".swiper__about", {
+        modules: [Navigation],
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+        spaceBetween: 20,
+        // centeredSlides: true,
+        breakpoints: {
+          // when window width is >= 320px
+          1090: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          // when window width is >= 523px
+          523: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper__about-next",
+          prevEl: ".swiper__about-prev",
+        },
+      });
+    }
+  } else if (init) {
+    swiper.destroy();
+    init = false;
+  }
+}
+try {
+  swiperCard();
+  window.addEventListener("resize", swiperCard);
+} catch (error) {}
 //====делаем первую букву  в Верхнем регистре
 // const regex = /[A-Za-z0-0]/;
 // let firstLetterToUpperCase = (className) => {
 //   const inputs = document.getElementsByClassName(className)
-  
-  
+
 //     for (let i = 0; i < inputs.length; ++i) {
 //       inputs[i].onblur = () => {
 //         // if (regex.test(inputs[i].value)) inputs[i].value='';
 //         if (inputs[i].value === '') return;
-  
+
 //         let str = inputs[i].value
 //           .trim()
 //           .replace(/-+/g, '-')
@@ -224,11 +302,9 @@ const swiperDeal = new Swiper('.swiper-deal', {
 //         inputs[i].value = str[0].toUpperCase() + str.substr(1).toLowerCase()
 //       }
 //     }
-  
+
 // }
 // firstLetterToUpperCase('form-control')
-
-
 
 //=====Input mask
 // const mask = event => {
@@ -266,12 +342,8 @@ const swiperDeal = new Swiper('.swiper-deal', {
 //   input.addEventListener('keydown', mask);
 // }
 
-
-
-
-
 //========Валидация формы открытия счета и маска================
-      //======маска телефон
+//======маска телефон
 // const accountFormTel = document.getElementById('tel');
 // if (accountFormTel.type === 'tel') {
 //   accountFormTel.addEventListener('input', mask);

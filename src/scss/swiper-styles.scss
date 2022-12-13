@@ -1,15 +1,34 @@
 .swiper-button-prev {
   left: -2rem;
+  @media (max-width: 1090px) {
+    left: 0;
+  }
 }
 .swiper-button-next {
   right: -2rem;
+  @media (max-width: 1090px) {
+    right: 0;
+  }
 }
 .swiper-button-prev, 
 .swiper-button-next {
   color: var(--primary-text);
   transition: var(--transition-color);
+  @media (max-width: 768px) {
+    width: 22px;
+    height: 22px;
+  }
+  @media (max-width: 523px) {
+    display: none;
+  }
+  
 }
-
+.swiper-button-prev:after, .swiper-button-next:after {
+  
+  @media (max-width: 768px) {
+    font-size: 27px;
+  }
+}
 .swiper-button-prev:hover:not(.swiper-button-disabled), 
 .swiper-button-next:hover:not(.swiper-button-disabled) {
   color: var(--primary-orange);
@@ -26,9 +45,7 @@
   height: 100%;
   padding: 10px;
 }
-.swiper-container {
-  position: relative;
-}
+
 .swiper-pagination-bullet{
   border: 1px solid var(--primary-orange);
   width: 30px;
@@ -37,12 +54,18 @@
   transition: 300ms;
   background-color: inherit;
   opacity: 1;
+  @media (max-width: 523px) {
+    display: none;
+  }
 }
 .swiper-pagination-bullet:hover {
   background-color: var(--primary-orange);
 }
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-  bottom: -2rem;
+  bottom: 0;
+  @media (max-width: 1090px)  {
+    bottom: 0;
+  }
 }
 .swiper-pagination-bullet-active {
   background-color: var(--primary-orange);
@@ -54,6 +77,9 @@
   background-repeat: no-repeat;
   background-position: left bottom -25px;
   padding-bottom: 50px;
-  // overflow: visible;
+  @media (max-width: 523px) {
+    padding-bottom: 0;
+    background-position: left bottom 20px;
+  }
   
 }

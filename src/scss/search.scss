@@ -131,7 +131,7 @@
   padding: 20px 23px;
   position: absolute;
   right: -14px;
-  top: 78px;
+  top: 5rem;
   height: 0;
   box-shadow: 1px 1px 10px rgb(0 0 0 / 15%);
   border-radius: 5px;
@@ -140,7 +140,9 @@
   z-index: 55;
   flex-wrap: wrap;
   background-color: var(--white);
-  
+  @media (max-width: 768px) {
+    top: 4rem;
+  }
   &::after {
     content: '';
     position: absolute;
