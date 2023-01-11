@@ -3012,6 +3012,8 @@ a.user-info {
 @media (max-width: 748px) {
   .modal-window-content {
     padding: 48px 12px;
+    height: 80vh;
+    overflow: scroll;
   }
 }
 .modal-window-content ._submit {
@@ -3065,8 +3067,8 @@ a.user-info {
 }
 @media (max-width: 748px) {
   .modal-close {
-    right: 2px;
-    top: 8px;
+    right: -14px;
+    top: -12px;
   }
 }
 .modal-close:before {
@@ -3245,7 +3247,7 @@ a.user-info {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #4F4F4F;
+  color: #4f4f4f;
   text-decoration: underline;
 }
 
@@ -3376,10 +3378,20 @@ a.user-info {
   max-height: 500px;
   column-gap: 30px;
 }
+@media (max-width: 748px) {
+  .modal__form-wallet .flex-container {
+    max-height: initial;
+  }
+}
 .modal__form-wallet .wallet__form-item {
   width: 100%;
   max-width: 50%;
   margin-bottom: 12px;
+}
+@media (max-width: 748px) {
+  .modal__form-wallet .wallet__form-item {
+    max-width: 100%;
+  }
 }
 .modal__form-wallet .wallet__form-item label {
   margin-bottom: 0.5rem;

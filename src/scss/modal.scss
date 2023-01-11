@@ -10,7 +10,7 @@
   display: block;
   margin: 0 auto;
 
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     font-size: 18px;
     line-height: 21px;
   }
@@ -29,14 +29,14 @@
     z-index: 500;
 
     &.open {
-      display: block
+      display: block;
     }
 
     .container {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%
+      height: 100%;
     }
 
     .success-message {
@@ -53,7 +53,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 10
+    z-index: 10;
   }
 
   &-window {
@@ -64,13 +64,16 @@
     border-radius: 5px;
     position: relative;
 
-    @media(max-width: 748px) {}
+    @media (max-width: 748px) {
+    }
 
     &-content {
       padding: 48px 64px;
 
-      @media(max-width: 748px) {
+      @media (max-width: 748px) {
         padding: 48px 12px;
+        height: 80vh;
+        overflow: scroll;
       }
 
       ._submit {
@@ -86,7 +89,7 @@
 
         &:hover {
           color: #fff;
-          background: #ff6416
+          background: #ff6416;
         }
       }
 
@@ -101,7 +104,7 @@
         resize: none;
         background-color: #f2f3f5;
         min-height: 52px;
-        outline: none
+        outline: none;
       }
     }
 
@@ -111,11 +114,11 @@
 
       lable {
         white-space: nowrap;
-        margin-right: 10px
+        margin-right: 10px;
       }
 
       select {
-        width: 50%
+        width: 50%;
       }
     }
   }
@@ -130,13 +133,13 @@
     border-radius: 50%;
     cursor: pointer;
 
-    @media(max-width: 748px) {
-      right: 2px;
-      top: 8px;
+    @media (max-width: 748px) {
+      right: -14px;
+    top: -12px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       border-top: 1.5px solid #212529;
       width: 20px;
@@ -146,7 +149,7 @@
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       border-top: 1.5px solid #212529;
       width: 20px;
@@ -165,7 +168,7 @@
   margin: 0 0 36px 0;
   text-align: center;
 
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     margin: 0 0 24px 0;
     font-weight: 700;
     font-size: 24px;
@@ -179,55 +182,54 @@
   column-gap: 16px;
   row-gap: 24px;
 
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     row-gap: 16px;
   }
 
   &-region {
-    grid-column: 1/ span 6;
+    grid-column: 1 / span 6;
 
-    @media(max-width: 748px) {
-      grid-column: 1/ span 12;
+    @media (max-width: 748px) {
+      grid-column: 1 / span 12;
     }
-
   }
 
   &-city {
-    grid-column: 7/ span 6;
+    grid-column: 7 / span 6;
 
-    @media(max-width: 748px) {
-      grid-row: 2/span 1;
-      grid-column: 1/ span 12;
+    @media (max-width: 748px) {
+      grid-row: 2 / span 1;
+      grid-column: 1 / span 12;
     }
   }
 
   &-street {
-    grid-row: 2/ span 1;
-    grid-column: 1/ span 6;
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 6;
 
-    @media(max-width: 748px) {
-      grid-row: 3/span 1;
-      grid-column: 1/ span 12;
+    @media (max-width: 748px) {
+      grid-row: 3 / span 1;
+      grid-column: 1 / span 12;
     }
   }
 
   &-house {
-    grid-row: 2/ span 1;
-    grid-column: 7/ span 3;
+    grid-row: 2 / span 1;
+    grid-column: 7 / span 3;
 
-    @media(max-width: 748px) {
-      grid-row: 4/span 1;
-      grid-column: 1/ span 6;
+    @media (max-width: 748px) {
+      grid-row: 4 / span 1;
+      grid-column: 1 / span 6;
     }
   }
 
   &-flat {
-    grid-row: 2/ span 1;
-    grid-column: 10/ span 3;
+    grid-row: 2 / span 1;
+    grid-column: 10 / span 3;
 
-    @media(max-width: 748px) {
-      grid-row: 4/span 1;
-      grid-column: 7/ span 6;
+    @media (max-width: 748px) {
+      grid-row: 4 / span 1;
+      grid-column: 7 / span 6;
     }
   }
 
@@ -236,7 +238,7 @@
     padding: 12px 64px;
     justify-content: center;
 
-    @media(max-width: 748px) {
+    @media (max-width: 748px) {
       padding: 12px 72px;
       margin-top: 12px;
       font-size: 18px;
@@ -246,16 +248,15 @@
 }
 
 .modal__btn {
-  grid-row: 3/ span 1;
-  grid-column: 3/ span 8;
+  grid-row: 3 / span 1;
+  grid-column: 3 / span 8;
   display: flex;
   justify-content: center;
 
-  @media(max-width: 748px) {
-    grid-row: 5/span 1;
-    grid-column: 1/ span 12;
+  @media (max-width: 748px) {
+    grid-row: 5 / span 1;
+    grid-column: 1 / span 12;
   }
-
 }
 
 .form-control-text {
@@ -267,7 +268,7 @@
   background-color: #f7f7f7;
   border: 0;
 
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     font-size: 16px;
     line-height: 19px;
   }
@@ -280,7 +281,7 @@
   margin-bottom: 12px;
   display: inline-block;
 
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     font-size: 14px;
     line-height: 16px;
     margin-bottom: 8px;
@@ -292,14 +293,14 @@
   margin-bottom: 36px;
 
   // padding: 0 24px 0 24px;
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     margin-top: 24px;
   }
 
   &-text {
     text-align: center;
 
-    @media(max-width: 748px) {
+    @media (max-width: 748px) {
       font-weight: 400;
       font-size: 14px;
       line-height: 20px;
@@ -307,14 +308,12 @@
   }
 }
 
-
-
 .modal__link {
   display: inline-block;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #4F4F4F;
+  color: #4f4f4f;
   text-decoration: underline;
 }
 
@@ -323,7 +322,7 @@
   justify-content: center;
   margin-top: 24px;
 
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     margin-top: 16px;
   }
 }
@@ -337,23 +336,23 @@
   margin: 0 auto;
   max-width: 312px;
 
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     column-gap: 16px;
     row-gap: 24px;
   }
 }
 
 .modal__confirm-current-price {
-  grid-column: 1/span 1;
+  grid-column: 1 / span 1;
 }
 
 .modal__confirm-current-bet {
-  grid-column: 2/span 1;
+  grid-column: 2 / span 1;
 }
 
 .modal__confirm-btn {
-  grid-row: 2/span 1;
-  grid-column: 1/span 2;
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 2;
 }
 
 .modal__confirm-price {
@@ -361,11 +360,11 @@
   border-radius: 4px;
   background-color: #f7f7f7;
 
-  @media(max-width: 1039px) {
+  @media (max-width: 1039px) {
     padding: 11px 12px;
   }
 
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     padding: 8px 35px;
   }
 }
@@ -374,7 +373,7 @@
   display: inline-block;
   margin-bottom: 12px;
 
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     margin-bottom: 8px;
   }
 }
@@ -385,7 +384,7 @@
   text-align: center;
   display: block;
 
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     font-size: 18px;
     line-height: 21px;
   }
@@ -400,14 +399,15 @@
   border: 0;
   background-color: #f7f7f7;
 
-  @media(max-width: 1039px) {}
+  @media (max-width: 1039px) {
+  }
 
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     height: 37px;
     min-height: 37px;
   }
 
-  @media(max-width: 748px) {
+  @media (max-width: 748px) {
     font-size: 18px;
     line-height: 21px;
   }
@@ -441,6 +441,9 @@
     flex-wrap: wrap;
     max-height: 500px;
     column-gap: 30px;
+    @media (max-width: 748px) {
+      max-height: initial;
+    }
   }
 
   .wallet__form {
@@ -448,6 +451,9 @@
       width: 100%;
       max-width: 50%;
       margin-bottom: 12px;
+      @media (max-width: 748px) {
+        max-width: 100%;
+      }
 
       & label {
         margin-bottom: 0.5rem;
@@ -460,8 +466,7 @@
       & button {
         width: 100%;
       }
-      & 
-      &-min {
+      & &-min {
         max-width: 40%;
       }
 
@@ -475,5 +480,4 @@
       column-gap: 20px;
     }
   }
-
 }
