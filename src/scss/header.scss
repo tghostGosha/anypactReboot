@@ -38,7 +38,11 @@ button {
   border-radius: .25rem;
 }
 
-
+.long-divider {
+  margin-top: 64px;
+  border-top: 2px solid #f2f2f2;
+  margin-bottom: 69px;
+}
 .buttons-wrapper {
   margin-top: 1.5rem;
   flex: 0 0 100%;

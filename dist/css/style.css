@@ -1820,6 +1820,12 @@ button {
   border-radius: 0.25rem;
 }
 
+.long-divider {
+  margin-top: 64px;
+  border-top: 2px solid #f2f2f2;
+  margin-bottom: 69px;
+}
+
 .buttons-wrapper {
   margin-top: 1.5rem;
   flex: 0 0 100%;
@@ -2630,8 +2636,12 @@ a.user-info {
 }
 
 .description__wrapper {
-  align-items: center;
   margin-bottom: 40px;
+  gap: 30px;
+  padding-top: 20px;
+}
+.description__wrapper h3 {
+  grid-column: 1/span 12;
 }
 .description__wrapper .text-block, .description__wrapper .video__block {
   grid-column: span 6;
@@ -2640,6 +2650,13 @@ a.user-info {
   .description__wrapper .text-block, .description__wrapper .video__block {
     grid-column: span 12;
   }
+}
+.description__wrapper .text-block p {
+  line-height: 1.65;
+  text-align: justify;
+}
+.description__wrapper .text-block p:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 .map {
@@ -4889,12 +4906,6 @@ input::-webkit-input-placeholder {
   z-index: 1;
 }
 
-.long-divider {
-  margin-top: 64px;
-  border-top: 2px solid #f2f2f2;
-  margin-bottom: 69px;
-}
-
 .signature-container {
   background: url(../image/bg-points.png) no-repeat;
   background-position-x: 43vw;
@@ -5997,12 +6008,6 @@ body.bg-russia {
   width: 100%;
   background: #eaeaea;
   margin-top: -60px;
-}
-
-.long-divider {
-  margin-top: 64px;
-  border-top: 2px solid #f2f2f2;
-  margin-bottom: 69px;
 }
 
 .signature-container {

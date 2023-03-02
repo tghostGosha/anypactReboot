@@ -202,15 +202,31 @@
 }
 
 .description__wrapper {
-  align-items: center;
+  // align-items: center;
   margin-bottom: 40px;
-
+  gap: 30px;
+  padding-top: 20px;
+  & h3 {
+    grid-column: 1/ span 12;
+  }
   & .text-block,
   & .video__block {
     grid-column: span 6;
 
     @media (max-width: 768px) {
       grid-column: span 12;
+    }
+  }
+
+  & .text-block {
+
+    & p {
+      line-height: 1.65;
+      
+      text-align: justify;
+    }
+    & p:not(:last-child) {
+      margin-bottom: 1rem;
     }
   }
 }
