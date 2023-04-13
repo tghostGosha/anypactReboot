@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html',{ "title": "Каталог" })
+
+  <body class="" style="overflow: auto; padding-right: 0px">
+    @@include('html/header.html',{})
+
+    <main class="custom-scroll" data-simplebar>
+      <div class="container">
+        <h1>Выберите категорию</h1>
+        <div class="catalog__search block__margin-bottom">
+          <button
+            type="button"
+            class="catalog__category-btn flex-container"
+            id="button_catalog_category"
+          >
+            <span class="button-decor"></span>
+            <span>Все категории</span>
+            <ul
+              id="select_category_main"
+              class="select__category-list dropdown__menu"
+            >
+              <li>
+                <a href="/pacts/nayem_zhilya/" class="black-link">
+                  Наём жилья</a
+                >
+              </li>
+              <li>
+                <a href="/pacts/zayem/" class="black-link"> Заём</a>
+              </li>
+              <li>
+                <a href="/pacts/kuplya_prodazha/" class="black-link"
+                  >Купля-продажа</a
+                >
+              </li>
+              <li>
+                <a href="/pacts/rabota/" class="black-link"> Работа</a>
+              </li>
+              <li>
+                <a href="/pacts/uslugi/" class="black-link"> Услуги</a>
+              </li>
+              <li>
+                <a href="/pacts/darenie_pozhertvovanie/" class="black-link">
+                  Дарение&nbsp;/&nbsp;Пожертвование</a
+                >
+              </li>
+              <li>
+                <a href="/pacts/investitsii/" class="black-link"> Инвестиции</a>
+              </li>
+              <li>
+                <a href="/pacts/arenda/" class="black-link"> Аренда</a>
+              </li>
+              <li>
+                <a href="/pacts/obmen_mena/" class="black-link"> Обмен, мена</a>
+              </li>
+              <li>
+                <a href="/pacts/drugoe/" class="black-link"> Другое</a>
+              </li>
+            </ul>
+          </button>
+          <form
+            class="catalog__search-form flex-container"
+            action="/search/index.php"
+          >
+            <input
+              type="text"
+              class="catalog__search-input"
+              name="q"
+              placeholder="Поиск по объявлениям"
+              value=""
+            />
+            <a
+              name="s"
+              type="submit"
+              class="primary__btn-orange catalog__search-btn"
+              tabindex="0"
+              value="Поиск"
+              >Найти</a
+            >
+          </form>
+        </div>
+        <div class="swiper__category-container">
+          <div class="swiper__category swiper">
+            <div class="swiper-wrapper swiper__category-wrapper">
+              <div class="swiper-slide category__slide">
+                <div class="category__slide-box">
+                  <svg width="48px" height="43px" class="svg-cart-dims">
+                    <use xlink:href="image/icons/icons.svg#cart"></use>
+                  </svg>
+                </div>
+                <span>Купля&nbsp;-&nbsp;продажа</span>
+              </div>
+              <div class="swiper-slide category__slide">
+                <div class="category__slide-box">
+                  <svg width="48px" height="43px" class="svg-job-dims">
+                    <use xlink:href="image/icons/icons.svg#job"></use>
+                  </svg>
+                </div>
+                <span>Работа</span>
+              </div>
+              <div class="swiper-slide category__slide">
+                <div class="category__slide-box">
+                  <svg width="48px" height="43px" class="svg-wrench-dims">
+                    <use xlink:href="image/icons/icons.svg#wrench"></use>
+                  </svg>
+                </div>
+                <span>Услуги</span>
+              </div>
+              <div class="swiper-slide category__slide">
+                <div class="category__slide-box">
+                  <svg width="48px" height="43px" class="svg-house-dims">
+                    <use xlink:href="image/icons/icons.svg#house"></use>
+                  </svg>
+                </div>
+                <span>Найм жилья</span>
+              </div>
+              <div class="swiper-slide category__slide">
+                <div class="category__slide-box">
+                  <svg width="48px" height="43px" class="svg-key-dims">
+                    <use xlink:href="image/icons/icons.svg#key"></use>
+                  </svg>
+                </div>
+                <span>Аренда</span>
+              </div>
+              <div class="swiper-slide category__slide">
+                <div class="category__slide-box">
+                  <svg
+                    width="48px"
+                    height="43px"
+                    class="svg-catalog-change-dims"
+                  >
+                    <use
+                      xlink:href="image/icons/icons.svg#catalog-change"
+                    ></use>
+                  </svg>
+                </div>
+                <span>Обмен</span>
+              </div>
+              <div class="swiper-slide category__slide">
+                <div class="category__slide-box">
+                  <svg
+                    width="48px"
+                    height="43px"
+                    class="svg-hand-with-coins-dims"
+                  >
+                    <use
+                      xlink:href="image/icons/icons.svg#hand-with-coins"
+                    ></use>
+                  </svg>
+                </div>
+                <span>Займ</span>
+              </div>
+              <div class="swiper-slide category__slide">
+                <div class="category__slide-box">
+                  <svg width="48px" height="43px" class="svg-gift-box-dims">
+                    <use xlink:href="image/icons/icons.svg#gift-box"></use>
+                  </svg>
+                </div>
+                <span>Дарение/Пожертвование</span>
+              </div>
+              <div class="swiper-slide category__slide">
+                <div class="category__slide-box">
+                  <svg width="48px" height="43px" class="svg-other-dims">
+                    <use xlink:href="image/icons/icons.svg#other"></use>
+                  </svg>
+                </div>
+                <span>Другое</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-prev swiper-category-prev"></div>
+          <div class="swiper-button-next swiper-category-next"></div>
+        </div>
+        <section class="cards__container">
+          <div class="cards__sort-settings">
+            <div class="cards__sort-filter">
+              <span>Сортировать:</span>
+
+              <form>
+                <select class="choices-sort dropdown__menu">
+                  <option selected value="По умолчанию">По умолчанию</option>
+                  <option value="По дате">По дате</option>
+                  <option value="По возврастанию цены">
+                    По возврастанию цены
+                  </option>
+                  <option value="По убыванию цены">По убыванию цены</option>
+                  <option value="От А до Я">От А до Я</option>
+                  <option value="От Я до А">От Я до А</option>
+                </select>
+              </form>
+            </div>
+            <div class="cards__sort-settings-btns">
+              <button id="mediumIconsSort" class="chosen btn-sort">
+                <svg
+                  width="36px"
+                  height="35px"
+                  class="svg-mediumIconsSort-dims"
+                >
+                  <use xlink:href="image/icons/icons.svg#mediumIconsSort"></use>
+                </svg>
+              </button>
+              <button id="listSort" class="btn-sort">
+                <svg width="36px" height="35px" class="svg-list-sort-dims">
+                  <use xlink:href="image/icons/icons.svg#list-sort"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div
+            class="catalog__wrapper grid-container catalog__wrapper-with-filter"
+          >
+            <form class="catalog__filter">
+              <div class="cards__sort-filter">
+                <span>Регион:</span>
+                <select class="choice-region"  name="choices-multiple-remove-button" id="choices-multiple-remove-button"  placeholder="This is a placeholder"  data-trigger>
+                  <option value="Россия">Россия</option>
+                </select>
+                <span>Сфера деятельности:</span>
+                <select class="choice-job"  name="choices-multiple-groups" one>
+                  <option value="Россия">Все</option>
+                </select>
+              </div>
+            </form>
+            <ul class="grid-container tender__post-container">
+              <li class="tender__post">
+                <a href="#" class="tender__post-link">
+                  <div class="tender__post-img-container">
+                    <img
+                      class="tender__post-img"
+                      src="image/test1.jpg"
+                      alt="товар"
+                    />
+                  </div>
+                  <div class="tender__post-text">
+                    <h3 title="Умная собака">Умная собака</h3>
+                    <div class="tender__post-info">
+                      <p>10 000 руб.</p>
+                      <span>Чебоксары, Калининский р-н</span>
+                      <span>8 февраля 2023 г.</span>
+                    </div>
+                    <p class="tender__post-descr">
+                      Готовы к продаже чистокровные щенки французского бульдога.
+                      Дата рождения: 06.03.2023 . Все очень красивенькие и
+                      здоровенькие малыши, не "коровки"отличие лишь в наличии
+                      галстучков белого цвета( это уже от мамы);) Остались 4
+                      девочки).Кушают самостоятельно, бегают вовсю. Можем
+                      прислать видео. Малыши-крепыши ждут своих хозяев. Мы
+                      находимся в городе Чебоксары. Гарантия честной сделки.
+                      Возможна доставка, но в ближайшие регионы. Просьба звонить
+                      до 22.00. Сообщения сразу не вижу, но обязательно отвечу в
+                      течении дня.
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="tender__post">
+                <a href="#" class="tender__post-link">
+                  <div class="tender__post-img-container">
+                    <img
+                      class="tender__post-img"
+                      src="image/test2.jpg"
+                      alt="товар"
+                    />
+                  </div>
+                  <div class="tender__post-text">
+                    <h3 title="Консультация психолога">
+                      Консультация психолога
+                    </h3>
+                    <div class="tender__post-info">
+                      <p>10 000 руб.</p>
+                      <span>Чебоксары, Калининский р-н</span>
+                      <span>8 февраля 2023 г.</span>
+                    </div>
+                    <p class="tender__post-descr">
+                      Качество ✔️ Польза ✔️ Результат Я - практический психолог,
+                      работаю в интегративном подходе, консультирую взрослых с
+                      18 до 55 лет. Формат консультаций: 🔹 индивидуальная; 🔹
+                      семейная и парная; 🔹 онлайн; 🔹 очный прием в Сочи.
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="tender__post">
+                <a href="#" class="tender__post-link">
+                  <div class="tender__post-img-container">
+                    <img
+                      class="tender__post-img"
+                      src="image/test3.jpg"
+                      alt="товар"
+                    />
+                  </div>
+                  <div class="tender__post-text">
+                    <h3 title="Поющий ведущий">Поющий ведущий</h3>
+                    <div class="tender__post-info">
+                      <p>10 000 руб.</p>
+                      <span>Чебоксары, Калининский р-н</span>
+                      <span>8 февраля 2023 г.</span>
+                    </div>
+                    <p class="tender__post-descr">
+                      Профессиональный ведущий праздников. Опыт работы больше 8
+                      лет и DJ со своим оборудованием (звук / свет) в
+                      Чебоксарах, Новочебоксарск и Чувашской Республике.
+                    </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    @@include('html/footer.html',{})
+
+    <div id="popup-load" class="preloader">
+      <div class="preloader__image"></div>
+    </div>
+
+    <div class="user-menu-modal" id="user_menu">
+      <button class="close__btn">
+        <svg width="32px" height="32px" class="close__btn-svg">
+          <use xlink:href="image/icons/icons.svg#header-create-btn"></use>
+        </svg>
+      </button>
+      <div class="user-menu-modal-block" onclick="event.stopPropagation()">
+        <div class="user-info-block">
+          <a class="user-info" href="/profile_user/?ID=2207">
+            <div class="login-information-photo container_prof">
+              <img
+                src="image/test-account-img/d45dfb0e1762f6e7ae55db2e7628934a.jpeg"
+              />
+              <div class="count_unread">0</div>
+            </div>
+            <div class="user-fio underscore-link">Куралев Е.А.</div>
+          </a>
+          <div class="header__item-action-btn">
+            <a href="/profile/wallet/" class="flex-container">
+              <svg width="34px" height="34px" class="svg-header-wallet-dims">
+                <use xlink:href="image/icons/icons.svg#header-wallet"></use>
+              </svg>
+              <p>105,00 ₽</p>
+            </a>
+          </div>
+        </div>
+        <div class="user-menu">
+          <ul>
+            <li>
+              <a
+                href="/my_pacts/edit_my_pact/?ACTION=ADD"
+                class="underscore-link"
+                >Создать предложение</a
+              >
+            </li>
+            <li>
+              <a href="/profile_user/?ID=2207" class="underscore-link"
+                >Мой профиль</a
+              >
+            </li>
+            <li>
+              <a href="/profile/" class="underscore-link"
+                >Редактировать профиль</a
+              >
+            </li>
+            <li>
+              <a href="/profile/select_company/" class="underscore-link"
+                >Переключить профиль</a
+              >
+            </li>
+            <li>
+              <a
+                href="/develop/empty/?logout=yes"
+                class="exit-profile link-color underscore-link"
+                >Выйти</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="//api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=08f051a6-35f1-4392-a988-5024961ee1a8"
+    ></script>
+
+    <!-- <script src="js/modules/map.js"></script> -->
+    
+    <script src="js/app.min.js"></script>
+  </body>
+</html>

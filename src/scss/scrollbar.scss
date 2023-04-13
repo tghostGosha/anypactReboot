@@ -1,0 +1,36 @@
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 20%;
+  }
+  /* button */
+  ::-webkit-scrollbar-button {
+    background: transparent; 
+    
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-orange); 
+    border-radius: 10px;
+    
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #666; 
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  /* The track NOT covered by the handle.
+  ::-webkit-scrollbar-track-piece {
+    background: #000; 
+  }
+  /* Corner */
+  ::-webkit-scrollbar-corner {
+    background: #999; 
+  }
+  /* Resizer */
+  ::-webkit-resizer {
+    background: #111; 
+  }

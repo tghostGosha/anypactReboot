@@ -4,6 +4,7 @@ import "./modules/map.js"; //====яндекс карта
 import gsap from "gsap"; //======Анимация
 // import { Inputmask } from "inputmask";
 import Swiper, { Navigation, Pagination } from "swiper";
+import Choices from 'choices.js'
 // import JustValidate from 'just-validate';
 
 Swiper.use([Navigation, Pagination]);
@@ -100,11 +101,38 @@ notificationsBtn.onclick = function () {
 const openCategory = document.querySelector("#button_select_category");
 const selectCategory = document.querySelector(".select__category-list");
 let tl = gsap.timeline();
-openCategory.onclick = function () {
-  if (!openCategory.classList.contains("active")) {
-    openCategory.classList.add("active");
+try {
 
-    tl.to(selectCategory, {
+  openCategory.onclick = function () {
+    if (!openCategory.classList.contains("active")) {
+      openCategory.classList.add("active");
+  
+      tl.to(selectCategory, {
+        height: "auto",
+        y: 0,
+        opacity: 1,
+        display: "flex",
+        duration: 0.3,
+      });
+  
+      tl.play();
+    } else {
+      openCategory.classList.remove("active");
+      tl.reverse(0.5);
+    }
+  };
+} catch(error) {
+
+}
+//====Открытие каталога категории =============
+const openCatalogCategory = document.querySelector("#button_catalog_category");
+
+let tl2 = gsap.timeline();
+openCatalogCategory.onclick = function () {
+  if (!openCatalogCategory.classList.contains("active")) {
+    openCatalogCategory.classList.add("active");
+
+    tl2.to(selectCategory, {
       height: "auto",
       y: 0,
       opacity: 1,
@@ -112,10 +140,10 @@ openCategory.onclick = function () {
       duration: 0.3,
     });
 
-    tl.play();
+    tl2.play();
   } else {
-    openCategory.classList.remove("active");
-    tl.reverse(0.5);
+    openCatalogCategory.classList.remove("active");
+    tl2.reverse(0.5);
   }
 };
 
@@ -192,9 +220,19 @@ let mapOpen = (btn) => {
     }
   };
 };
+try {
 
-mapOpen(openMap);
-mapOpen(openMap2);
+  mapOpen(openMap);
+} catch(error) {
+
+}
+try {
+
+  mapOpen(openMap2);
+} catch(error) {
+
+}
+
 
 // =========swiper hero=======
 const swiperDeal = new Swiper(".swiper-deal", {
@@ -228,6 +266,40 @@ const swiperDeal = new Swiper(".swiper-deal", {
   navigation: {
     nextEl: ".swiper-deal-next",
     prevEl: ".swiper-deal-prev",
+  },
+});
+// =========swiper hero=======
+const swiperCategory = new Swiper(".swiper__category", {
+  modules: [Navigation, Pagination],
+  slidesPerView: 8,
+  slidesPerGroup: 1,
+  spaceBetween: 16,
+  loop: false,
+  breakpoints: {
+    // when window width is >= 1090px
+    1090: {
+      slidesPerView: 7,
+      spaceBetween: 36,
+    },
+    // when window width is >= 523px
+    523: {
+      slidesPerView: 2,
+      spaceBetween: 16,
+    },
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-category-next",
+    prevEl: ".swiper-category-prev",
   },
 });
 //===========swiper ======
@@ -283,6 +355,93 @@ try {
   swiperCard();
   window.addEventListener("resize", swiperCard);
 } catch (error) {}
+
+
+const choiceRegion = new Choices('.choice-region', {
+  itemSelectText: '',
+  searchEnabled: true, 
+  position: 'bottom',
+  allowHTML: true,
+  choices: [
+    { value: "Абакан", label: "Абакан" },
+    { value: "Анадырь", label: "Анадырь"},
+    { value: "Архангельск", label: "Архангельск" },
+    { value: "Астрахань", label: "Астрахань" },
+    { value: "Барнаул", label: "Барнаул" },
+    { value: "Белгород", label: "Белгород" },
+    { value: "Биробиджан", label: "Биробиджан" },
+    { value: "Благовещенск", label: "Благовещенск" },
+    { value: "Брянск", label: "Брянск" },
+    { value: "Великий Новгород", label: "Великий Новгород" },
+    { value: "Владивосток", label: "Владивосток" },
+    { value: "Владикавказ", label: "Владикавказ" },
+    { value: "Консультирование", label: "Консультирование" },
+    { value: "Владимир", label: "Владимир" },
+  ],
+
+});
+const choiceJob = new Choices('.choice-job', {
+  itemSelectText: '',
+  searchEnabled: false, 
+  position: 'bottom',
+  allowHTML: true,
+  choices: [
+    { value: "IT, интернет, телеком", label: "IT, интернет, телеком" },
+    { value: "Автомобильный бизнес", label: "Автомобильный бизнес"},
+    { value: "Административная работа", label: "Административная работа" },
+    { value: "Банки, инвестиции", label: "Банки, инвестиции" },
+    { value: "Без опыта, студенты", label: "Без опыта, студенты" },
+    { value: "Бухгалтерия, финансы", label: "Бухгалтерия, финансы" },
+    { value: "Высший менеджмент", label: "Высший менеджмент" },
+    { value: "Госслужба, НКО", label: "Госслужба, НКО" },
+    { value: "Домашний персонал", label: "Домашний персонал" },
+    { value: "ЖКХ, эксплуатация", label: "ЖКХ, эксплуатация" },
+    { value: "Исскуство, развлечения", label: "Исскуство, развлечения" },
+    { value: "Маркетинг, реклама, PR", label: "Маркетинг, реклама, PR" },
+    { value: "Консультирование", label: "Консультирование" },
+    { value: "Курьерская доставка", label: "Курьерская доставка" },
+    { value: "Медицина, фармацевтика", label: "Медицина, фармацевтика" },
+    { value: "Продажи", label: "Продажи" },
+    { value: "Образование, наука", label: "Образование, наука" },
+    { value: "Охрана, безопасность", label: "Охрана, безопасность" },
+    { value: "Производство, сырье, с/х", label: "Производство, сырье, с/х" },
+    { value: "Страхование", label: "Страхование" },
+    { value: "Строительство", label: "Строительство" },
+    { value: "Транспорт, логистика", label: "Транспорт, логистика" },
+    { value: "Туризм, рестораны", label: "Туризм, рестораны" },
+    { value: "Управление персоналом", label: "Управление персоналом" },
+    { value: "Фитнес, салоны красоты", label: "Фитнес, салоны красоты" },
+    { value: "Юриспрунденция", label: "Юриспрунденция" },
+    
+  ],
+
+});
+
+//============Сортировка списка 
+
+
+$('#listSort').on('click', function (event) {
+  event.preventDefault();
+  $('#listSort').addClass('chosen')
+  $('#mediumIconsSort').removeClass('chosen')
+  if($('.tender__post')) {
+    $('.tender__post').toggleClass('tender__post-list tender__post');
+  }
+  
+});
+
+$('#mediumIconsSort').on('click', function (event) {
+  event.preventDefault();
+  $('#mediumIconsSort').addClass('chosen')
+  $('#listSort').removeClass('chosen')
+  if($('.tender__post-list')) {
+    $('.tender__post-list').toggleClass('tender__post tender__post-list ');
+  }
+  
+
+});
+
+
 //====делаем первую букву  в Верхнем регистре
 // const regex = /[A-Za-z0-0]/;
 // let firstLetterToUpperCase = (className) => {
