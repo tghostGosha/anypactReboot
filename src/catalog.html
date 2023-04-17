@@ -177,7 +177,7 @@
               <span>Сортировать:</span>
 
               <form>
-                <select class="choices-sort dropdown__menu">
+                <select class="choices-sort">
                   <option selected value="По умолчанию">По умолчанию</option>
                   <option value="По дате">По дате</option>
                   <option value="По возврастанию цены">
@@ -209,16 +209,136 @@
           <div
             class="catalog__wrapper grid-container catalog__wrapper-with-filter"
           >
-            <form class="catalog__filter">
-              <div class="cards__sort-filter">
-                <span>Регион:</span>
-                <select class="choice-region"  name="choices-multiple-remove-button" id="choices-multiple-remove-button"  placeholder="This is a placeholder"  data-trigger>
-                  <option value="Россия">Россия</option>
-                </select>
-                <span>Сфера деятельности:</span>
-                <select class="choice-job"  name="choices-multiple-groups" one>
-                  <option value="Россия">Все</option>
-                </select>
+            <!--------------- Вакансии -------------------->
+            <!-- <form class="catalog__filter" name="for-job">
+              <ul class="nav nav__tabs">
+                <li class="nav__tabs-item">
+                  <a class="nav__tabs-link active" aria-current="page" href="#">Резюме</a>
+                </li>
+                <li class="nav__tabs-item">
+                  <a class="nav__tabs-link" href="#">Вакансии</a>
+                </li>
+                
+              </ul>
+              <label for="choices-multiple-remove-button">Регион:</label>
+              <select
+                class="choice-region"
+                name="choices-multiple-remove-button"
+                id="choices-multiple-remove-button"
+                placeholder="This is a placeholder"
+                multiple
+              >
+                <option value="Россия">Россия</option>
+              </select>
+              <label for="choices-multiple-groups">Сфера деятельности:</label>
+              <select class="choice-job choice-filter" name="choices-multiple-groups" one>
+                <option value="Все" selected>Все</option>
+              </select>
+              <label for="choices-multiple-groups">Время публикации</label>
+              <select class="choice-time choice-filter" name="choices-multiple-groups" one>
+                <option value="За все время" selected>За все время</option>
+                <option value="За сутки">За сутки</option>
+                <option value="За 3 дня">За 3 дня</option>
+                <option value="За неделю">За неделю</option>
+                <option value="За месяц">За месяц</option>
+              </select>
+              <label for="choices-multiple-groups">Опыт работы</label>
+              <select class="choice-experience choice-filter" name="choices-multiple-groups" one>
+                <option value="Не имеет значения" selected>Не имеет значения</option>
+                <option value="Более 1 года">Более 1 года</option>
+                <option value="Более 3 лет">Более 3 лет</option>
+                <option value="Более 5 лет">Более 5 лет</option>
+                <option value="Более 10 лет">Более 10 лет</option>
+              </select>
+              <label for="choices-multiple-groups">Образование</label>
+              <select class="choice-education choice-filter" name="choices-multiple-groups" one>
+                <option value="Не имеет значения" selected>Не имеет значения</option>
+                <option value="Высшее">Высшее</option>
+                <option value="Незаконченное высшее">Незаконченное высшее</option>
+                <option value="Среднее специальное">Среднее специальное</option>
+                <option value="Среднее">Среднее</option>
+              </select>
+              <label for="choices-multiple-groups">Гражданство</label>
+              <select class="choice-nationality choice-filter" name="choices-multiple-groups" one>
+                <option value="Любое" selected>Любое</option>
+                <option value="Россия">Россия</option>
+                <option value="Беларусия">Беларусия</option>
+                <option value="Казахстан">Казахстан</option>
+                <option value="Узбекистан">Узбекистан</option>
+                <option value="Таджикистан">Таджикистан</option>
+                <option value="Киргизия">Киргизия</option>
+                <option value="Украина">Украина</option>
+                <option value="Азербайджан">Азербайджан</option>
+                <option value="Армения">Армения</option>
+                <option value="Молдавия">Молдавия</option>
+                <option value="Туркмения">Туркмения</option>
+                <option value="Грузия">Грузия</option>
+              </select>
+              <div class="catalog__filter-buttons">
+                <button class="primary__btn-orange">Показать 177</button>
+                <button class="white-btn">Сбросить</button>
+              </div>
+            </form> -->
+            <!--------------- Услуги -------------------->
+            <form class="catalog__filter" name="for-services">
+              <label for="choices-multiple-remove-button">Город:</label>
+              <select
+                class="choice-region"
+                name="choices-multiple-remove-button"
+                id="choices-multiple-remove-button"
+                placeholder="This is a placeholder"
+                multiple
+              >
+                <option value="Россия">Россия</option>
+              </select>
+              <label for="choices-services">Сфера услуги:</label>
+              <select
+                class="choice-services choice-filter"
+                name="choices-services"
+                one
+              >
+                <option value="Все" selected>Все</option>
+                <option value="Перевозки">Перевозки</option>
+                <option value="Ремонт">Ремонт</option>
+                <option value="Уборка">Уборка</option>
+                <option value="Благоустройство">Благоустройство</option>
+                <option value="Красота и здоровье">Красота и здоровье</option>
+                <option value="Обучение">Обучение</option>
+                <option value="Деловые услуги">Деловые услуги</option>
+                <option value="Бытовые услуги">Бытовые услуги</option>
+                <option value="Строительство">Строительство</option>
+                <option value="Реклама и полиграфия">
+                  Реклама и полиграфия
+                </option>
+                <option value="Доставка">Доставка</option>
+                <option value="Фото- и видео-съемки">
+                  Фото- и видео-съемки
+                </option>
+                <option value="Няни и сиделки">Няни и сиделки</option>
+                <option value="Безопасность">Безопасность</option>
+                <option value="Животные">Животные</option>
+                <option value="Другое">Другое</option>
+              </select>
+              <div class="filter__price">
+                <label for="rangePrice">Цена, руб.:</label>
+                <div name="rangePrice" class="filter__price-range">
+                  <input type="text" placeholder="От" />
+                  <input type="text" placeholder="До" />
+                </div>
+              </div>
+              <div class="pretty p-svg p-curve">
+                <input type="checkbox" />
+                <div class="state p-success">
+                    <!-- svg path -->
+                    <svg class="svg svg-icon" viewBox="0 0 20 20">
+                        <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: #FF6600;fill:#FF6600;"></path>
+                    </svg>
+                    <label>Recurring</label>
+                </div>
+            </div>
+              <div class="catalog__filter-buttons">
+                <button class="primary__btn-orange">Показать 177</button>
+                <button class="white-btn">Сбросить</button>
               </div>
             </form>
             <ul class="grid-container tender__post-container">
@@ -383,7 +503,7 @@
     ></script>
 
     <!-- <script src="js/modules/map.js"></script> -->
-    
+
     <script src="js/app.min.js"></script>
   </body>
 </html>

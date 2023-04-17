@@ -4,7 +4,8 @@ import "./modules/map.js"; //====яндекс карта
 import gsap from "gsap"; //======Анимация
 // import { Inputmask } from "inputmask";
 import Swiper, { Navigation, Pagination } from "swiper";
-import Choices from 'choices.js'
+import Choices from "choices.js";
+
 // import JustValidate from 'just-validate';
 
 Swiper.use([Navigation, Pagination]);
@@ -102,11 +103,10 @@ const openCategory = document.querySelector("#button_select_category");
 const selectCategory = document.querySelector(".select__category-list");
 let tl = gsap.timeline();
 try {
-
   openCategory.onclick = function () {
     if (!openCategory.classList.contains("active")) {
       openCategory.classList.add("active");
-  
+
       tl.to(selectCategory, {
         height: "auto",
         y: 0,
@@ -114,16 +114,14 @@ try {
         display: "flex",
         duration: 0.3,
       });
-  
+
       tl.play();
     } else {
       openCategory.classList.remove("active");
       tl.reverse(0.5);
     }
   };
-} catch(error) {
-
-}
+} catch (error) {}
 //====Открытие каталога категории =============
 const openCatalogCategory = document.querySelector("#button_catalog_category");
 
@@ -221,18 +219,11 @@ let mapOpen = (btn) => {
   };
 };
 try {
-
   mapOpen(openMap);
-} catch(error) {
-
-}
+} catch (error) {}
 try {
-
   mapOpen(openMap2);
-} catch(error) {
-
-}
-
+} catch (error) {}
 
 // =========swiper hero=======
 const swiperDeal = new Swiper(".swiper-deal", {
@@ -356,91 +347,144 @@ try {
   window.addEventListener("resize", swiperCard);
 } catch (error) {}
 
-
-const choiceRegion = new Choices('.choice-region', {
-  itemSelectText: '',
-  searchEnabled: true, 
-  position: 'bottom',
-  allowHTML: true,
-  choices: [
-    { value: "Абакан", label: "Абакан" },
-    { value: "Анадырь", label: "Анадырь"},
-    { value: "Архангельск", label: "Архангельск" },
-    { value: "Астрахань", label: "Астрахань" },
-    { value: "Барнаул", label: "Барнаул" },
-    { value: "Белгород", label: "Белгород" },
-    { value: "Биробиджан", label: "Биробиджан" },
-    { value: "Благовещенск", label: "Благовещенск" },
-    { value: "Брянск", label: "Брянск" },
-    { value: "Великий Новгород", label: "Великий Новгород" },
-    { value: "Владивосток", label: "Владивосток" },
-    { value: "Владикавказ", label: "Владикавказ" },
-    { value: "Консультирование", label: "Консультирование" },
-    { value: "Владимир", label: "Владимир" },
-  ],
-
-});
-const choiceJob = new Choices('.choice-job', {
-  itemSelectText: '',
-  searchEnabled: false, 
-  position: 'bottom',
-  allowHTML: true,
-  choices: [
-    { value: "IT, интернет, телеком", label: "IT, интернет, телеком" },
-    { value: "Автомобильный бизнес", label: "Автомобильный бизнес"},
-    { value: "Административная работа", label: "Административная работа" },
-    { value: "Банки, инвестиции", label: "Банки, инвестиции" },
-    { value: "Без опыта, студенты", label: "Без опыта, студенты" },
-    { value: "Бухгалтерия, финансы", label: "Бухгалтерия, финансы" },
-    { value: "Высший менеджмент", label: "Высший менеджмент" },
-    { value: "Госслужба, НКО", label: "Госслужба, НКО" },
-    { value: "Домашний персонал", label: "Домашний персонал" },
-    { value: "ЖКХ, эксплуатация", label: "ЖКХ, эксплуатация" },
-    { value: "Исскуство, развлечения", label: "Исскуство, развлечения" },
-    { value: "Маркетинг, реклама, PR", label: "Маркетинг, реклама, PR" },
-    { value: "Консультирование", label: "Консультирование" },
-    { value: "Курьерская доставка", label: "Курьерская доставка" },
-    { value: "Медицина, фармацевтика", label: "Медицина, фармацевтика" },
-    { value: "Продажи", label: "Продажи" },
-    { value: "Образование, наука", label: "Образование, наука" },
-    { value: "Охрана, безопасность", label: "Охрана, безопасность" },
-    { value: "Производство, сырье, с/х", label: "Производство, сырье, с/х" },
-    { value: "Страхование", label: "Страхование" },
-    { value: "Строительство", label: "Строительство" },
-    { value: "Транспорт, логистика", label: "Транспорт, логистика" },
-    { value: "Туризм, рестораны", label: "Туризм, рестораны" },
-    { value: "Управление персоналом", label: "Управление персоналом" },
-    { value: "Фитнес, салоны красоты", label: "Фитнес, салоны красоты" },
-    { value: "Юриспрунденция", label: "Юриспрунденция" },
-    
-  ],
-
+//==========Фильтр "Сортироать"===========
+const choiceSort = new Choices(".choices-sort", {
+  searchEnabled: false,
+  itemSelectText: "",
+  position: "bottom",
+  classNames: {
+    containerInner: "choices__inner-withoot-border",
+  },
 });
 
-//============Сортировка списка 
+//==========Фильтр "Регион"===========
+try {
+  const choiceRegion = new Choices(".choice-region", {
+    itemSelectText: "",
+    // searchEnabled: true,
+    position: "bottom",
+    allowHTML: true,
+    removeItemButton: true,
+    choices: [
+      { value: "Абакан", label: "Абакан" },
+      { value: "Анадырь", label: "Анадырь" },
+      { value: "Архангельск", label: "Архангельск" },
+      { value: "Астрахань", label: "Астрахань" },
+      { value: "Барнаул", label: "Барнаул" },
+      { value: "Белгород", label: "Белгород" },
+      { value: "Биробиджан", label: "Биробиджан" },
+      { value: "Благовещенск", label: "Благовещенск" },
+      { value: "Брянск", label: "Брянск" },
+      { value: "Великий Новгород", label: "Великий Новгород" },
+      { value: "Владивосток", label: "Владивосток" },
+      { value: "Владикавказ", label: "Владикавказ" },
+      { value: "Владимир", label: "Владимир" },
+    ],
+    classNames: {
+      containerInner: "choices__inner-withoot-border",
+    },
+  });
+} catch (error) {}
+//==========Фильтр "Время публикации"===========
+try {
+  const choiceJob = new Choices(".choice-job", {
+    itemSelectText: "",
+    searchEnabled: false,
+    position: "bottom",
+    allowHTML: true,
+    choices: [
+      { value: "IT, интернет, телеком", label: "IT, интернет, телеком" },
+      { value: "Автомобильный бизнес", label: "Автомобильный бизнес" },
+      { value: "Административная работа", label: "Административная работа" },
+      { value: "Банки, инвестиции", label: "Банки, инвестиции" },
+      { value: "Без опыта, студенты", label: "Без опыта, студенты" },
+      { value: "Бухгалтерия, финансы", label: "Бухгалтерия, финансы" },
+      { value: "Высший менеджмент", label: "Высший менеджмент" },
+      { value: "Госслужба, НКО", label: "Госслужба, НКО" },
+      { value: "Домашний персонал", label: "Домашний персонал" },
+      { value: "ЖКХ, эксплуатация", label: "ЖКХ, эксплуатация" },
+      { value: "Исскуство, развлечения", label: "Исскуство, развлечения" },
+      { value: "Маркетинг, реклама, PR", label: "Маркетинг, реклама, PR" },
+      { value: "Консультирование", label: "Консультирование" },
+      { value: "Курьерская доставка", label: "Курьерская доставка" },
+      { value: "Медицина, фармацевтика", label: "Медицина, фармацевтика" },
+      { value: "Продажи", label: "Продажи" },
+      { value: "Образование, наука", label: "Образование, наука" },
+      { value: "Охрана, безопасность", label: "Охрана, безопасность" },
+      { value: "Производство, сырье, с/х", label: "Производство, сырье, с/х" },
+      { value: "Страхование", label: "Страхование" },
+      { value: "Строительство", label: "Строительство" },
+      { value: "Транспорт, логистика", label: "Транспорт, логистика" },
+      { value: "Туризм, рестораны", label: "Туризм, рестораны" },
+      { value: "Управление персоналом", label: "Управление персоналом" },
+      { value: "Фитнес, салоны красоты", label: "Фитнес, салоны красоты" },
+      { value: "Юриспрунденция", label: "Юриспрунденция" },
+    ],
+  });
+} catch (error) {}
 
+//==========Фильтр "Время публикации"===========
+//==========Фильтр "Опыт работы"===========
+//==========Фильтр "Образование"===========
+//==========Фильтр "Гражданство"===========
+let genericExamples = document.querySelectorAll(".choice-filter");
+console.log(genericExamples);
+for (let i = 0; i < genericExamples.length; ++i) {
+  let element = genericExamples[i];
+  new Choices(element, {
+    searchEnabled: false,
+    itemSelectText: "",
+    position: "bottom",
+  });
+}
 
-$('#listSort').on('click', function (event) {
+//==========Фильтр "Время публикации"===========
+// const choiceTime = new Choices('.choice-time', {
+//   searchEnabled: false,
+//   itemSelectText: '',
+//   position: 'bottom',
+
+// })
+// //==========Фильтр "Опыт работы"===========
+// const choiceExperience = new Choices('.choice-experience', {
+//   searchEnabled: false,
+//   itemSelectText: '',
+//   position: 'bottom',
+
+// })
+// //==========Фильтр "Образование"===========
+// const choiceEducation = new Choices('.choice-education', {
+//   searchEnabled: false,
+//   itemSelectText: '',
+//   position: 'bottom',
+
+// })
+// //==========Фильтр "Гражданство"===========
+// const choiceNationality = new Choices('.choice-nationality', {
+//   searchEnabled: false,
+//   itemSelectText: '',
+//   position: 'bottom',
+
+// })
+//============Сортировка списка
+
+$("#listSort").on("click", function (event) {
   event.preventDefault();
-  $('#listSort').addClass('chosen')
-  $('#mediumIconsSort').removeClass('chosen')
-  if($('.tender__post')) {
-    $('.tender__post').toggleClass('tender__post-list tender__post');
+  $("#listSort").addClass("chosen");
+  $("#mediumIconsSort").removeClass("chosen");
+  if ($(".tender__post")) {
+    $(".tender__post").toggleClass("tender__post-list tender__post");
   }
-  
 });
 
-$('#mediumIconsSort').on('click', function (event) {
+$("#mediumIconsSort").on("click", function (event) {
   event.preventDefault();
-  $('#mediumIconsSort').addClass('chosen')
-  $('#listSort').removeClass('chosen')
-  if($('.tender__post-list')) {
-    $('.tender__post-list').toggleClass('tender__post tender__post-list ');
+  $("#mediumIconsSort").addClass("chosen");
+  $("#listSort").removeClass("chosen");
+  if ($(".tender__post-list")) {
+    $(".tender__post-list").toggleClass("tender__post tender__post-list ");
   }
-  
-
 });
-
 
 //====делаем первую букву  в Верхнем регистре
 // const regex = /[A-Za-z0-0]/;
