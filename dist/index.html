@@ -1505,44 +1505,67 @@
       <span class="adm-informer-arrow"></span>
     </div> -->
 
-  <div class="user-menu-modal" id="user_menu">
-    <button class="close__btn">
-      <svg width="32px" height="32px" class="close__btn-svg">
-        <use xlink:href="image/icons/icons.svg#header-create-btn"></use>
-      </svg>
-    </button>
-    <div class="user-menu-modal-block" onclick="event.stopPropagation()">
-      <div class="user-info-block">
-        <a class="user-info" href="/profile_user/?ID=2207">
-          <div class="login-information-photo container_prof">
-            <img src="image/test-account-img/d45dfb0e1762f6e7ae55db2e7628934a.jpeg">
-            <div class="count_unread">0</div>
-          </div>
-          <div class="user-fio underscore-link">
-            Куралев Е.А. </div>
-        </a>
-        <div class="header__item-action-btn">
-          <a href="/profile/wallet/" class="flex-container">
-
-            <svg width="34px" height="34px" class="svg-header-wallet-dims">
-              <use xlink:href="image/icons/icons.svg#header-wallet"></use>
-            </svg>
-            <p>105,00 ₽</p>
+    <div class="sides__modal sides__modal-right" id="user_menu">
+      <button class="close__btn" id="closeBtnUserMenu">
+        <svg width="32px" height="32px" class="close__btn-svg">
+          <use xlink:href="image/icons/icons.svg#header-create-btn"></use>
+        </svg>
+      </button>
+      <div class="sides__modal-block" id="userMenuBlock" onclick="event.stopPropagation()">
+        <div class="user-info-block">
+          <a class="user-info" href="/profile_user/?ID=2207">
+            <div class="login-information-photo container_prof">
+              <img
+                src="image/test-account-img/d45dfb0e1762f6e7ae55db2e7628934a.jpeg"
+              />
+              <div class="count_unread">0</div>
+            </div>
+            <div class="user-fio underscore-link">Куралев Е.А.</div>
           </a>
+          <div class="header__item-action-btn">
+            <a href="/profile/wallet/" class="flex-container">
+              <svg width="34px" height="34px" class="svg-header-wallet-dims">
+                <use xlink:href="image/icons/icons.svg#header-wallet"></use>
+              </svg>
+              <p>105,00 ₽</p>
+            </a>
+          </div>
+        </div>
+        <div class="user-menu">
+          <ul>
+            <li>
+              <a
+                href="/my_pacts/edit_my_pact/?ACTION=ADD"
+                class="underscore-link"
+                >Создать предложение</a
+              >
+            </li>
+            <li>
+              <a href="/profile_user/?ID=2207" class="underscore-link"
+                >Мой профиль</a
+              >
+            </li>
+            <li>
+              <a href="/profile/" class="underscore-link"
+                >Редактировать профиль</a
+              >
+            </li>
+            <li>
+              <a href="/profile/select_company/" class="underscore-link"
+                >Переключить профиль</a
+              >
+            </li>
+            <li>
+              <a
+                href="/develop/empty/?logout=yes"
+                class="exit-profile link-color underscore-link"
+                >Выйти</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="user-menu">
-        <ul>
-          <li><a href="/my_pacts/edit_my_pact/?ACTION=ADD" class="underscore-link">Создать предложение</a></li>
-          <li><a href="/profile_user/?ID=2207" class="underscore-link">Мой профиль</a></li>
-          <li><a href="/profile/" class="underscore-link">Редактировать профиль</a></li>
-          <li><a href="/profile/select_company/" class="underscore-link">Переключить профиль</a></li>
-          <li><a href="/develop/empty/?logout=yes" class="exit-profile link-color underscore-link">Выйти</a></li>
-        </ul>
-
-      </div>
     </div>
-  </div>
   <script type="text/javascript"
     src="//api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=08f051a6-35f1-4392-a988-5024961ee1a8"></script>
 

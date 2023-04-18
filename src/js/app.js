@@ -63,9 +63,9 @@ if (burger) {
 //====Профайл на мобилке=============
 const userIcon = document.querySelector(".header__profile-mobile");
 if (userIcon) {
-  const closeBtn = document.querySelector(".close__btn");
-  const menuModal = document.querySelector(".user-menu-modal");
-  const menuModalBody = document.querySelector(".user-menu-modal-block");
+  const closeBtn = document.querySelector("#closeBtnUserMenu");
+  const menuModal = document.querySelector("#user_menu");
+  const menuModalBody = document.querySelector("#userMenuBlock");
 
   userIcon.addEventListener("click", (e) => {
     userIcon.classList.toggle("_active");
@@ -79,6 +79,24 @@ if (userIcon) {
     }, 200);
   });
 }
+//====Категории на мобилке=============
+const usecategory = document.querySelector(".category__mobile-slide");
+if (usecategory) {
+  const closeBtn = document.querySelector("#closeBtnCategory");
+  const categoryMenu = document.querySelector("#categoryMenu");
+  const categoryMenuBlock = document.querySelector("#categoryMenuBlock");
+
+  usecategory.addEventListener("click", (e) => {
+    categoryMenu.classList.toggle("_show");
+    categoryMenuBlock.classList.toggle("_show");
+  });
+  closeBtn.addEventListener("click", (e) => {
+    categoryMenuBlock.classList.toggle("_show");
+    setTimeout(function () {
+      categoryMenu.classList.toggle("_show");
+    }, 200);
+  });
+}
 
 //====Боковое окно=============
 const notificationsBtn = document.querySelector("#notification_btn");
@@ -89,8 +107,14 @@ notificationsBtn.onclick = function () {
   if (!notificationsBtn.classList.contains("active")) {
     notificationsBtn.classList.add("active");
     bellSvg.classList.add("_active");
-    rightMenu.to(".right-menu", { x: -368, duration: 0.4 });
-    rightMenu.play();
+    if(window.screen.width > 768) {
+
+      rightMenu.to(".right-menu", { x: -368, duration: 0.3 });
+      rightMenu.play();
+    } else {
+      rightMenu.to(".right-menu", { x: -250, duration: 0.3 });
+      rightMenu.play();
+    }
   } else {
     notificationsBtn.classList.remove("active");
     bellSvg.classList.remove("_active");
@@ -272,14 +296,18 @@ const swiperCategory = new Swiper(".swiper__category", {
       slidesPerView: 7,
       spaceBetween: 36,
     },
+    768: {
+      slidesPerView: 5,
+      spaceBetween: 30,
+    },
     // when window width is >= 523px
     523: {
-      slidesPerView: 2,
-      spaceBetween: 16,
+      slidesPerView: 4,
+      spaceBetween: 22,
     },
     // when window width is >= 320px
     320: {
-      slidesPerView: 1,
+      slidesPerView: 3,
       spaceBetween: 20,
     },
   },

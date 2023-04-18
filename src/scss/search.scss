@@ -41,6 +41,9 @@
   & .primary__btn-orange {
     padding: 12px 38px;
     margin-left: 40px;
+    @media (max-width: 524px) {
+      display: none;
+    }
   }
 
   & .region__link,
