@@ -32,7 +32,16 @@
     font-size: 18px;
     color: var(--white);
   }
+  &__filter-btn {
+    display: none;
+    width: 47px;
+    height: 40px;
+    background-color: var(--primary-orange);
+    @media (max-width: 523px) {
+      display: block;
 
+    }
+  }
   &__category-btn .button-decor {
     width: 20px;
     height: 2px;
@@ -86,9 +95,13 @@
     &-form {
       position: relative;
       width: 100%;
+      @media (max-width: 523px) {
+
+        width: 80%;
+      }
       & a {
         @media (max-width: 523px) {
-          padding: 9px 32px;
+          padding: 11px 16px 12px 16px;
         }
       }
     }
@@ -106,7 +119,7 @@
       background-color: inherit;
       transition: var(--transition-color);
       @media (max-width: 523px) {
-        padding: 9px 30px 9px 30px;
+       padding: 11px 30px 12px 30px;
       }
     }
   }
@@ -247,7 +260,7 @@
       bottom: 0;
     }
   }
-
+  
   &-container {
     grid-column: span 12;
   }
@@ -329,9 +342,7 @@
   }
  
 }
-.catalog__filter {
-  display: none;
-}
+
 //===========================================================
 
 ////////================Карточка товара списком===================
