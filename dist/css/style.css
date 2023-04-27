@@ -610,7 +610,8 @@ video {
 .choices[data-type*=select-one].is-open::after {
   transform: rotate(135deg);
   border-color: var(--primary-orange);
-  top: 55%;
+  top: 45%;
+  margin: 0;
 }
 
 .choices__input {
@@ -633,9 +634,13 @@ video {
   border-color: var(--border-grey);
   border-width: 0 0 1px 1px;
   transform: rotate(-45deg);
-  top: 35%;
+  top: 38%;
   right: 20px;
   transition: all 0.2s ease-in-out;
+}
+
+.choices__inner-withoot-border {
+  padding: 12px 0;
 }
 
 /**
@@ -4786,6 +4791,12 @@ button {
 .cards__sort-filter {
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 350px;
+  column-gap: 20px;
+}
+.cards__sort-filter form {
+  width: 100%;
 }
 
 .btn-sort {
@@ -4860,17 +4871,6 @@ button {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-}
-
-.cards__sort-filter {
-  width: 100%;
-  max-width: 280px;
-  display: flex;
-  align-items: flex-start;
-  column-gap: 20px;
-}
-.cards__sort-filter form {
-  width: 100%;
 }
 
 .nav__tabs {

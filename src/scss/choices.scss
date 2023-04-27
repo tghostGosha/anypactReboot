@@ -94,7 +94,8 @@
 .choices[data-type*=select-one].is-open::after {
   transform: rotate(135deg);
   border-color: var(--primary-orange);
-  top: 55%;
+  top: 45%;
+  margin: 0;
 }
 .choices__input {
   padding: 12px 20px 12px 20px;
@@ -116,7 +117,10 @@
   border-color: var(--border-grey);
   border-width: 0 0 1px 1px;
   transform: rotate(-45deg);
-  top: 35%;
+  top: 38%;
   right: 20px;
   transition: all 0.2s ease-in-out;
+}
+.choices__inner-withoot-border {
+  padding: 12px 0;
 }

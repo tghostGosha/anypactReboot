@@ -13,6 +13,7 @@
             type="button"
             class="catalog__category-btn flex-container"
             id="button_catalog_category"
+            aria-label="все категории"
           >
             <span class="button-decor"></span>
             <span>Все категории</span>
@@ -67,7 +68,7 @@
               class="catalog__search-input"
               name="q"
               placeholder="Поиск по объявлениям"
-              value=""
+              value="Поиск по объявлениям"
             />
             <a
               name="s"
@@ -78,7 +79,7 @@
               >Найти</a
             >
           </form>
-          <button class="catalog__filter-btn" >
+          <button class="catalog__filter-btn" aria-label="фильтр" >
             <svg
                     width="30px"
                     height="30px"
@@ -215,7 +216,7 @@
               </form>
             </div>
             <div class="cards__sort-settings-btns">
-              <button id="mediumIconsSort" class="chosen btn-sort">
+              <button id="mediumIconsSort" class="chosen btn-sort" aria-label="сортировка плиткой">
                 <svg
                   width="36px"
                   height="35px"
@@ -224,7 +225,7 @@
                   <use xlink:href="image/icons/icons.svg#mediumIconsSort"></use>
                 </svg>
               </button>
-              <button id="listSort" class="btn-sort">
+              <button id="listSort" class="btn-sort" aria-label="сортировка списком">
                 <svg width="36px" height="35px" class="svg-list-sort-dims">
                   <use xlink:href="image/icons/icons.svg#list-sort"></use>
                 </svg>
@@ -762,7 +763,7 @@
     </div>
 
     <div class="sides__modal sides__modal-right" id="user_menu">
-      <button class="close__btn" id="closeBtnUserMenu">
+      <button class="close__btn" id="closeBtnUserMenu" aria-label="закрыть меню">
         <svg width="32px" height="32px" class="close__btn-svg">
           <use xlink:href="image/icons/icons.svg#header-create-btn"></use>
         </svg>
@@ -827,7 +828,7 @@
       </div>
     </div>
     <div class="sides__modal sides__modal-left" id="categoryMenu">
-      <button class="close__btn" id="closeBtnCategory">
+      <button class="close__btn" id="closeBtnCategory" aria-label="закрыть меню">
         <svg width="32px" height="32px" class="close__btn-svg">
           <use xlink:href="image/icons/icons.svg#header-create-btn"></use>
         </svg>

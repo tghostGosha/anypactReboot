@@ -39,7 +39,6 @@
     background-color: var(--primary-orange);
     @media (max-width: 523px) {
       display: block;
-
     }
   }
   &__category-btn .button-decor {
@@ -96,7 +95,6 @@
       position: relative;
       width: 100%;
       @media (max-width: 523px) {
-
         width: 80%;
       }
       & a {
@@ -119,7 +117,7 @@
       background-color: inherit;
       transition: var(--transition-color);
       @media (max-width: 523px) {
-       padding: 11px 30px 12px 30px;
+        padding: 11px 30px 12px 30px;
       }
     }
   }
@@ -242,11 +240,10 @@
     min-height: 320px;
   }
   @media (min-width: 1024px) {
-
     &:hover {
       box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
       // border: 1px solid var(--primary-orange);
-  
+
       & .tender__post-img {
         background-color: rgba(0, 0, 0, 0);
       }
@@ -260,7 +257,7 @@
       bottom: 0;
     }
   }
-  
+
   &-container {
     grid-column: span 12;
   }
@@ -281,7 +278,7 @@
     object-fit: cover;
     border-radius: 10px;
   }
- 
+
   &-text {
     display: flex;
     flex-direction: column;
@@ -340,7 +337,6 @@
     position: relative;
     bottom: -200px;
   }
- 
 }
 
 //===========================================================
@@ -402,6 +398,12 @@
   &-filter {
     display: flex;
     align-items: center;
+    width: 100%;
+    max-width: 350px;
+    column-gap: 20px;
+    & form {
+      width: 100%;
+    }
   }
 }
 .btn-sort {
@@ -471,17 +473,6 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-  }
-}
-.cards__sort-filter {
-  width: 100%;
-  max-width: 280px;
-  display: flex;
-  // flex-direction: column;
-  align-items: flex-start;
-  column-gap: 20px;
-  & form {
-    width: 100%;
   }
 }
 
@@ -558,7 +549,7 @@
 .sides__modal {
   position: fixed;
   top: 0;
-  
+
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
@@ -617,7 +608,6 @@
         color: var(--primary-text);
         font-size: 18px;
       }
-
     }
   }
 }
@@ -641,7 +631,6 @@ a.user-info {
   font-size: 14px;
 }
 
-
 .close__btn {
   height: 32px;
   width: 32px;
@@ -653,5 +642,4 @@ a.user-info {
     transform: rotate(45deg);
     color: var(--white);
   }
-
 }
