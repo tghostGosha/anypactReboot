@@ -1,0 +1,26 @@
+.breadcrumbs {
+  margin-bottom: 50px;
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+  &__list {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    font-size: 14px;
+    line-height: 140%;
+
+    &-item {
+      & .active-link {
+        color: var(--primary-text);
+      }
+    }
+  }
+
+  &-item__link {
+    color: var(--secondary-text);
+    &:hover {
+      color: var(--primary-text);
+    }
+  }
+}

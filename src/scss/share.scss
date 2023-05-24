@@ -1,0 +1,36 @@
+.card__share {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & span {
+    font-size: 18px;
+    line-height: 140%;
+  }
+  &-list {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    & li {
+      transition: var(--transition-color);
+      width: 30px;
+      height: 30px;
+    }
+    & li:hover svg {
+      color: var(--primary-orange);
+    }
+    & a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background: var(--grey-db);
+      border-radius: 50%;
+      & svg { 
+        color: var(--white);
+      }
+    }
+
+  }
+}

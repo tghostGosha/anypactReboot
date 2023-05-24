@@ -1,0 +1,40 @@
+.card__person {
+  display: flex;
+  &-link {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+  }
+  &-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+    & p {
+      font-size: 18px;
+      line-height: 140%;
+      color: var(--primary-text);
+    }
+  }
+  &-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    & img {
+      border-radius: 50%;
+    }
+  }
+  &-status {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 130%;
+    
+    &.__active {
+      color: var(--primary-orange);
+    }
+    &.__off {
+      color: var(--secondary-text);
+    }
+  }
+ 
+}

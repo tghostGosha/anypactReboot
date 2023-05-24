@@ -277,14 +277,17 @@
     <div id="abakan" class="marker"></div>
     <span class="city__choose-form-header">Или введите в поле</span>
     <form class="city__submit flex-container">
-
-      <div class="col-md-6"><input type="text" tabindex="0" class="city__submit-input"
-          placeholder="Введите город или населенный пункт (например &quot;Санкт-Петербург&quot;)">
+      <div class="col-md-6">
+        <input
+          type="text"
+          tabindex="0"
+          class="city__submit-input"
+          placeholder='Введите город или населенный пункт (например "Санкт-Петербург")'
+        />
       </div>
       <div class="col-md-6">
         <button class="primary__btn-orange city__choose-btn-choose">Выбрать</button>
       </div>
-
     </form>
   </div>
 </div>
@@ -295,80 +298,166 @@
       <div class="modal-window">
         <div class="modal-close"></div>
         <div class="modal-window-content">
-
           <div class="test1 modal__form-wallet" id="modalWalletRegister">
             <h2 class="modal__title">Регистрация кошелька</h2>
-            <form action="/develop/empty/?moneta_reg=yes" method="post" name="moneta_reg_form"
-              class="wallet__form flex-container">
+            <form
+              action="/develop/empty/?moneta_reg=yes"
+              method="post"
+              name="moneta_reg_form"
+              class="wallet__form flex-container"
+            >
               <div class="wallet__form-item passport-date">
                 <label>Дата выдачи паспорта:</label>
-                <input disabled="" type="text" placeholder="Дата выдачи паспорта:" value="29********">
+                <input
+                  disabled=""
+                  type="text"
+                  placeholder="Дата выдачи паспорта:"
+                  value="29********"
+                />
               </div>
               <div class="wallet__form-item wallet__form-passport">
                 <div class="wallet__form-item-min">
                   <label>Серия:</label>
-                  <input disabled="" type="text" placeholder="Серия" value="97**">
+                  <input disabled="" type="text" placeholder="Серия" value="97**" />
                 </div>
                 <div class="wallet__form-item-middle">
                   <label>Номер:</label>
-                  <input disabled="" type="text" placeholder="Номер" value="91****">
+                  <input disabled="" type="text" placeholder="Номер" value="91****" />
                 </div>
               </div>
 
               <div class="wallet__form-item">
                 <label>Кем выдан:</label>
-                <input disabled="" type="text" placeholder="Кем выдан паспорт:"
-                  value="Вы****************************************************************************************************ы">
+                <input
+                  disabled=""
+                  type="text"
+                  placeholder="Кем выдан паспорт:"
+                  value="Вы****************************************************************************************************ы"
+                />
               </div>
 
               <div class="wallet__form-item">
                 <label>Код подразделения:</label>
-                <input type="text" placeholder="Код подразделения" name="DEPARTMENT" value="" inputmode="text">
+                <input
+                  type="text"
+                  placeholder="Код подразделения"
+                  name="DEPARTMENT"
+                  value=""
+                  inputmode="text"
+                />
               </div>
 
               <div class="wallet__form-item">
                 <label>СНИЛС:</label>
-                <input disabled="" class="hidden-value" type="text" placeholder="СНИЛС" name="SNILS"
-                  value="150*********11">
+                <input
+                  disabled=""
+                  class="hidden-value"
+                  type="text"
+                  placeholder="СНИЛС"
+                  name="SNILS"
+                  value="150*********11"
+                />
               </div>
 
               <div class="wallet__form-item">
-                <input type="hidden" name="D_S" value="Y"> <label>ИНН:</label>
-                <input disabled="" class="hidden-value" type="text" placeholder="ИНН" maxlength="12"
-                  aria-invalid="true" name="INN" value="213*******84">
+                <input type="hidden" name="D_S" value="Y" /> <label>ИНН:</label>
+                <input
+                  disabled=""
+                  class="hidden-value"
+                  type="text"
+                  placeholder="ИНН"
+                  maxlength="12"
+                  aria-invalid="true"
+                  name="INN"
+                  value="213*******84"
+                />
               </div>
 
               <div class="wallet__form-item">
                 <label>E-mail:</label>
-                <input disabled="" type="email" placeholder="E-mail" value="e.k****ev@mail.ru">
+                <input disabled="" type="email" placeholder="E-mail" value="e.k****ev@mail.ru" />
               </div>
 
               <div class="wallet__form-item">
                 <label>Телефон:</label>
-                <input type="tel" placeholder="Телефон" class="js-mask__phone" name="PHONE" value="8(987) 677-78-70"
-                  inputmode="text">
+                <input
+                  type="tel"
+                  placeholder="Телефон"
+                  class="js-mask__phone"
+                  name="PHONE"
+                  value="8(987) 677-78-70"
+                  inputmode="text"
+                />
               </div>
               <div class="wallet__form-item">
-
-                <p class="secondary-text">При нажатии на кнопку "Открыть" вы соглашаетесь передать
-                  свои персональные данные сервиcу <a href="https://www.moneta.ru/" target="__blank"
-                    class="underscore-link link-color">Монета</a>, а
-                  так же соглашаетесь с правилами
-                  использования сервиса <a href="https://www.moneta.ru/" target="__blank"
-                    class="underscore-link link-color">Монета</a></p>
+                <p class="secondary-text">
+                  При нажатии на кнопку "Открыть" вы соглашаетесь передать свои персональные данные
+                  сервиcу
+                  <a
+                    href="https://www.moneta.ru/"
+                    target="__blank"
+                    class="underscore-link link-color"
+                    >Монета</a
+                  >, а так же соглашаетесь с правилами использования сервиса
+                  <a
+                    href="https://www.moneta.ru/"
+                    target="__blank"
+                    class="underscore-link link-color"
+                    >Монета</a
+                  >
+                </p>
                 <div class="buttons-wrapper">
-
-                  <button class="btn primary-btn" type="submit" name="SUBMIT" value="Открыть">Открыть</button>
+                  <button class="btn primary-btn" type="submit" name="SUBMIT" value="Открыть">
+                    Открыть
+                  </button>
                 </div>
               </div>
+            </form>
+          </div>
+          <div class="test2 modal__form-wallet" id="modalCardComplaint">
+            <h2 class="modal__title">Жалоба на предложение</h2>
+            <form
+              action="/develop/empty/?moneta_reg=yes"
+              method="post"
+              name="moneta_reg_form"
+              class="wallet__form flex-container"
+            >
+              <div class="wallet__form-item">
+                <label for="choices-multiple-groups">Тип нарушения:</label>
+                <select class="choice-experience choice-filter" name="choices-multiple-groups" one>
+                  <option value="Не имеет значения" selected>Мошенник</option>
+                  <option value="Более 1 года">Непристойное содержание</option>
+                  <option value="Более 3 лет">Нарушает правила Anypact.ru</option>
+                  <option value="Более 5 лет">Спам</option>
+                  <option value="Более 10 лет">Другое</option>
+                </select>
+              </div>
+              <div class="wallet__form-item">
+                <label for="complaint"></label>
+                <textarea  id="" cols="30" rows="10" name="complaint" placeholder="Введите текст жалобы"></textarea>
+              </div>
 
+              <div class="wallet__form-item">
+                <div class="buttons-wrapper">
+                  <button
+                    class="btn primary-btn"
+                    type="submit"
+                    name="SUBMIT"
+                    value="Отправить жалобу"
+                  >
+                    Отправить жалобу
+                  </button>
+                </div>
+              </div>
             </form>
           </div>
         </div>
       </div>
+      
     </div>
   </div>
 </div>
+
 <div class="right-menu">
   <div class="tabs">
     <div class="point" id="notification_btn" data-content-id="notification_list">
@@ -386,7 +475,9 @@
       <div data-id="5577" class="person-conversation">
         <div class="person-conversation-photo">
           <a href="/profile_user/?ID=115138">
-            <img src="/upload/resize_cache/iblock/7e8/50_50_2/xg1pbxrjrw2754zya0rg4qm09hilfcy1.jpeg">
+            <img
+              src="/upload/resize_cache/iblock/7e8/50_50_2/xg1pbxrjrw2754zya0rg4qm09hilfcy1.jpeg"
+            />
           </a>
         </div>
         <div class="notification-block">
@@ -394,13 +485,19 @@
             <a href="/profile_user/?ID=115138&amp;type=company">
               <div class="person-conversation-name"><strong>ИП Шишкин М.А.</strong></div>
             </a>
-            <div class="person-conversation-date">
-              01.11.2022 </div>
+            <div class="person-conversation-date">01.11.2022</div>
           </div>
-          <div class="notification-message-block ">
-            Организация подписал ваш договор №<a href="/contract/?ID=115956&amp;COMPANY_ID=115138"
-              class="link-color underscore-link">115957</a> по
-            сделке <a href="/pacts/drugoe/test_01112022/" class="link-color underscore-link">Тест 01112022</a> </div>
+          <div class="notification-message-block">
+            Организация подписал ваш договор №<a
+              href="/contract/?ID=115956&amp;COMPANY_ID=115138"
+              class="link-color underscore-link"
+              >115957</a
+            >
+            по сделке
+            <a href="/pacts/drugoe/test_01112022/" class="link-color underscore-link"
+              >Тест 01112022</a
+            >
+          </div>
           <div class="delete">
             <div class="not-delete underscore-link">Удалить</div>
           </div>
@@ -413,24 +510,21 @@
         </svg>
         <p>Уведомления отсутствуют</p>
       </div> -->
-
     </div>
   </div>
   <script>
     var NL_component = {
-      params: { 'ACTION_VARIABLE': 'action', '~ACTION_VARIABLE': 'action' },
-      signedParamsString: 'YToyOntzOjE1OiJBQ1RJT05fVkFSSUFCTEUiO3M6NjoiYWN0aW9uIjtzOjE2OiJ+QUNUSU9OX1ZBUklBQkxFIjtzOjY6ImFjdGlvbiI7fQ==.29fb638b9dd78d5c88f194c80d1ff6cd91725bd87f8536e4c8dd291d79464c40',
-      siteID: 's1',
-      ajaxUrl: '/local/components/nfksber/notification.list/ajax.php',
-      templateFolder: '/local/components/nfksber/notification.list/templates/.default',
+      params: { ACTION_VARIABLE: "action", "~ACTION_VARIABLE": "action" },
+      signedParamsString:
+        "YToyOntzOjE1OiJBQ1RJT05fVkFSSUFCTEUiO3M6NjoiYWN0aW9uIjtzOjE2OiJ+QUNUSU9OX1ZBUklBQkxFIjtzOjY6ImFjdGlvbiI7fQ==.29fb638b9dd78d5c88f194c80d1ff6cd91725bd87f8536e4c8dd291d79464c40",
+      siteID: "s1",
+      ajaxUrl: "/local/components/nfksber/notification.list/ajax.php",
+      templateFolder: "/local/components/nfksber/notification.list/templates/.default",
     };
   </script>
 </div>
 
-
-
-<header class="header container" id="header" style="width: 100%;">
-
+<header class="header container" id="header" style="width: 100%">
   <div class="grid-container">
     <div class="menu__icon">
       <span></span>
@@ -442,9 +536,14 @@
         </svg>
       </a>
       <span class="location">Чебоксары</span>
-      <a href="/AnyPact инструкция.pdf" class="manual underscore-link link-color" target="_blank"
-        onclick="ym(64629523,'reachGoal','manual');">
-        Инструкция</a>
+      <a
+        href="/AnyPact инструкция.pdf"
+        class="manual underscore-link link-color"
+        target="_blank"
+        onclick="ym(64629523,'reachGoal','manual');"
+      >
+        Инструкция</a
+      >
     </div>
     <div class="flex-container header__profile-action">
       <div class="header__item-action-btn" tabindex="0">
@@ -455,7 +554,12 @@
           <p>Открыть счёт</p>
         </a>
       </div>
-      <div class="header__item-action-btn round-button" tabindex="0" tooltip="Создать предложение" flow="down">
+      <div
+        class="header__item-action-btn round-button"
+        tabindex="0"
+        tooltip="Создать предложение"
+        flow="down"
+      >
         <a href="/my_pacts/edit_my_pact/?ACTION=ADD">
           <svg width="21px" height="21px" class="svg-header-create-btn-dims">
             <use xlink:href="image/icons/icons.svg#header-create-btn"></use>
@@ -475,14 +579,17 @@
             <div class="flex-container">
               <a href="/profile_user/?ID=2207" class="link-messageList">
                 <div class="login-information-photo container_prof">
-                  <img src="image/test-account-img/d45dfb0e1762f6e7ae55db2e7628934a.jpeg">
-                  <div class="count_unread ">0</div>
+                  <img src="image/test-account-img/d45dfb0e1762f6e7ae55db2e7628934a.jpeg" />
+                  <div class="count_unread">0</div>
                 </div>
               </a>
 
-
               <div class="login-information-text widget_user_profile_name">
-                <button type="button" id="profileOptionsBtn" class="widget_user_profile_name__title">
+                <button
+                  type="button"
+                  id="profileOptionsBtn"
+                  class="widget_user_profile_name__title"
+                >
                   <span>Куралев Е.А. </span>
                   <svg width="12px" height="8px" class="svg-arr__profile-dims">
                     <use xlink:href="image/icons/icons.svg#arr_profile"></use>
@@ -490,17 +597,32 @@
                 </button>
 
                 <ul class="profile__select-options dropdown__menu" id="selectProfileOptions">
-                  <li><a href="/my_pacts/edit_my_pact/?ACTION=ADD" class="link-color underscore-link">Создать
-                      объявление</a>
+                  <li>
+                    <a href="/my_pacts/edit_my_pact/?ACTION=ADD" class="link-color underscore-link"
+                      >Создать объявление</a
+                    >
                   </li>
-                  <li><a href="/profile_user/?ID=2207" class="link-color underscore-link">Мой профиль</a></li>
-                  <li><a href="/profile/" class="link-color underscore-link">Редактировать профиль</a></li>
-                  <li><a href="/profile/select_company/" class="link-color underscore-link">Переключить профиль</a>
+                  <li>
+                    <a href="/profile_user/?ID=2207" class="link-color underscore-link"
+                      >Мой профиль</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/profile/" class="link-color underscore-link">Редактировать профиль</a>
+                  </li>
+                  <li>
+                    <a href="/profile/select_company/" class="link-color underscore-link"
+                      >Переключить профиль</a
+                    >
                   </li>
 
-                  <li><a href="/develop/empty/?logout=yes" class="exit-profile link-color underscore-link">Выйти</a>
+                  <li>
+                    <a
+                      href="/develop/empty/?logout=yes"
+                      class="exit-profile link-color underscore-link"
+                      >Выйти</a
+                    >
                   </li>
-
                 </ul>
               </div>
             </div>
@@ -510,14 +632,16 @@
     </div>
     <div class="header__profile-mobile">
       <button type="button" class="profile-mobile-link" id="profileMobileLink">
-        <img src="image/test-account-img/d45dfb0e1762f6e7ae55db2e7628934a.jpeg">
+        <img src="image/test-account-img/d45dfb0e1762f6e7ae55db2e7628934a.jpeg" />
       </button>
     </div>
 
     <nav class="header__nav flex-container">
-      <div class="header__navbar ">
-        <a class="header__navbar-link link-color flex-container underscore-link"
-          href="https://anypact.ru/develop/empty/">
+      <div class="header__navbar">
+        <a
+          class="header__navbar-link link-color flex-container underscore-link"
+          href="https://anypact.ru/develop/empty/"
+        >
           <svg width="25px" height="20px" class="svg-arrow-left-dims">
             <use xlink:href="image/icons/icons.svg#arrow-left"></use>
           </svg>
@@ -525,43 +649,58 @@
         </a>
       </div>
 
-      <ul class="navbar-nav flex-container" style="margin-right: 0 !important;">
+      <ul class="navbar-nav flex-container" style="margin-right: 0 !important">
         <li class="mobile-location">
           <span class="location">Выберите город</span>
         </li>
-        <li class="navbar-nav-item " data-href="/pacts/">
-          <a class="navbar-nav-link underscore-link" href="catalog.html" data-count="">Все предложения</a>
+        <li class="navbar-nav-item" data-href="/pacts/">
+          <a class="navbar-nav-link underscore-link" href="catalog.html" data-count=""
+            >Все предложения</a
+          >
         </li>
-        <li class="navbar-nav-item " data-href="/search_people/">
-          <a class="navbar-nav-link underscore-link" href="/search_people/" data-count="">Поиск контрагентов</a>
+        <li class="navbar-nav-item" data-href="/search_people/">
+          <a class="navbar-nav-link underscore-link" href="/search_people/" data-count=""
+            >Поиск контрагентов</a
+          >
         </li>
-        <li class="navbar-nav-item " data-href="/my_pacts/">
-          <a class="navbar-nav-link underscore-link" href="/my_pacts/" data-count="">Объявления / договоры</a>
+        <li class="navbar-nav-item" data-href="/my_pacts/">
+          <a class="navbar-nav-link underscore-link" href="/my_pacts/" data-count=""
+            >Объявления / договоры</a
+          >
         </li>
-        <li class="navbar-nav-item " data-href="/friends/">
+        <li class="navbar-nav-item" data-href="/friends/">
           <a class="navbar-nav-link underscore-link" href="/friends/" data-count="1">Друзья</a>
         </li>
-        <li class="navbar-nav-item " data-href="/list_message/">
-          <a class="navbar-nav-link underscore-link" href="/list_message/" data-count="">Сообщения</a>
+        <li class="navbar-nav-item" data-href="/list_message/">
+          <a class="navbar-nav-link underscore-link" href="/list_message/" data-count=""
+            >Сообщения</a
+          >
         </li>
-        <li class="navbar-nav-item " data-href="/service/">
+        <li class="navbar-nav-item" data-href="/service/">
           <a class="navbar-nav-link underscore-link" href="about.html" data-count="">О сервисе</a>
         </li>
-        <li class="navbar-nav-item " data-href="/help/">
+        <li class="navbar-nav-item" data-href="/help/">
           <a class="navbar-nav-link underscore-link" href="/help/" data-count="">Контакты</a>
         </li>
-        <li class="navbar-nav-item last " data-href="promotion-2022.html">
-          <a class="navbar-nav-link underscore-link" href="promotion-2022.html" data-count="">Промоакция</a>
+        <li class="navbar-nav-item last" data-href="promotion-2022.html">
+          <a class="navbar-nav-link underscore-link" href="promotion-2022.html" data-count=""
+            >Промоакция</a
+          >
         </li>
-        <li class="navbar-nav-item manual-nav-item ">
-          <a href="/AnyPact инструкция.pdf" class="link-color underscore-link" target="_blank"
-            onclick="ym(64629523,'reachGoal','manual');">Инструкция</a>
+        <li class="navbar-nav-item manual-nav-item">
+          <a
+            href="/AnyPact инструкция.pdf"
+            class="link-color underscore-link"
+            target="_blank"
+            onclick="ym(64629523,'reachGoal','manual');"
+            >Инструкция</a
+          >
         </li>
       </ul>
     </nav>
   </div>
-
 </header>
+
 
   <main>
     <h1 class="hide"></h1>

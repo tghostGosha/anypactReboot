@@ -72,7 +72,7 @@
 
       @media (max-width: 748px) {
         padding: 48px 12px;
-        height: 80vh;
+        max-height: 80vh;
         overflow: scroll;
       }
 
@@ -478,6 +478,22 @@
     &-passport {
       display: flex;
       column-gap: 20px;
+    }
+  }
+}
+.test2 {
+
+  & .wallet__form {
+    display: flex;
+    
+  }
+  & .wallet__form-item {
+    max-width: 70%;
+
+    & textarea {
+      margin-top: 0;
+      height: 120px;
+      background-color: inherit;
     }
   }
 }
