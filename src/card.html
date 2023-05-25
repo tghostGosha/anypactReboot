@@ -141,6 +141,8 @@
               </div>
               <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
             </div>
+            <div id="fullscreen-swiper"></div>
+            <div id="fullscreen-swiper-backdrop"></div>
           </div>
 
           <div class="card__container-right">
@@ -234,7 +236,59 @@
             </div>
           </div>
         </div>
-      </div>
+          <div id="productCarousel" class="f-carousel">
+            <!-- <div class="f-carousel__viewport">
+              <div class="f-carousel__track"> -->
+              
+              <div
+                class="f-carousel__slide"
+                data-thumb-src="./image/test1.jpg"
+                data-fancybox="gallery"
+                data-src="./image/test1.jpg"
+              >
+                <img alt="" data-lazy-src="./image/test1.jpg" />
+              </div>
+              <div
+                class="f-carousel__slide"
+                data-thumb-src="./image/test2.jpg"
+                data-fancybox="gallery"
+                data-src="./image/test2.jpg"
+              >
+                <img
+                  alt=""
+                  
+                  data-lazy-src="./image/test2.jpg"
+                />
+              </div>
+              <div
+                class="f-carousel__slide"
+                data-thumb-src="./image/test3.jpg"
+                data-fancybox="gallery"
+                data-src="./image/test3.jpg"
+              >
+                <img
+                  alt=""
+                  
+                  data-lazy-src="./image/test3.jpg"
+                />
+              </div>
+              <div
+                class="f-carousel__slide"
+                data-thumb-src="./image/test1.jpg"
+                data-fancybox="gallery"
+                data-src="./image/test1.jpg"
+              >
+                <img
+                  alt=""
+                  
+                  data-lazy-src="./image/test1.jpg"
+                />
+              </div>
+                
+            <!-- </div> -->
+          </div>
+        </div>
+      
     </main>
 
     @@include('html/footer.html',{})
@@ -342,15 +396,17 @@
 
     <!-- <script src="js/modules/map.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
       var swiper1 = new Swiper(".mySwiper", {
         spaceBetween: 10,
         slidesPerView: 5,
         freeMode: true,
         watchSlidesProgress: true,
+       
       });
       var swiper2 = new Swiper(".mySwiper2", {
-        // spaceBetween: 10,
+        loop: true,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -359,6 +415,39 @@
           swiper: swiper1,
         },
       });
+      $('.mySwiper2 .swiper-slide').on('click', function() {
+    let slideId = $(this).attr('id');         
+    openFullscreenSwiper(slideId);
+  });
+  function openFullscreenSwiper(initialSlideNumber) {
+    var mainSwiperMarkup = $('.mySwiper2').html(); 
+    
+    $('#fullscreen-swiper')
+      .append(mainSwiperMarkup + "<div id='fullscreen-swiper-close'>X</div>")
+      .fadeIn();
+    
+    var fullscreenSwiper = new Swiper('#fullscreen-swiper', {
+      pagination: '.swiper-pagination',
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      slidesPerView: 1,
+      centeredSlides: true,
+      paginationClickable: true,
+      spaceBetween: 10,
+      loop: true,
+      initialSlide: initialSlideNumber - 1,
+    });      
+    
+    $('#fullscreen-swiper-backdrop').fadeIn();
+    $('body, html').addClass('no-scroll');  
+
+    $('#fullscreen-swiper-close').on('click', function() {
+      $('#fullscreen-swiper').hide().empty();
+      $('#fullscreen-swiper-backdrop').fadeOut();
+      $('body, html').removeClass('no-scroll');
+    });
+  
+  }
     </script>
 
     <script src="js/app.min.js"></script>

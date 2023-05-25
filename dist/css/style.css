@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import "@fancyapps/ui/dist/carousel/carousel.css";
+@import "@fancyapps/ui/dist/fancybox/fancybox.css";
 .container {
   width: 100%;
   margin: 0 auto;
@@ -5243,6 +5245,105 @@ a.user-info {
   display: block;
   border: none;
   vertical-align: middle;
+}
+
+#fullscreen-swiper {
+  display: none;
+  height: 90vh;
+  overflow: hidden;
+  position: absolute;
+  top: 5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+}
+
+#fullscreen-swiper .swiper-slide {
+  background: none;
+}
+
+#fullscreen-swiper .swiper-slide img {
+  height: 75vh;
+  max-height: 650px;
+}
+
+#fullscreen-swiper-backdrop {
+  background: #000;
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+#fullscreen-swiper-close {
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 1px 6px 0;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  z-index: 10000;
+}
+
+.no-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+#productCarousel,
+.f-thumbs.is-classic,
+.fancybox__toolbar,
+.fancybox__nav {
+  --f-button-width: 40px;
+  --f-button-height: 40px;
+  --f-button-border-radius: 4px;
+  --f-button-color: #0d0c22;
+  --f-button-hover-color: var(--f-brand-color);
+  --f-button-bg: #f1f5f9;
+  --f-button-hover-bg: #e2e8f0;
+  --f-button-active-bg: #e2e8f0;
+  --f-button-svg-width: 20px;
+  --f-button-svg-height: 20px;
+  --f-button-svg-stroke-width: 2.25;
+  --f-button-svg-filter: none;
+  --f-button-svg-disabled-opacity: 0.2;
+}
+
+.f-carousel__slide {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.f-thumbs.is-classic {
+  --f-thumb-width: 120px;
+  --f-thumb-height: 80px;
+  --f-thumb-gap: 8px;
+  --f-thumb-opacity: 1;
+  --f-thumb-selected-opacity: 1;
+  --f-thumb-outline: 2px;
+  --f-thumb-outline-color: var(--f-brand-color);
+  --f-button-next-pos: 8px;
+  --f-button-prev-pos: 8px;
+}
+
+.f-thumbs.is-classic.is-horizontal {
+  padding: 0 56px;
+}
+
+.f-thumbs.is-classic.is-vertical {
+  padding: 56px 0;
+}
+
+#productCarousel .f-carousel__nav {
+  opacity: 0;
+  transition: opacity 0.15s;
 }
 
 .breadcrumbs {
