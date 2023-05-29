@@ -10,13 +10,13 @@
         <div class="breadcrumbs">
           <ul class="breadcrumbs__list">
             <li class="breadcrumbs__list-item">
-              <a href="#" class="breadcrumbs-item__link">Все объявления/</a>
+              <a href="#" class="breadcrumbs-item__link hide-on-mobile">Все объявления/</a>
             </li>
             <li class="breadcrumbs__list-item">
-              <a href="#" class="breadcrumbs-item__link">Купля-продажа/</a>
+              <a href="#" class="breadcrumbs-item__link hide-on-mobile">Купля-продажа/</a>
             </li>
             <li class="breadcrumbs__list-item">
-              <a href="#" class="breadcrumbs-item__link">Электроника/</a>
+              <a href="#" class="breadcrumbs-item__link hide-on-mobile">Электроника/</a>
             </li>
             <li class="breadcrumbs__list-item">
               <a href="#" class="breadcrumbs-item__link active-link">Фотоаппарат Canon...</a>
@@ -139,6 +139,22 @@
                   <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
                 </div>
               </div>
+              <div
+                class="swiper-button-next"
+                tabindex="0"
+                role="button"
+                aria-label="Next slide"
+                aria-controls="swiper-wrapper-d010925cda01cc9e5"
+                aria-disabled="false"
+              ></div>
+              <div
+                class="swiper-button-prev"
+                tabindex="0"
+                role="button"
+                aria-label="Previous slide"
+                aria-controls="swiper-wrapper-d010925cda01cc9e5"
+                aria-disabled="false"
+              ></div>
               <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
             </div>
             <div id="fullscreen-swiper"></div>
@@ -401,9 +417,14 @@
     <script>
       var swiper1 = new Swiper(".mySwiper", {
         spaceBetween: 10,
-        slidesPerView: 5,
+        slidesPerView: 4,
         freeMode: true,
         watchSlidesProgress: true,
+        slidesPerGroup: 4,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
        
       });
       var swiper2 = new Swiper(".mySwiper2", {
